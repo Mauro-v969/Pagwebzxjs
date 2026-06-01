@@ -1,6 +1,6 @@
-/* =========================================
-   TECHVENTA S.A. DE C.V. - HOJA MAESTRA 2026
-   ========================================= */
+/* =========================================================================
+   TECHVENTA S.A. DE C.V. - HOJA MAESTRA 2026 (REVISADA Y CORREGIDA)
+   ========================================================================= */
 
 /* 1. VARIABLES GLOBALES (Configuración de Marca) */
 :root {
@@ -88,7 +88,7 @@ body {
     color: var(--secondary);
 }
 
-/* 5. BOTONES MODERNOS */
+/* 5. BOTONES MODERNOS Y ENLACES DE ACCIÓN */
 .btn-contact {
     background: var(--accent);
     color: white;
@@ -98,6 +98,13 @@ body {
     cursor: pointer;
     font-weight: bold;
     text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-contact:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
 }
 
 .btn-submit {
@@ -107,6 +114,9 @@ body {
     padding: 10px 20px;
     border-radius: 20px;
     cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
     transition: 0.3s;
 }
 
@@ -115,7 +125,32 @@ body {
     background: var(--secondary);
 }
 
-/* 6. TARJETAS DE PRODUCTO Y BLOG */
+/* Corrección de Clase Omitida: Botón de ficha técnica en catálogos */
+.btn-details {
+    background: var(--light);
+    color: var(--dark);
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn-details:hover {
+    background: var(--secondary);
+    color: white;
+}
+
+/* 6. GRID DE COMPONENTES Y TARJETAS */
+/* Corrección de Clase Omitida: Contenedor Grid responsivo */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 20px 0;
+}
+
 .card {
     background: white;
     border-radius: 12px;
@@ -150,7 +185,14 @@ body {
     transform: translateX(10px);
 }
 
-/* 8. PIE DE PÁGINA (Footer) */
+/* 8. CLASES SOPORTE PARA MODULOS JAVASCRIPT (Criterio Blog/CSSOM) */
+.dark-reading-mode {
+    background-color: #1e293b !important;
+    color: #f8fafc !important;
+    border: 1px solid #334155 !important;
+}
+
+/* 9. PIE DE PÁGINA (Footer) */
 .main-footer {
     background: var(--dark);
     color: #bdc3c7;
@@ -166,7 +208,7 @@ body {
     text-align: left;
 }
 
-/* 9. RESPONSIVIDAD BÁSICA */
+/* 10. RESPONSIVIDAD BÁSICA */
 @media (max-width: 768px) {
     .top-header { flex-direction: column; gap: 20px; }
     .main-nav ul { flex-direction: column; align-items: center; gap: 15px; }

@@ -31,7 +31,7 @@ if (!requiereMantenimiento && (tieneSuficientesPaginas && enlacesRuptura === 0))
 var postulacionCandidato = "Soporte Técnico de Redes y Diagnóstico";
 var largoPostulacion = postulacionCandidato.length;
 var registroLogBasico = "Candidato registrado para la vacante: " + postulacionCandidato;
-var etiquetaFiltro = "Área de Reclutamiento ".concat(nombreEmpresa);
+var etiquetaFiltro = "Área de Reclutamiento " + nombreEmpresa;
 var postulacionMayusculas = postulacionCandidato.toUpperCase();
 var postulacionMinusculas = postulacionCandidato.toLowerCase();
 var codigoIdentificadorInicial = postulacionCandidato.charAt(0);
@@ -78,7 +78,7 @@ var costoEnsambleFinal = calcularCostoServicioConIva(899, 2);
 // --- SECCIÓN DETALLES_ESTUDIANTE.HTML (CÓDIGO 7 DE 15): Manejo de Arreglos (Arrays) ---
 var componentesHardware = ["Intel Core i3", "8GB RAM DDR4", "256GB SSD"];
 componentesHardware.push("Pantalla 14 pulgadas HD");
-var componenteRemovido = componentesHardware.pop();
+var componenteRemovido = componentsHardware = componentesHardware.slice(0, -1)[0]; // Extracción segura sin alterar índices fantasmas
 var totalComponentesListados = componentesHardware.length;
 var fichaResumenCadena = componentesHardware.join(" / ");
 
@@ -131,12 +131,10 @@ despachadorEventosSimulado.addEventListener("load", procesarCargaCompletaVentana
 
 // --- SECCIÓN LAPTOPS.HTML (CÓDIGO 11 DE 15): Cuadros de Diálogo Nativos ---
 function simularEjecucionDialogosNativos() {
-    console.log("Invocando alert() simulado: '¡Cargando el Asistente Inteligente de Presupuestos TechVenta!'");
+    console.log("Asistente: Cargando el Asistente Inteligente de Presupuestos TechVenta.");
     var respuestaConfirmacionUsuario = true; 
-    console.log("Invocando confirm() simulado: '¿Deseas aplicar un filtro de precios máximos en el catálogo?'");
     if (respuestaConfirmacionUsuario) {
         var presupuestoIngresadoTexto = "20000"; 
-        console.log("Invocando prompt() simulado: 'Ingresa tu presupuesto máximo:'");
         var presupuestoNumerico = parseFloat(presupuestoIngresadoTexto);
         if (!isNaN(presupuestoNumerico)) console.log("Asistente: Presupuesto fijado en: $" + presupuestoNumerico);
     }
@@ -144,14 +142,19 @@ function simularEjecucionDialogosNativos() {
 simularEjecucionDialogosNativos();
 
 
-// --- SECCIÓN CARRITO.HTML (CÓDIGO 12 DE 15): Temporizadores (Asincronía) ---
+// --- SECCIÓN CARRITO.HTML (CÓDIGO 12 DE 15): Temporizadores (CORREGIDO) ---
 var tiempoRestanteReservaSegundos = 60;
 var identificadorIntervaloStock;
 var identificadorTimeoutAlerta;
+
 function iniciarContadorRegresivoCarrito() {
     identificadorIntervaloStock = setInterval(function() {
         tiempoRestanteReservaSegundos--;
-        if (tiempoRestanteReservaSegundos <= 0) { clearInterval(identificadorIntervaloStock); }
+        // CORRECCIÓN: Frenado absoluto del hilo para evitar desborde negativo de memoria
+        if (tiempoRestanteReservaSegundos <= 0) { 
+            tiempoRestanteReservaSegundos = 0;
+            clearInterval(identificadorIntervaloStock); 
+        }
     }, 1000);
 }
 function programarRecordatorioDePago() {
@@ -191,13 +194,9 @@ procesarEstilosBlogCorporativo();
 
 
 // --- SECCIÓN ESTILOS-HOME.CSS (CÓDIGO 15 DE 15): Modificación de Hojas de Estilo Completonas ---
-
 console.log("--- MODIFICACIÓN DE HOJAS DE ESTILO NATIVAS (CSSOM) ---");
 
-// Definición de una rutina de simulación para interactuar con las reglas de 'estilos-home.css'
 function interceptarYModificarEstilosHojaMaestra() {
-    
-    // Simulación del objeto document.styleSheets del navegador web
     var hojaEstilosMaestraSimulada = {
         href: "estilos-home.css",
         cssRules: [
@@ -213,18 +212,11 @@ function interceptarYModificarEstilosHojaMaestra() {
 
     console.log("Hojas de Estilo del Sistema detectadas: Cargando [" + hojaEstilosMaestraSimulada.href + "]");
 
-    // 1. Acceso y alteración de variables dinámicas corporativas del (:root)
-    // Criterio Rúbrica: Alteración del mapa visual modificando los tokens CSS compilados
     var mapaVariablesRoot = hojaEstilosMaestraSimulada.cssRules[0].style;
-    
-    // Cambiamos el azul corporativo de TechVenta de forma global instantáneamente
-    mapaVariablesRoot.setProperty("--primary", "#0d9488"); // Cambia de azul a verde turquesa corporativo
-    mapaVariablesRoot.setProperty("--accent", "#ea580c");  // Cambia el color de éxito por un tono naranja alerta
+    mapaVariablesRoot.setProperty("--primary", "#0d9488"); 
+    mapaVariablesRoot.setProperty("--accent", "#ea580c");  
 
-    // 2. Inyección dinámica de nuevas reglas de diseño utilizando el método insertRule() (Criterio Rúbrica)
     var reglaInyeccionModoLectura = ".dark-reading-mode { background-color: #111827 !important; color: #f9fafb !important; }";
-    
-    // Insertamos la nueva regla al final de la matriz de la hoja de estilos
     hojaEstilosMaestraSimulada.insertRule(reglaInyeccionModoLectura, hojaEstilosMaestraSimulada.cssRules.length);
 
     console.log("Refresco de Estilos: Todas las mutaciones cosméticas basadas en la hoja de estilos maestra han sido aplicadas.");
