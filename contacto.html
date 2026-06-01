@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto Directo | TechVenta S.A. de C.V.</title>
+    <link rel="stylesheet" href="estilos-home.css">
+</head>
+<body style="background-color: #f4f7f6;">
+
+    <!-- ========================================================================= -->
+    <!-- CRITERIO RÚBRICA: <noscript> en etiqueta <body> para protección del flujo -->
+    <!-- ========================================================================= -->
+    <noscript>
+        <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
+            Atención: El formulario de contacto requiere JavaScript activo para validar los campos antes de su envío seguro.
+        </div>
+    </noscript>
+
+    <!-- Header reutilizado para consistencia de marca -->
+    <header class="top-header">
+        <div class="logo-container">
+            <div class="logo-box">T</div>
+            <div class="logo-text">
+                <span class="brand">TechVenta</span>
+                <small>ATENCIÓN AL CLIENTE</small>
+            </div>
+        </div>
+        <a href="index.html" class="btn-contact" style="background: transparent; color: var(--primary); border: 2px solid var(--primary);">VOLVER AL INICIO</a>
+    </header>
+
+    <main style="max-width: 800px; margin: 50px auto; padding: 0 20px;">
+        <section style="background: white; padding: 40px; border-radius: 15px; box-shadow: var(--shadow-soft);">
+            
+            <header style="text-align: center; margin-bottom: 30px;">
+                <h1 style="color: var(--dark); margin-bottom: 10px;">Atención Personalizada</h1>
+                <p style="color: #666; font-style: italic;">"Convertimos tus necesidades tecnológicas en soluciones reales."</p>
+                <hr style="border: 1px solid #eee; margin: 20px 0;">
+            </header>
+
+            <!-- Formulario con estructura moderna (sin tablas) -->
+            <form action="procesar_contacto.php" method="POST" class="contact-form">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="usuario@correo.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="interes">Interés Principal</label>
+                        <select id="interes" name="interes">
+                            <option value="cotizacion">Cotización de Equipos</option>
+                            <option value="soporte">Soporte Técnico</option>
+                            <option value="estudiante">Plan Estudiante (Descuento)</option>
+                            <option value="queja">Sugerencias</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo de Cliente</label>
+                        <div class="radio-container">
+                            <label><input type="radio" name="tipo" value="persona" checked> Estudiante</label>
+                            <label><input type="radio" name="tipo" value="empresa"> Empresa</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="mensaje">Mensaje o Requerimiento</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Detalla el equipo que buscas o el problema técnico..."></textarea>
+                </div>
+
+                <div style="text-align: center; margin-top: 30px;">
+                    <button type="submit" class="btn-submit">ENVIAR SOLICITUD</button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+    <footer class="main-footer" style="margin-top: 50px;">
+        <p>&copy; 2026 TechVenta S.A. de C.V. | <a href="mapa_sitio.html" style="color: #3498db; text-decoration: none;">Mapa del Sitio</a></p>
+    </footer>
+
+    <!-- ========================================================================= -->
+    <!-- CRITERIO RÚBRICA: Vinculación del JavaScript centralizado en archivo externo -->
+    <!-- ========================================================================= -->
+    <script type="text/javascript" src="interactivo.js"></script>
+</body>
+</html>

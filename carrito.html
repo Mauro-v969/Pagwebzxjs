@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito | TechVenta</title>
+    <!-- Vinculación al CSS maestro para mantener la identidad -->
+    <link rel="stylesheet" href="estilos-home.css">
+</head>
+<body style="background-color: #f8fafc;">
+
+    <!-- ========================================================================= -->
+    <!-- CRITERIO RÚBRICA: <noscript> en etiqueta <body> para protección del flujo -->
+    <!-- ========================================================================= -->
+    <noscript>
+        <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
+            Atención: Los contadores de reserva de inventario y el procesamiento seguro del pago requieren JavaScript activo.
+        </div>
+    </noscript>
+
+    <!-- Header Especial de Compra Segura -->
+    <header class="top-header" style="border-bottom: 3px solid #27ae60;">
+        <div class="logo-container">
+            <div class="logo-box" style="background-color: #27ae60;">🛒</div>
+            <div class="logo-text">
+                <span class="brand">TechVenta</span>
+                <small>COMPRA SEGURA SSL</small>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html" class="btn-contact">VOLVER AL INICIO</a>
+        </nav>
+    </header>
+
+    <main style="max-width: 1100px; margin: 40px auto; padding: 0 20px;">
+        
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 30px; flex-wrap: wrap;">
+            
+            <!-- Columna Izquierda: Lista de Productos -->
+            <section style="background: white; padding: 30px; border-radius: 15px; box-shadow: var(--shadow-soft);">
+                <h2 style="color: var(--dark); margin-bottom: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px;">Productos en tu Carrito</h2>
+                
+                <!-- Producto 1 -->
+                <div style="display: flex; align-items: center; gap: 20px; padding-bottom: 20px; border-bottom: 1px solid #f1f5f9;">
+                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=120" alt="Laptop" style="border-radius: 10px;">
+                    <div style="flex: 1;">
+                        <h4 style="margin: 0; color: var(--dark);">Laptop Uni-Student 14"</h4>
+                        <p style="margin: 5px 0; color: #64748b; font-size: 0.85rem;">Mochila de regalo incluida</p>
+                        <small style="color: #27ae60; font-weight: bold;">En stock - Envío inmediato</small>
+                    </div>
+                    <div style="text-align: right;">
+                        <span style="display: block; font-weight: bold; font-size: 1.2rem; color: var(--primary);">$8,499.00</span>
+                        <button style="background: none; border: none; color: #ef4444; font-size: 0.8rem; cursor: pointer; text-decoration: underline;">Eliminar</button>
+                    </div>
+                </div>
+
+                <div style="margin-top: 30px;">
+                    <a href="laptops.html" style="color: var(--primary); text-decoration: none; font-weight: bold;">← Continuar Comprando</a>
+                </div>
+            </section>
+
+            <!-- Columna Derecha: Resumen de Orden -->
+            <aside>
+                <div style="background: white; padding: 25px; border-radius: 15px; box-shadow: var(--shadow-soft); margin-bottom: 20px;">
+                    <h3 style="margin-top: 0; color: var(--dark);">Resumen de Orden</h3>
+                    
+                    <div style="display: flex; justify-content: space-between; margin: 15px 0; color: #64748b;">
+                        <span>Subtotal:</span>
+                        <span>$7,326.72</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin: 15px 0; color: #64748b;">
+                        <span>IVA (16%):</span>
+                        <span>$1,172.28</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin: 15px 0; color: #64748b;">
+                        <span>Envío:</span>
+                        <span style="color: #27ae60; font-weight: bold;">Gratis</span>
+                    </div>
+                    
+                    <hr style="border: 0; border-top: 1px solid #f1f5f9; margin: 20px 0;">
+                    
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 25px;">
+                        <span style="font-size: 1.2rem; font-weight: bold;">Total:</span>
+                        <span style="font-size: 1.5rem; font-weight: bold; color: #27ae60;">$8,499.00</span>
+                    </div>
+
+                    <button class="btn-submit" style="width: 100%; background-color: #27ae60; height: 55px; font-size: 1.1rem;">
+                        PROCEDER AL PAGO
+                    </button>
+                </div>
+
+                <!-- Garantías y Pagos -->
+                <div style="text-align: center; padding: 10px;">
+                    <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 15px;">Aceptamos todas las tarjetas</p>
+                    <div style="font-size: 1.5rem; opacity: 0.6; letter-spacing: 10px;">
+                        💳 🏦 💵
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+
+    </main>
+
+    <footer class="main-footer" style="margin-top: 60px;">
+        <p>TechVenta 2026 | Pago seguro procesado por TechPay Systems</p>
+    </footer>
+
+    <!-- ========================================================================= -->
+    <!-- CRITERIO RÚBRICA: Vinculación del JavaScript centralizado en archivo externo -->
+    <!-- ========================================================================= -->
+    <script type="text/javascript" src="interactivo.js"></script>
+</body>
+</html>
