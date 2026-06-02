@@ -1,14 +1,14 @@
 // ====================================================================
 // ARCHIVO JAVASCRIPT EXTERNO CENTRALIZADO - TECHVENTA S.A. DE C.V.
 // PROYECTO ACADÉMICO INTEGRAL - COMPILADO COMPLETO DE INTERACTIVIDAD
-// VERSIÓN ACADÉMICA FINAL (15 DE 15 BLOQUES TEMÁTICOS CONALEP)
+// VERSIÓN ACADÉMICA FINAL (15 DE 15 BLOQUES TEMÁTICOS)
 // ====================================================================
 
 // --- SECCIÓN INDEX.HTML (CÓDIGO 1 DE 15): Variables y Consola ---
 var nombreEmpresa = "TechVenta S.A. de C.V.";
 var anioOperacion = 2026;
 var estadoSistemaActivo = true;
-var mensajeConsolaInicio = "Sistema Central de \"TechVenta\" inicializado correctamente.\nVersión de producción: " + anioOperacion + ".\n\u00A1Listo para operar!";
+var mensajeConsolaInicio = "Sistema Central de \"TechVenta\" inicializado correctamente.\nVersión de producción: " + anioOperacion + ".\n¡Listo para operar!";
 console.log(mensajeConsolaInicio);
 
 
@@ -61,7 +61,9 @@ var camposAValidar = ["Nombre", "Email", "Mensaje"];
 for (var i = 0; i < camposAValidar.length; i++) { console.log("Bucle FOR - Validando: " + camposAValidar[i]); }
 var intentosConexionSmtp = 1;
 while (intentosConexionSmtp <= 3) { intentosConexionSmtp++; }
-var correosEnColaEspera = 0;
+
+// OPTIMIZACIÓN LOGICAL: Evita que baje a números negativos de forma innecesaria
+var correosEnColaEspera = 1;
 do { correosEnColaEspera--; } while (correosEnColaEspera > 0);
 
 
@@ -78,7 +80,9 @@ var costoEnsambleFinal = calcularCostoServicioConIva(899, 2);
 // --- SECCIÓN DETALLES_ESTUDIANTE.HTML (CÓDIGO 7 DE 15): Manejo de Arreglos (Arrays) ---
 var componentesHardware = ["Intel Core i3", "8GB RAM DDR4", "256GB SSD"];
 componentesHardware.push("Pantalla 14 pulgadas HD");
-var componenteRemovido = componentsHardware = componentesHardware.slice(0, -1)[0]; // Extracción segura sin alterar índices fantasmas
+
+/* CORRECCIÓN: Se eliminó la "s" de componentsHardware para evitar el ReferenceError */
+var componenteRemovido = componentesHardware.slice(0, -1)[0]; 
 var totalComponentesListados = componentesHardware.length;
 var fichaResumenCadena = componentesHardware.join(" / ");
 
@@ -142,7 +146,7 @@ function simularEjecucionDialogosNativos() {
 simularEjecucionDialogosNativos();
 
 
-// --- SECCIÓN CARRITO.HTML (CÓDIGO 12 DE 15): Temporizadores (CORREGIDO) ---
+// --- SECCIÓN CARRITO.HTML (CÓDIGO 12 DE 15): Temporizadores ---
 var tiempoRestanteReservaSegundos = 60;
 var identificadorIntervaloStock;
 var identificadorTimeoutAlerta;
@@ -150,7 +154,6 @@ var identificadorTimeoutAlerta;
 function iniciarContadorRegresivoCarrito() {
     identificadorIntervaloStock = setInterval(function() {
         tiempoRestanteReservaSegundos--;
-        // CORRECCIÓN: Frenado absoluto del hilo para evitar desborde negativo de memoria
         if (tiempoRestanteReservaSegundos <= 0) { 
             tiempoRestanteReservaSegundos = 0;
             clearInterval(identificadorIntervaloStock); 

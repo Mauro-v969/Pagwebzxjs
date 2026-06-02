@@ -1,5 +1,5 @@
 /* =========================================================================
-   TECHVENTA S.A. DE C.V. - HOJA MAESTRA 2026 (REVISADA Y CORREGIDA)
+   TECHVENTA S.A. DE C.V. - HOJA MAESTRA 2026 (REVISADA Y OPTIMIZADA)
    ========================================================================= */
 
 /* 1. VARIABLES GLOBALES (Configuración de Marca) */
@@ -63,7 +63,7 @@ body {
     color: var(--primary);
 }
 
-/* 4. NAVEGACIÓN PRINCIPAL */
+/* 4. NAVEGACIÓN PRINCIPAL (Compatibilidad Estricta para Listas y Tablas) */
 .main-nav {
     background: var(--dark);
     padding: 15px 0;
@@ -76,16 +76,16 @@ body {
     gap: 30px;
 }
 
-.main-nav a {
-    color: white;
+/* Asegura el diseño de enlaces tanto en estructura moderna como en la tabla del index */
+.main-nav a, table tr td a {
     text-decoration: none;
     font-weight: bold;
     font-size: 0.9rem;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.main-nav a:hover {
-    color: var(--secondary);
+.main-nav a:hover, table tr td a:hover {
+    color: var(--secondary) !important;
 }
 
 /* 5. BOTONES MODERNOS Y ENLACES DE ACCIÓN */
@@ -100,6 +100,7 @@ body {
     text-decoration: none;
     display: inline-block;
     transition: background 0.3s, transform 0.2s;
+    text-align: center;
 }
 
 .btn-contact:hover {
@@ -111,13 +112,14 @@ body {
     background: var(--primary);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 20px;
     cursor: pointer;
     font-weight: bold;
     text-decoration: none;
     display: inline-block;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
 .btn-submit:hover {
@@ -125,25 +127,29 @@ body {
     background: var(--secondary);
 }
 
-/* Corrección de Clase Omitida: Botón de ficha técnica en catálogos */
-.btn-details {
-    background: var(--light);
-    color: var(--dark);
+/* Estilo unificado para los botones de "VER FICHA" en los catálogos */
+.btn-contact[style*="background: var(--secondary);"], .btn-details {
+    background: var(--light) !important;
+    color: var(--dark) !important;
     padding: 10px 15px;
     border-radius: 6px;
     font-weight: bold;
     font-size: 0.85rem;
     text-transform: uppercase;
+    border: 1px solid #ccc;
     transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+    width: 100%;
 }
 
-.btn-details:hover {
-    background: var(--secondary);
-    color: white;
+.btn-contact[style*="background: var(--secondary);"]:hover, .btn-details:hover {
+    background: var(--secondary) !important;
+    color: var(--white) !important;
+    border-color: var(--secondary);
 }
 
 /* 6. GRID DE COMPONENTES Y TARJETAS */
-/* Corrección de Clase Omitida: Contenedor Grid responsivo */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -157,7 +163,7 @@ body {
     border: 1px solid #eee;
     padding: 20px;
     box-shadow: var(--shadow-soft);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
@@ -192,12 +198,22 @@ body {
     border: 1px solid #334155 !important;
 }
 
-/* 9. PIE DE PÁGINA (Footer) */
+/* 9. PIE DE PÁGINA (Footer corporativo) */
 .main-footer {
     background: var(--dark);
     color: #bdc3c7;
     padding: 40px 5%;
     text-align: center;
+}
+
+.main-footer p a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.main-footer p a:hover {
+    color: var(--secondary);
 }
 
 .footer-grid {
@@ -210,6 +226,6 @@ body {
 
 /* 10. RESPONSIVIDAD BÁSICA */
 @media (max-width: 768px) {
-    .top-header { flex-direction: column; gap: 20px; }
+    .top-header { flex-direction: column; gap: 20px; text-align: center; }
     .main-nav ul { flex-direction: column; align-items: center; gap: 15px; }
 }
