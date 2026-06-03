@@ -7,15 +7,24 @@
     <style>
         /* Estilos base y transiciones globales */
         body {
+            background-color: #FFFFFF;
+            color: #333333;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .tarjeta-producto {
-            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+            background: #FFFFFF;
+            border: 1px solid #e2e8f0;
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
         }
         .tarjeta-producto:hover {
             transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
-        /* Clases de utilidad para el Modo Oscuro */
+        
+        /* Selectores dinámicos controlados por Modo Oscuro */
         .dark-mode-body {
             background-color: #0f172a !important;
             color: #f8fafc !important;
@@ -25,12 +34,23 @@
             border-color: #334155 !important;
             color: #f8fafc !important;
         }
-        .dark-mode-text-muted {
-            color: #94a3b8 !important;
+        .dark-mode-card h3 {
+            color: #f8fafc !important;
+        }
+        .dark-mode-header {
+            background-color: #1e293b !important;
+        }
+        .dark-mode-sidebar {
+            background-color: #1e293b !important;
+            border-color: #334155 !important;
+        }
+        .dark-mode-mision {
+            background-color: #111827 !important;
+            border-top-color: #1e293b !important;
         }
     </style>
 </head>
-<body bgcolor="#FFFFFF" text="#333333" style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
+<body>
 
     <noscript>
         <table width="100%" bgcolor="#e74c3c" cellpadding="15" border="0">
@@ -44,7 +64,7 @@
         </table>
     </noscript>
 
-    <table width="100%" border="0" cellpadding="20" cellspacing="0" bgcolor="#FFFFFF" style="border-bottom: 4px solid #0056b3; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: relative; z-index: 10;" id="cabecera-principal">
+    <table width="100%" border="0" cellpadding="20" cellspacing="0" style="background-color: #FFFFFF; border-bottom: 4px solid #0056b3; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: relative; z-index: 10;" id="cabecera-principal">
         <tr>
             <td width="300">
                 <table border="0" cellpadding="0" cellspacing="0">
@@ -53,7 +73,7 @@
                             <font color="#FFFFFF" size="6"><strong>T</strong></font>
                         </td>
                         <td style="padding-left: 12px;">
-                            <font color="#0056b3" size="5" id="logo-texto"><strong>Tech</strong>Venta</font><br>
+                            <font color="#0056b3" size="5" id="logo-texto"><strong id="logo-destaque" style="color: #0056b3;">Tech</strong>Venta</font><br>
                             <font color="#999999" size="1" style="letter-spacing: 1px;" id="logo-subtexto">SOLUCIONES TECNOLÓGICAS</font>
                         </td>
                     </tr>
@@ -105,14 +125,14 @@
 
     <table width="95%" align="center" border="0" cellpadding="35" cellspacing="0">
         <tr>
-            <td width="260" valign="top" bgcolor="#F4F7F6" style="border-radius: 16px; border: 1px solid #e2e8f0; padding: 25px;" id="barra-lateral">
+            <td width="260" valign="top" style="background-color: #F4F7F6; border-radius: 16px; border: 1px solid #e2e8f0; padding: 25px;" id="barra-lateral">
                 <h3 style="color: #0056b3; margin-top: 0; font-size: 16px; letter-spacing: 0.5px;" id="titulo-filtros">ORDENACIÓN E INTELIGENCIA</h3>
                 
                 <p style="font-size: 13px;"><strong>Organizar Catálogo:</strong></p>
                 <select id="control-orden" onchange="ordenarProductosPorPrecio();" style="width:100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: white; font-size: 13px; outline: none; cursor: pointer;">
                     <option value="DEF">Seleccionar ordenamiento...</option>
                     <option value="MENOR">Precio: De Menor a Mayor</option>
-                    <option value="MAYOR">Precio: De Mayor a Menor</option>
+                    <option value="MAYOR">Precio: De Mayor a Minor</option>
                 </select>
 
                 <p style="font-size: 13px; margin-top: 20px;"><strong>Segmentación Académica:</strong></p>
@@ -137,7 +157,7 @@
                 
                 <table border="0" width="100%" cellpadding="0" cellspacing="15" id="grid-laptops">
                     <tr>
-                        <td width="50%" style="border: 1px solid #e2e8f0; border-radius: 16px; padding: 25px; background: #FFFFFF;" class="tarjeta-producto" data-precio="8499" id="producto-student">
+                        <td width="50%" style="border-radius: 16px; padding: 25px;" class="tarjeta-producto" data-precio="8499" id="producto-student">
                             <div align="center">
                                 <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400" width="260" style="border-radius: 8px; transition: all 0.3s; border: 3px solid transparent;" id="img-student"><br>
                                 <h3 style="margin: 20px 0 5px 0; font-size: 16px; color:#0f172a;">Laptop Uni-Student 14"</h3>
@@ -148,7 +168,7 @@
                                     <span onclick="cambiarColorEquipo('student', '#b5c0d0', 'Azul Hielo');" style="display:inline-block; width:14px; height:14px; background:#b5c0d0; border-radius:50%; margin:0 5px; cursor:pointer; border:2px solid #fff; box-shadow:0 0 4px rgba(0,0,0,0.3);" title="Azul Claro"></span>
                                 </p>
 
-                                <p style="margin: 10px 0;"><font color="#10b981" size="4"><strong>$8,499.00 MXN</strong></font></p>
+                                <p style="margin: 10px 0;"><font color="#10b981" size="4"><strong class="precio-texto">$8,499.00 MXN</strong></font></p>
                                 <table width="100%" border="0" cellpadding="0" cellspacing="4">
                                     <tr>
                                         <td width="50%"><a href="detalles_estudiante.html" style="text-decoration: none;"><button style="width:100%; padding: 11px; cursor: pointer; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; font-weight: bold; font-size: 11px; color:#64748b;">FICHA</button></a></td>
@@ -158,7 +178,7 @@
                             </div>
                         </td>
 
-                        <td width="50%" style="border: 1px solid #e2e8f0; border-radius: 16px; padding: 25px; background: #FFFFFF;" class="tarjeta-producto" data-precio="18900" id="producto-pro">
+                        <td width="50%" style="border-radius: 16px; padding: 25px;" class="tarjeta-producto" data-precio="18900" id="producto-pro">
                             <div align="center">
                                 <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400" width="260" style="border-radius: 8px; transition: all 0.3s; border: 3px solid transparent;" id="img-pro"><br>
                                 <h3 style="margin: 20px 0 5px 0; font-size: 16px; color:#0f172a;">Workstation Pro-Venta</h3>
@@ -169,7 +189,7 @@
                                     <span onclick="cambiarColorEquipo('pro', '#e2e8f0', 'Titanio Puro');" style="display:inline-block; width:14px; height:14px; background:#e2e8f0; border-radius:50%; margin:0 5px; cursor:pointer; border:2px solid #fff; box-shadow:0 0 4px rgba(0,0,0,0.3);" title="Claro"></span>
                                 </p>
 
-                                <p style="margin: 10px 0;"><font color="#0f172a" size="4" class="precio-pro-texto"><strong>$18,900.00 MXN</strong></font></p>
+                                <p style="margin: 10px 0;"><font color="#0f172a" size="4"><strong class="precio-texto precio-pro-texto">$18,900.00 MXN</strong></font></p>
                                 <table width="100%" border="0" cellpadding="0" cellspacing="4">
                                     <tr>
                                         <td width="50%"><a href="detalles_pro.html" style="text-decoration: none;"><button style="width:100%; padding: 11px; cursor: pointer; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; font-weight: bold; font-size: 11px; color:#64748b;">FICHA</button></a></td>
@@ -184,7 +204,7 @@
         </tr>
     </table>
 
-    <table width="100%" bgcolor="#f8fafc" cellpadding="50" id="seccion-mision" style="border-top: 1px solid #e2e8f0; transition: background-color 0.3s;">
+    <table width="100%" cellpadding="50" id="seccion-mision" style="background-color: #f8fafc; border-top: 1px solid #e2e8f0; transition: background-color 0.3s;">
         <tr>
             <td align="center">
                 <table width="65%" border="0">
@@ -223,12 +243,14 @@
     </table>
 
     <script type="text/javascript">
+        let totalItemsCarrito = 0;
+
         document.addEventListener("DOMContentLoaded", function() {
             inicializarModoOscuro();
             inicializarCarrito();
         });
 
-        // 1. CONTROL DE MOTO OSCURO / CLARO OPTIMIZADO
+        // 1. CONTROL DE MODO OSCURO CON CSS DINÁMICO
         function inicializarModoOscuro() {
             const btnModo = document.getElementById("btn-modo-lectura");
             if (!btnModo) return;
@@ -247,31 +269,25 @@
             const body = document.body;
             const btnModo = document.getElementById("btn-modo-lectura");
             const cabecera = document.getElementById("cabecera-principal");
-            const logoTexto = document.getElementById("logo-texto");
+            const logoDestaque = document.getElementById("logo-destaque");
             const logoSubtexto = document.getElementById("logo-subtexto");
             const barraLateral = document.getElementById("barra-lateral");
             const tituloCatalogo = document.getElementById("titulo-catalogo");
             const seccionMision = document.getElementById("seccion-mision");
             const tarjetas = document.querySelectorAll(".tarjeta-producto");
-            const titulosProductos = document.querySelectorAll(".tarjeta-producto h3");
-            const precioPro = document.querySelector(".precio-pro-texto");
+            const preciosTextos = document.querySelectorAll(".precio-texto");
 
             if (activar) {
                 body.classList.add("dark-mode-body");
-                if (cabecera) cabecera.style.backgroundColor = "#1e293b";
-                if (logoTexto) logoTexto.innerHTML = '<strong style="color: #38bdf8;">Tech</strong>Venta';
-                if (logoSubtexto) logoSubtexto.color = "#64748b";
-                
-                if (barraLateral) {
-                    barraLateral.style.backgroundColor = "#1e293b";
-                    barraLateral.style.borderColor = "#334155";
-                }
-                if (seccionMision) seccionMision.style.backgroundColor = "#111827";
+                if (cabecera) cabecera.classList.add("dark-mode-header");
+                if (logoDestaque) logoDestaque.style.color = "#38bdf8";
+                if (logoSubtexto) logoSubtexto.style.color = "#64748b";
+                if (barraLateral) barraLateral.classList.add("dark-mode-sidebar");
+                if (seccionMision) seccionMision.classList.add("dark-mode-mision");
                 if (tituloCatalogo) tituloCatalogo.style.color = "#38bdf8";
-                if (precioPro) precioPro.color = "#ffffff";
-
+                
                 tarjetas.forEach(t => t.classList.add("dark-mode-card"));
-                titulosProductos.forEach(h => h.style.color = "#f8fafc");
+                preciosTextos.forEach(p => p.style.color = "#ffffff");
 
                 if (btnModo) {
                     btnModo.textContent = " Modo Claro";
@@ -281,20 +297,15 @@
                 localStorage.setItem("modoOscuro", "true");
             } else {
                 body.classList.remove("dark-mode-body");
-                if (cabecera) cabecera.style.backgroundColor = "#FFFFFF";
-                if (logoTexto) logoTexto.innerHTML = '<strong style="color: #0056b3;">Tech</strong>Venta';
-                if (logoSubtexto) logoSubtexto.color = "#999999";
-                
-                if (barraLateral) {
-                    barraLateral.style.backgroundColor = "#F4F7F6";
-                    barraLateral.style.borderColor = "#e2e8f0";
-                }
-                if (seccionMision) seccionMision.style.backgroundColor = "#f8fafc";
+                if (cabecera) cabecera.classList.remove("dark-mode-header");
+                if (logoDestaque) logoDestaque.style.color = "#0056b3";
+                if (logoSubtexto) logoSubtexto.style.color = "#999999";
+                if (barraLateral) barraLateral.classList.remove("dark-mode-sidebar");
+                if (seccionMision) seccionMision.classList.remove("dark-mode-mision");
                 if (tituloCatalogo) tituloCatalogo.style.color = "#0f172a";
-                if (precioPro) precioPro.color = "#0f172a";
-
+                
                 tarjetas.forEach(t => t.classList.remove("dark-mode-card"));
-                titulosProductos.forEach(h => h.style.color = "#0f172a");
+                preciosTextos.forEach(p => p.style.color = "");
 
                 if (btnModo) {
                     btnModo.textContent = " Modo Oscuro";
@@ -334,7 +345,7 @@
             celdas.forEach(celda => filaDestino.appendChild(celda));
         }
 
-        // 3. CAMBIO VISUAL DE COLORES DE EQUIPOS
+        // 3. CAMBIO VISUAL DE COLORES DE EQUIPOS (BUG DE ID CORREGIDO)
         function cambiarColorEquipo(idProducto, codigoHex, nombreColor) {
             const img = document.getElementById(`img-${idProducto}`);
             if (!img) return;
@@ -348,8 +359,6 @@
         }
 
         // 4. CARRITO DE COMPRAS PERSISTENTE
-        let totalItemsCarrito = 0;
-
         function inicializarCarrito() {
             const almacenado = localStorage.getItem("itemsCarrito");
             if (almacenado) {
