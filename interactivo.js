@@ -1,7 +1,7 @@
 // ====================================================================
 // ARCHIVO JAVASCRIPT EXTERNO CENTRALIZADO - TECHVENTA S.A. DE C.V.
 // PROYECTO ACADÉMICO INTEGRAL - COMPILADO COMPLETO DE INTERACTIVIDAD
-// VERSIÓN ACADÉMICA FINAL (ACTUALIZADA CON MANIPULACIÓN VISUAL DEL DOM)
+// VERSIÓN ACADÉMICA FINAL (ACTUALIZADA CON FUNCIONES AVANZADAS DE E-COMMERCE)
 // ====================================================================
 
 // --- SECCIÓN INDEX.HTML (CÓDIGO 1 DE 15): Variables y Consola ---
@@ -209,14 +209,14 @@ function interceptarYModificarEstilosHojaMaestra() {
     };
 
     var mapaVariablesRoot = hojaEstilosMaestraSimulada.cssRules[0].style;
-    mapaVariablesRoot.setProperty("--primary", "#0056b3"); 
+    mapaVariablesRoot.setProperty("--primary", "#0d9488"); 
     mapaVariablesRoot.setProperty("--accent", "#ea580c");  
 }
 interceptarYModificarEstilosHojaMaestra();
 
 
 // ====================================================================
-// 🚀 INYECCIÓN DE MEJORAS DE PRODUCCIÓN INTERACTIVAS (REALES)
+// 🚀 INYECCIÓN DE MEJORAS DE PRODUCCIÓN (MÓDULOS DE INTERACTIVIDAD REAL)
 // ====================================================================
 
 // --- MEJORA 1: Sistema de Carrito Dinámico usando LocalStorage ---
@@ -233,7 +233,7 @@ function agregarAlCarrito(idProducto, nombre, precio) {
 function actualizarContadorMenu() {
     var enlaces = document.getElementsByTagName('a');
     for (var i = 0; i < enlaces.length; i++) {
-        if (enlaces[i].textContent && enlaces[i].textContent.includes('MI CARRITO')) {
+        if (enlaces[i].innerText.includes('MI CARRITO')) {
             enlaces[i].innerHTML = "🛒 MI CARRITO (" + carritoReal.length + ")";
         }
     }
@@ -246,10 +246,11 @@ function inicializarBuscadorInteractivo() {
 
     inputBusqueda.addEventListener('keyup', function(e) {
         var palabraClave = e.target.value.toLowerCase();
-        var tarjetasProductos = document.querySelectorAll('td[style*="border: 1px solid #EEE"], .product-card');
         
-        for (var i = 0; i < tarjetasProductos.length; i++) {
-            var tarjeta = tarjetasProductos[i];
+        // Aplica tanto para la estructura de tablas (index) como para divs modernos (catálogo)
+        var tarjetasProductos = document.querySelectorAll('td[width="50%"], .product-card');
+        
+        tarjetasProductos.forEach(function(tarjeta) {
             var encabezadoTitulo = tarjeta.querySelector('h3');
             if (encabezadoTitulo) {
                 var textoProducto = encabezadoTitulo.innerText.toLowerCase();
@@ -259,50 +260,15 @@ function inicializarBuscadorInteractivo() {
                     tarjeta.style.display = "none"; 
                 }
             }
-        }
+        });
     });
 }
 
-// --- MEJORA 3: Transformación Visual del Entorno (Inyección DOM Dinámica) ---
-function inyectarCambiosVisualesPremium() {
-    // 1. Modificación de la barra de navegación (Cambio de color inmediato a Azul Corporativo)
-    var barraMenu = document.querySelector('table[bgcolor="#1a1a1a"]');
-    if (barraMenu) {
-        barraMenu.style.backgroundColor = "#002d62";
-        console.log("Visual: Barra de navegación transformada de forma interactiva.");
-    }
-
-    // 2. Efecto Dinámico Hover 3D en Tarjetas de Productos mediante bucle convencional
-    var tarjetas = document.querySelectorAll('td[style*="border: 1px solid #EEE"]');
-    for (var i = 0; i < tarjetas.length; i++) {
-        tarjetas[i].style.transition = "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease";
-        tarjetas[i].style.cursor = "pointer";
-        
-        tarjetas[i].onmouseover = function() {
-            this.style.transform = "scale(1.03)";
-            this.style.boxShadow = "0px 10px 25px rgba(0, 86, 179, 0.2)";
-            this.style.borderColor = "#0056b3";
-        };
-        
-        tarjetas[i].onmouseout = function() {
-            this.style.transform = "scale(1)";
-            this.style.boxShadow = "none";
-            this.style.borderColor = "#EEE";
-        };
-    }
-}
-
-// --- CONTROLADOR DE INICIALIZACIÓN SEGURO (DOM READY) ---
+// Ejecución automática al inicializar el documento de forma segura
 window.addEventListener('DOMContentLoaded', function() {
     actualizarContadorMenu();
     inicializarBuscadorInteractivo();
-    inyectarCambiosVisualesPremium();
 });
-
-// Función interactiva nativa para botones de acción directa
-function alertarContacto() {
-    alert("Conectando con un asesor de TechVenta S.A. de C.V. Por favor espere...");
-}
 
 console.log("====================================================================");
 console.log("SISTEMA TOTALMENTE COMPILADO: Modificaciones aplicadas con éxito.");
