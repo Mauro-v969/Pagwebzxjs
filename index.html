@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechVenta S.A. de C.V. | Inicio Profesional</title>
+    <title>TechVenta S.A. de C.V. | E-Commerce Premium 2.0</title>
 </head>
 <body bgcolor="#FFFFFF" text="#333333" style="font-family: Arial, sans-serif; margin: 0; padding: 0; transition: background-color 0.4s, color 0.4s;">
 
@@ -12,64 +12,63 @@
             <tr>
                 <td align="center">
                     <font color="#FFFFFF" size="4" face="Arial">
-                        <strong>&iexcl;Aviso importante!</strong> Su navegador tiene las funciones de JavaScript deshabilitadas o no las soporta. Para experimentar toda la interactividad de TechVenta, por favor active los scripts.
+                        <strong>&iexcl;Aviso importante!</strong> Su navegador tiene las funciones de JavaScript deshabilitadas o no las soporta. Por favor, active los scripts para experimentar la interfaz v2.0.
                     </font>
                 </td>
             </tr>
         </table>
     </noscript>
 
-    <table width="100%" border="0" cellpadding="20" cellspacing="0" bgcolor="#FFFFFF" style="border-bottom: 4px solid #0056b3; transition: all 0.3s;" id="cabecera-principal">
+    <table width="100%" border="0" cellpadding="20" cellspacing="0" bgcolor="#FFFFFF" style="border-bottom: 4px solid #0056b3; box-shadow: 0 4px 12px rgba(0,0,0,0.05); position: relative; z-index: 10;" id="cabecera-principal">
         <tr>
             <td width="300">
                 <table border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                        <td bgcolor="#0056b3" style="padding: 10px 18px; border-radius: 5px; transition: all 0.3s;" id="logo-contenedor">
+                        <td bgcolor="#0056b3" style="padding: 10px 18px; border-radius: 8px; transition: all 0.3s;" id="logo-contenedor">
                             <font color="#FFFFFF" size="6"><strong>T</strong></font>
                         </td>
                         <td style="padding-left: 12px;">
                             <font color="#0056b3" size="5" id="logo-texto"><strong>Tech</strong>Venta</font><br>
-                            <font color="#999999" size="1">SOLUCIONES TECNOL&Oacute;GICAS</font>
+                            <font color="#999999" size="1" style="letter-spacing: 1px;">SOLUCIONES TECNOLÓGICAS</font>
                         </td>
                     </tr>
                 </table>
             </td>
             <td align="center">
                 <form action="buscar.php" method="GET" onsubmit="return false;">
-                    <input type="text" name="search" size="40" style="padding: 10px; border: 1px solid #ccc; border-radius: 20px; outline: none; transition: all 0.3s;" placeholder="&iquest;Qu&eacute; equipo buscas hoy?">
-                    <input type="submit" value="Buscar" style="padding: 10px 20px; background: #0056b3; color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s;">
+                    <input type="text" name="search" size="45" style="padding: 12px 20px; border: 1px solid #cbd5e1; border-radius: 30px; outline: none; font-size: 14px; width: 80%; max-width: 400px;" placeholder="¿Qué equipo o solución buscas hoy?">
                 </form>
             </td>
             <td align="right">
-                <button id="btn-modo-lectura" style="padding: 11px 18px; background: #34495e; color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; margin-right: 10px; transition: all 0.3s;"> Modo Oscuro</button>
-                <button onclick="calcularPresupuestoExpress();" style="background: #28a745; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s;" id="btn-contacto-top">COTIZACIÓN EXPRESS</button>
+                <button id="btn-modo-lectura" style="padding: 12px 22px; background: #34495e; color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; margin-right: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"> Modo Oscuro</button>
+                <button onclick="calcularPresupuestoExpress();" style="background: #28a745; color: white; border: none; padding: 12px 22px; border-radius: 30px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 6px rgba(40,167,69,0.2);" id="btn-contacto-top">COTIZACIÓN EXPRESS</button>
             </td>
         </tr>
     </table>
 
-    <table width="100%" bgcolor="#1a1a1a" cellpadding="15" border="0" id="menu-navegacion" style="transition: background-color 0.4s;">
+    <table width="100%" bgcolor="#0f172a" cellpadding="16" border="0" id="menu-navegacion">
         <tr align="center">
-            <td><a href="index.html" style="color:#FFFFFF; text-decoration:none;"><strong>INICIO</strong></a></td>
-            <td><a href="laptops.html" style="color:#FFFFFF; text-decoration:none;">LAPTOPS</a></td>
-            <td><a href="desktops.html" style="color:#FFFFFF; text-decoration:none;">DESKTOPS</a></td>
-            <td><a href="ofertas.html" style="color:#FFD700; text-decoration:none;"><strong>OFERTAS</strong></a></td>
-            <td><a href="servicios.html" style="color:#FFFFFF; text-decoration:none;">SERVICIOS</a></td>
-            <td><a href="sucursales.html" style="color:#FFFFFF; text-decoration:none;">SUCURSALES</a></td>
-            <td><a href="carrito.html" style="color:#FFFFFF; text-decoration:none;" id="enlace-carrito"> MI CARRITO (<span>0</span>)</a></td>
+            <td><a href="index.html" style="color:#38bdf8; text-decoration:none; font-size: 14px; letter-spacing: 0.5px;"><strong>INICIO</strong></a></td>
+            <td><a href="laptops.html" style="color:#94a3b8; text-decoration:none; font-size: 14px; transition: color 0.2s;">LAPTOPS</a></td>
+            <td><a href="desktops.html" style="color:#94a3b8; text-decoration:none; font-size: 14px;">DESKTOPS</a></td>
+            <td><a href="ofertas.html" style="color:#f59e0b; text-decoration:none; font-size: 14px;"><strong>OFERTAS MUNDIALES</strong></a></td>
+            <td><a href="servicios.html" style="color:#94a3b8; text-decoration:none; font-size: 14px;">SERVICIOS</a></td>
+            <td><a href="sucursales.html" style="color:#94a3b8; text-decoration:none; font-size: 14px;">SUCURSALES</a></td>
+            <td><a href="carrito.html" style="color:#FFFFFF; text-decoration:none; font-size: 14px;" id="enlace-carrito"> MI CARRITO (<span>0</span>)</a></td>
         </tr>
     </table>
 
     <center>
         <table width="100%" border="0" cellpadding="0" cellspacing="0" id="indicador-home">
             <tr>
-                <td align="center" background="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200" style="background-size: cover; background-position: center; padding: 100px 0; transition: all 0.5s;" id="banner-hero">
-                    <table bgcolor="rgba(0,0,0,0.85)" style="padding: 40px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;" id="banner-recuadro">
+                <td align="center" background="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200" style="background-size: cover; background-position: center; padding: 80px 0;" id="banner-hero">
+                    <table bgcolor="rgba(15, 23, 42, 0.92)" width="85%" style="max-width: 900px; padding: 45px; border-radius: 24px; border: 2px solid #0056b3; box-shadow: 0 20px 40px rgba(0, 86, 179, 0.4);" id="banner-recuadro">
                         <tr>
                             <td align="center">
-                                <font color="#FFFFFF" size="6"><strong id="banner-titulo-dinamico">POTENCIA PARA TUS PROYECTOS</strong></font><br>
-                                <font color="#3498db" size="5" id="banner-subtitulo">Equipos de Alto Rendimiento 2026</font><br><br>
-                                <a href="laptops.html">
-                                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700" width="600" border="0" style="border: 4px solid white; border-radius: 10px; transition: transform 0.4s;" alt="Ver Laptops" id="banner-imagen">
+                                <font color="#FFFFFF" size="6" face="Arial"><strong id="banner-titulo-dinamico" style="letter-spacing: 1px;">POTENCIA COMPLETA PARA TUS PROYECTOS</strong></font><br><br>
+                                <font color="#38bdf8" size="4" id="banner-subtitulo">Equipos Profesionales Certificados e Industriales — Ciclo 2026</font><br><br><br>
+                                <a href="laptops.html" style="display: inline-block;">
+                                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700" width="640" border="0" style="border: 14px solid #1e293b; border-radius: 16px; box-shadow: 0 25px 50px rgba(0,0,0,0.6);" alt="Laptops de Vanguardia" id="banner-imagen">
                                 </a>
                             </td>
                         </tr>
@@ -79,60 +78,80 @@
         </table>
     </center>
 
-    <table width="95%" align="center" border="0" cellpadding="30" cellspacing="0">
+    <table width="95%" align="center" border="0" cellpadding="35" cellspacing="0">
         <tr>
-            <td width="250" valign="top" bgcolor="#F4F7F6" style="border-radius: 10px; border: 1px solid #E0E0E0; transition: background-color 0.3s, border-color 0.3s;" id="barra-lateral">
-                <h3 style="color: #0056b3; margin-top: 0; transition: color 0.3s;" id="titulo-filtros">FILTRAR PRODUCTOS</h3>
-                <form action="filtrar.php" method="POST" onsubmit="return false;">
-                    <p><strong>Rango de Precio:</strong></p>
-                    <select name="precio" id="control-orden" onchange="ordenarProductosPorPrecio();" style="width:100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc; background: white; transition: all 0.3s;">
-                        <option value="DEF">Seleccionar filtro...</option>
-                        <option value="MENOR">Precio: Menor a Mayor</option>
-                        <option value="MAYOR">Precio: Mayor a Menor</option>
-                    </select>
+            <td width="260" valign="top" bgcolor="#F4F7F6" style="border-radius: 16px; border: 1px solid #e2e8f0; padding: 25px;" id="barra-lateral">
+                <h3 style="color: #0056b3; margin-top: 0; font-size: 16px; letter-spacing: 0.5px;" id="titulo-filtros">ORDENACIÓN E INTELIGENCIA</h3>
+                
+                <p style="font-size: 13px;"><strong>Organizar Catálogo:</strong></p>
+                <select id="control-orden" onchange="ordenarProductosPorPrecio();" style="width:100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: white; font-size: 13px; outline: none;">
+                    <option value="DEF">Seleccionar ordenamiento...</option>
+                    <option value="MENOR">Precio: De Menor a Mayor</option>
+                    <option value="MAYOR">Precio: De Mayor a Menor</option>
+                </select>
 
-                    <p><strong>Rendimiento:</strong></p>
-                    <label><input type="radio" name="perf" value="basico"> Acad&eacute;mico</label><br>
-                    <label><input type="radio" name="perf" value="alto"> Profesional</label>
+                <p style="font-size: 13px; margin-top: 20px;"><strong>Segmentación Académica:</strong></p>
+                <label style="font-size: 13px; display: block; margin-bottom: 6px;"><input type="radio" name="perf" value="basico"> Rendimiento Estudiantil</label>
+                <label style="font-size: 13px; display: block;"><input type="radio" name="perf" value="alto"> Estación de Trabajo Alta</label>
 
-                    <p><strong>Nuestras Marcas:</strong></p>
-                    <label><input type="checkbox" name="m1" value="tech"> TechPro</label><br>
-                    <label><input type="checkbox" name="m2" value="eco"> EcoCompute</label>
-                    
-                    <br><br>
-                    <input type="button" onclick="calcularPresupuestoExpress();" value="Calcular Presupuesto Mantenimiento" style="width:100%; padding: 12px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s;" id="btn-filtrar-submit">
-                </form>
-                <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;" id="separador-lateral">
+                <p style="font-size: 13px; margin-top: 20px;"><strong>Fabricantes Integrados:</strong></p>
+                <label style="font-size: 13px; display: block; margin-bottom: 6px;"><input type="checkbox" name="m1" value="tech" checked> TechPro Global</label>
+                <label style="font-size: 13px; display: block;"><input type="checkbox" name="m2" value="eco"> EcoCompute S.A.</label>
+                
+                <br><br>
+                <input type="button" onclick="calcularPresupuestoExpress();" value="Calcular Presupuestos" style="width:100%; padding: 12px; background: #0f172a; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 13px;">
+                
+                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 25px 0;">
                 <center>
-                    <a href="blog.html" style="text-decoration:none;" id="enlace-blog"><font color="#0056b3"><b>Visita nuestro Blog</b></font></a>
+                    <a href="blog.html" style="text-decoration:none;" id="enlace-blog"><font color="#0056b3" size="2"><b> Leer Artículos del Blog</b></font></a>
                 </center>
             </td>
 
-            <td valign="top">
-                <h2 style="color: #333; border-bottom: 2px solid #EEE; padding-bottom: 10px; margin-top: 0; transition: color 0.3s;" id="titulo-catalogo">CAT&Aacute;LOGO DESTACADO</h2>
-                <table border="0" width="100%" cellpadding="15" cellspacing="10" id="grid-laptops">
-                    <tr align="center">
-                        <td width="50%" style="border: 1px solid #EEE; border-radius: 10px; padding: 20px; background: #FFF;" class="tarjeta-producto" data-precio="8499">
-                            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400" width="280" style="border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" alt="Laptop Student"><br>
-                            <h3 style="margin: 15px 0 5px 0;">Laptop Uni-Student 14"</h3>
-                            <p><font color="#28a745" size="4"><strong>$8,499.00</strong></font></p>
-                            <table width="100%" border="0" cellpadding="0" cellspacing="5">
-                                <tr>
-                                    <td><a href="detalles_estudiante.html" style="text-decoration: none;"><button style="width:100%; padding: 10px; cursor: pointer; background: #f8f9fa; border: 1px solid #ccc; border-radius: 5px; font-weight: bold; font-size: 11px; transition: all 0.2s;" class="btn-secundario">FICHA T&Eacute;CNICA</button></a></td>
-                                    <td><button onclick="agregarAlCarritoExpress('Laptop Uni-Student 14');" style="width:100%; padding: 10px; cursor: pointer; background: #0056b3; color: white; border: none; border-radius: 5px; font-weight: bold; font-size: 11px; transition: all 0.2s;" class="btn-primario"> AÑADIR</button></td>
-                                </tr>
-                            </table>
+            <td valign="top" style="padding-left: 20px;">
+                <h2 style="color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; margin-top: 0; font-size: 22px;" id="titulo-catalogo">CATÁLOGO DESTACADO CONFIGURABLE</h2>
+                
+                <table border="0" width="100%" cellpadding="0" cellspacing="15" id="grid-laptops">
+                    <tr>
+                        <td width="50%" style="border: 1px solid #e2e8f0; border-radius: 16px; padding: 25px; background: #FFFFFF;" class="tarjeta-producto" data-precio="8499" id="producto-student">
+                            <center>
+                                <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400" width="260" style="border-radius: 8px; transition: all 0.3s;" id="img-student"><br>
+                                <h3 style="margin: 20px 0 5px 0; font-size: 16px; color:#0f172a;">Laptop Uni-Student 14"</h3>
+                                
+                                <p style="margin: 8px 0 15px 0;">
+                                    <span onclick="cambiarColorEquipo('student', '#7f8c8d', 'Plata Estelar');" style="display:inline-block; width:14px; height:14px; background:#7f8c8d; border-radius:50%; margin:0 5px; cursor:pointer; border:2px solid #fff; box-shadow:0 0 4px rgba(0,0,0,0.3);" title="Plata"></span>
+                                    <span onclick="cambiarColorEquipo('student', '#1e293b', 'Gris Grafito');" style="display:inline-block; width:14px; height:14px; background:#1e293b; border-radius:50%; margin:0 5px; cursor:pointer; border:2px solid #fff; box-shadow:0 0 4px rgba(0,0,0,0.3);" title="Grafito"></span>
+                                    <span onclick="cambiarColorEquipo('student', '#b5c0d0', 'Azul Hielo');" style="display:inline-block; width:14px; height:14px; background:#b5c0d0; border-radius:50%; margin:0 5px; cursor:pointer; border:2px solid #fff; box-shadow:0 0 4px rgba(0,0,0,0.3);" title="Azul Claro"></span>
+                                </p>
+
+                                <p style="margin: 10px 0;"><font color="#10b981" size="4"><strong>$8,499.00 MXN</strong></font></p>
+                                <table width="100%" border="0" cellpadding="0" cellspacing="4">
+                                    <tr>
+                                        <td width="50%"><a href="detalles_estudiante.html" style="text-decoration: none;"><button style="width:100%; padding: 11px; cursor: pointer; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; font-weight: bold; font-size: 11px; color:#64748b;">FICHA</button></a></td>
+                                        <td width="50%"><button onclick="agregarAlCarritoExpress('Laptop Uni-Student 14');" style="width:100%; padding: 11px; cursor: pointer; background: #0056b3; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 11px;"> ADQUIRIR</button></td>
+                                    </tr>
+                                </table>
+                            </center>
                         </td>
-                        <td width="50%" style="border: 1px solid #EEE; border-radius: 10px; padding: 20px; background: #FFF;" class="tarjeta-producto" data-precio="18900">
-                            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400" width="280" style="border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" alt="Workstation Pro"><br>
-                            <h3 style="margin: 15px 0 5px 0;">Workstation Pro-Venta</h3>
-                            <p><font color="#333" size="4"><strong>$18,900.00</strong></font></p>
-                            <table width="100%" border="0" cellpadding="0" cellspacing="5">
-                                <tr>
-                                    <td><a href="detalles_pro.html" style="text-decoration: none;"><button style="width:100%; padding: 10px; cursor: pointer; background: #f8f9fa; border: 1px solid #ccc; border-radius: 5px; font-weight: bold; font-size: 11px; transition: all 0.2s;" class="btn-secundario">FICHA T&Eacute;CNICA</button></a></td>
-                                    <td><button onclick="agregarAlCarritoExpress('Workstation Pro-Venta');" style="width:100%; padding: 10px; cursor: pointer; background: #0056b3; color: white; border: none; border-radius: 5px; font-weight: bold; font-size: 11px; transition: all 0.2s;" class="btn-primario"> AÑADIR</button></td>
-                                </tr>
-                            </table>
+
+                        <td width="50%" style="border: 1px solid #e2e8f0; border-radius: 16px; padding: 25px; background: #FFFFFF;" class="tarjeta-producto" data-precio="18900" id="producto-pro">
+                            <center>
+                                <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400" width="260" style="border-radius: 8px; transition: all 0.3s;" id="img-pro"><br>
+                                <h3 style="margin: 20px 0 5px 0; font-size: 16px; color:#0f172a;">Workstation Pro-Venta</h3>
+                                
+                                <p style="margin: 8px 0 15px 0;">
+                                    <span onclick="cambiarColorEquipo('pro', '#34495e', 'Azul Industrial');" style="display:inline-block; width:14px; height:14px; background:#34495e; border-radius:50%; margin:0 5px; cursor:pointer; border:2px solid #fff; box-shadow:0 0 4px rgba(0,0,0,0.3);" title="Azul"></span>
+                                    <span onclick="cambiarColorEquipo('pro', '#0f172a', 'Obsidiana Premium');" style="display:inline-block; width:14px; height:14px; background:#0f172a; border-radius:50%; margin:0 5px; cursor:pointer; border:2px solid #fff; box-shadow:0 0 4px rgba(0,0,0,0.3);" title="Oscuro"></span>
+                                    <span onclick="cambiarColorEquipo('pro', '#e2e8f0', 'Titanio Puro');" style="display:inline-block; width:14px; height:14px; background:#e2e8f0; border-radius:50%; margin:0 5px; cursor:pointer; border:2px solid #fff; box-shadow:0 0 4px rgba(0,0,0,0.3);" title="Claro"></span>
+                                </p>
+
+                                <p style="margin: 10px 0;"><font color="#0f172a" size="4"><strong>$18,900.00 MXN</strong></font></p>
+                                <table width="100%" border="0" cellpadding="0" cellspacing="4">
+                                    <tr>
+                                        <td width="50%"><a href="detalles_pro.html" style="text-decoration: none;"><button style="width:100%; padding: 11px; cursor: pointer; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; font-weight: bold; font-size: 11px; color:#64748b;">FICHA</button></a></td>
+                                        <td width="50%"><button onclick="agregarAlCarritoExpress('Workstation Pro-Venta');" style="width:100%; padding: 11px; cursor: pointer; background: #0056b3; color: white; border: none; border-radius: 8px; font-weight: bold; font-size: 11px;"> ADQUIRIR</button></td>
+                                    </tr>
+                                </table>
+                            </center>
                         </td>
                     </tr>
                 </table>
@@ -140,15 +159,15 @@
         </tr>
     </table>
 
-    <table width="100%" bgcolor="#f0f7ff" cellpadding="60" id="seccion-mision" style="transition: background-color 0.3s;">
+    <table width="100%" bgcolor="#f8fafc" cellpadding="50" id="seccion-mision" style="border-top: 1px solid #e2e8f0;">
         <tr>
             <td align="center">
-                <table width="70%" border="0">
+                <table width="65%" border="0">
                     <tr>
                         <td align="center">
-                            <h2 style="color: #0056b3; font-size: 32px; transition: color 0.3s;" id="mision-header">IDENTIDAD CORPORATIVA</h2>
-                            <p style="font-size: 18px; line-height: 1.6; color: #444;" id="mision-p1"><strong>Misi&oacute;n:</strong> <cite>Proporcionar soluciones tecnol&oacute;gicas integrales a trav&eacute;s de la venta de equipos de c&oacute;mputo de alta calidad, impulsando el desarrollo educativo y profesional de nuestros clientes.</cite></p>
-                            <p style="font-size: 18px; line-height: 1.6; color: #444;" id="mision-p2"><strong>Visi&oacute;n:</strong> <em>Consolidarnos como la plataforma de comercio electr&oacute;nico l&iacute;der en el sector tecnol&oacute;gico, reconocida por nuestra excelencia en servicio y vanguardia en productos.</em></p>
+                            <h2 style="color: #0056b3; font-size: 26px; letter-spacing: 0.5px;" id="mision-header">IDENTIDAD CORPORATIVA CONTROLADA</h2>
+                            <p style="font-size: 15px; line-height: 1.7; color: #475569;" id="mision-p1"><strong>Misión:</strong> <cite>Proporcionar soluciones tecnológicas integrales a través de la venta de equipos de cómputo de alta calidad, impulsando el desarrollo educativo y profesional de nuestros usuarios.</cite></p>
+                            <p style="font-size: 15px; line-height: 1.7; color: #475569;" id="mision-p2"><strong>Visión:</strong> <em>Consolidarnos como la plataforma de comercio electrónico líder en el sector tecnológico nacional, reconocida por nuestra excelencia operativa y vanguardia en productos.</em></p>
                         </td>
                     </tr>
                 </table>
@@ -156,24 +175,24 @@
         </tr>
     </table>
 
-    <table width="100%" bgcolor="#1a1a1a" style="color:white;" cellpadding="40" id="pie-desarrollo">
+    <table width="100%" bgcolor="#0f172a" style="color:#94a3b8;" cellpadding="40" id="pie-desarrollo">
         <tr>
-            <td width="33%" valign="top">
-                <font color="#3498db" size="4"><strong>ATENCI&Oacute;N AL CLIENTE</strong></font><br><br>
-                <a href="preguntas-frecuentes.html" style="color:#bdc3c7; text-decoration:none;">Preguntas Frecuentes (FAQ)</a><br>
-                <a href="politicas.html" style="color:#bdc3c7; text-decoration:none;">Garant&iacute;as y Privacidad</a><br>
-                <a href="mailto:ventas@techventa.com.mx" style="color:#bdc3c7; text-decoration:none;">ventas@techventa.com.mx</a>
+            <td width="33%" valign="top" style="font-size: 13px; line-height: 1.8;">
+                <font color="#38bdf8" size="3"><strong>ATENCIÓN AL CLIENTE</strong></font><br><br>
+                <a href="preguntas-frecuentes.html" style="color:#64748b; text-decoration:none;">Preguntas Frecuentes (FAQ)</a><br>
+                <a href="politicas.html" style="color:#64748b; text-decoration:none;">Garantías de Hardware y Privacidad</a><br>
+                <a href="mailto:ventas@techventa.com.mx" style="color:#38bdf8; text-decoration:none;">ventas@techventa.com.mx</a>
             </td>
-            <td width="33%" align="center" valign="top">
-                <a href="mapa_sitio.html" style="color:white; border: 1px solid #3498db; padding: 10px 20px; text-decoration:none; border-radius: 20px; font-weight: bold;">MAPA DEL SITIO</a>
-                <br><br>
-                <p><small>&copy; 2026 TechVenta S.A. de C.V. <br> Espacio de Divulgaci&oacute;n Tecnol&oacute;gica</small></p>
-                <a href="bolsa-trabajo.html" style="color:#bdc3c7; font-size: 12px; text-decoration: none;">Bolsa de Trabajo</a>
+            <td width="33%" align="center" valign="top" style="font-size: 13px;">
+                <br>
+                <a href="mapa_sitio.html" style="color:white; border: 1px solid #38bdf8; padding: 10px 22px; text-decoration:none; border-radius: 30px; font-weight: bold; font-size: 12px; letter-spacing: 0.5px;">MAPA DEL SITIO</a>
+                <br><br><br>
+                <p style="color:#475569; font-size: 11px;">&copy; 2026 TechVenta S.A. de C.V. <br> Plataforma Comercial de Pruebas Académicas</p>
             </td>
-            <td width="33%" align="right" valign="top">
-                <font color="#3498db" size="4"><strong>NUESTRAS REDES</strong></font><br><br>
-                <font size="5">   </font><br><br>
-                <font size="2" color="#bdc3c7">Sigue nuestras novedades constantes.</font>
+            <td width="33%" align="right" valign="top" style="font-size: 13px;">
+                <font color="#38bdf8" size="3"><strong>NUESTRAS REDES v2.0</strong></font><br><br>
+                <font size="5" color="#ffffff"> &nbsp;  &nbsp;  &nbsp; </font><br><br>
+                <font size="2" color="#475569">Monitoreo de actualizaciones constantes del servidor.</font>
             </td>
         </tr>
     </table>
