@@ -2,11 +2,69 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laptop Uni-Student 14" | TechVenta</title>
+    
+    <!-- Enlace a tu hoja de estilos principal -->
     <link rel="stylesheet" href="estilos-home.css">
+
+    <!-- Estilos de respaldo integrados para blindar el diseño frente a fallas -->
+    <style>
+        :root {
+            --primary: #0056b3;
+            --success: #28a745;
+            --dark: #1e293b;
+            --border-color: #e2e8f0;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #334155;
+        }
+
+        /* Estructura de Rejilla Adaptable */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* Botones Optimizados */
+        .btn-action {
+            transition: var(--transition);
+        }
+        .btn-action:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        
+        .btn-add-cart {
+            width: 100%;
+            background: var(--success);
+            color: white;
+            font-size: 1.2rem;
+            height: 60px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);
+            transition: var(--transition);
+        }
+        .btn-add-cart:hover {
+            background: #218838;
+            box-shadow: 0 6px 12px rgba(40, 167, 69, 0.3);
+            transform: translateY(-2px);
+        }
+    </style>
 </head>
-<body style="background-color: #ffffff; margin: 0; padding: 0; font-family: Arial, sans-serif;">
+<body>
 
     <noscript>
         <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-weight: bold;">
@@ -14,87 +72,130 @@
         </div>
     </noscript>
 
-    <header class="top-header" style="background: #ffffff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid #0056b3;">
+    <!-- ENCABEZADO -->
+    <header class="top-header" style="background: #ffffff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid #0056b3; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
         <div class="logo-container" style="display: flex; align-items: center;">
             <div class="logo-box" style="background: #0056b3; color: white; padding: 5px 12px; font-weight: bold; border-radius: 5px; font-size: 24px;">T</div>
             <div class="logo-text" style="margin-left: 10px;">
                 <span class="brand" style="color: #0056b3; font-size: 20px; font-weight: bold;">TechVenta</span><br>
-                <small style="color: #999; font-size: 10px;">FICHA T&Eacute;CNICA OFICIAL</small>
+                <small style="color: #999; font-size: 10px; letter-spacing: 0.5px;">FICHA T&Eacute;CNICA OFICIAL</small>
             </div>
         </div>
         
         <nav style="display: flex; gap: 20px; align-items: center;">
             <a href="index.html" style="color: #333; text-decoration: none; font-weight: bold; font-size: 14px;">INICIO</a>
-            <a href="carrito.html" style="color: #0056b3; text-decoration: none; font-weight: bold; font-size: 14px;">ðŸ›’ MI CARRITO</a>
-            <a href="laptops.html" class="btn-contact" style="background: #0056b3; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 13px;">VOLVER AL CAT&Aacute;LOGO</a>
+            <a href="carrito.html" style="color: #0056b3; text-decoration: none; font-weight: bold; font-size: 14px;" id="nav-carrito"> MI CARRITO (<span id="contador-cart-nav">0</span>)</a>
+            <a href="index.html" class="btn-contact" style="background: #0056b3; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 13px; transition: background 0.2s;">VOLVER AL CAT&Aacute;LOGO</a>
         </nav>
     </header>
 
+    <!-- CONTENIDO PRINCIPAL -->
     <main style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; align-items: start;">
+        <div class="details-grid">
             
+            <!-- Columna Izquierda: Multimedia -->
             <section>
-                <div style="background: #f8fafc; padding: 20px; border-radius: 15px; text-align: center; margin-bottom: 20px; border: 1px solid #e2e8f0;">
-                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500" alt="Laptop Uni-Student" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
+                <div style="background: #f8fafc; padding: 20px; border-radius: 15px; text-align: center; margin-bottom: 20px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.02);">
+                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500" alt="Laptop Uni-Student" style="width: 100%; max-width: 420px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.08);">
                 </div>
                 
-                <h3 style="color: #1e293b; margin-bottom: 15px;">Video de Rendimiento</h3>
-                <div style="border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
-                    <video width="100%" controls poster="https://via.placeholder.com/400x250?text=Cargando+Video...">
+                <h3 style="color: #1e293b; margin-bottom: 15px; font-size: 16px;"> Video de Rendimiento Acad&eacute;mico</h3>
+                <div style="border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 8px 20px rgba(0,0,0,0.15);">
+                    <video width="100%" controls poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600">
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
                         Tu navegador no soporta el formato de video.
                     </video>
                 </div>
             </section>
 
+            <!-- Columna Derecha: Detalles de Compra -->
             <section>
-                <h1 style="color: #0056b3; font-size: 2.2rem; margin-bottom: 10px;">Laptop Uni-Student 14"</h1>
-                <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 20px;">La compa&ntilde;era ideal para tus proyectos universitarios y tareas diarias.</p>
+                <h1 style="color: #0056b3; font-size: 2.2rem; margin-top: 0; margin-bottom: 10px;">Laptop Uni-Student 14"</h1>
+                <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 25px; line-height: 1.5;">La compa&ntilde;era ideal para tus proyectos universitarios, clases virtuales y tareas diarias de alta demanda.</p>
                 
-                <div style="background: #f1f5f9; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
-                    <table width="100%" style="border-collapse: collapse; color: #334155;">
-                        <caption style="text-align: left; font-weight: bold; margin-bottom: 10px; color: #1e293b;">ESPECIFICACIONES DE HARDWARE</caption>
+                <div style="background: #f1f5f9; padding: 25px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #e2e8f0;">
+                    <table width="100%" style="border-collapse: collapse; color: #334155; font-size: 14px;">
+                        <caption style="text-align: left; font-weight: bold; margin-bottom: 15px; color: #1e293b; letter-spacing: 0.5px;">ESPECIFICACIONES DE HARDWARE</caption>
                         <tr style="border-bottom: 1px solid #cbd5e1;">
-                            <td style="padding: 10px 0;"><strong>Procesador</strong></td>
-                            <td style="padding: 10px 0;">Intel Core i3 <dfn style="font-style: normal; color: #94a3b8;">(Rendimiento Est&aacute;ndar)</dfn></td>
+                            <td style="padding: 12px 0;"><strong>Procesador</strong></td>
+                            <td style="padding: 12px 0; text-align: right;">Intel Core i3 <dfn style="font-style: normal; color: #94a3b8; font-size: 12px;">(Rendimiento Est&aacute;ndar)</dfn></td>
                         </tr>
                         <tr style="border-bottom: 1px solid #cbd5e1;">
-                            <td style="padding: 10px 0;"><strong>Memoria RAM</strong></td>
-                            <td style="padding: 10px 0;">8GB <abbr title="Random Access Memory" style="text-decoration: none; border-bottom: 1px dotted;">RAM</abbr> DDR4</td>
+                            <td style="padding: 12px 0;"><strong>Memoria RAM</strong></td>
+                            <td style="padding: 12px 0; text-align: right;">8GB <abbr title="Random Access Memory" style="text-decoration: none; border-bottom: 1px dotted; font-weight: bold; color: #0056b3;">RAM</abbr> DDR4</td>
                         </tr>
                         <tr>
-                            <td style="padding: 10px 0;"><strong>Almacenamiento</strong></td>
-                            <td style="padding: 10px 0;">256GB <acronym title="Solid State Drive" style="text-decoration: none; border-bottom: 1px dotted;">SSD</acronym> Ultra R&aacute;pido</td>
+                            <td style="padding: 12px 0;"><strong>Almacenamiento</strong></td>
+                            <td style="padding: 12px 0; text-align: right;">256GB <abbr title="Solid State Drive" style="text-decoration: none; border-bottom: 1px dotted; font-weight: bold; color: #0056b3;">SSD</abbr> Ultra R&aacute;pido</td>
                         </tr>
                     </table>
                 </div>
 
-                <div style="display: flex; gap: 15px; margin-bottom: 30px;">
+                <!-- Herramientas y Utilidades -->
+                <div style="display: flex; gap: 15px; margin-bottom: 25px;">
                     <form action="mailto:info@techventa.com" method="GET" style="flex: 1;">
                         <input type="hidden" name="subject" value="Inter&eacute;s en Laptop Uni-Student">
-                        <button type="submit" style="width: 100%; padding: 12px; font-size: 0.9rem; background: #333; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
-                            COMPARTIR FICHA
+                        <button type="submit" class="btn-action" style="width: 100%; padding: 12px; font-size: 0.9rem; background: #0f172a; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer;">
+                             COMPARTIR FICHA
                         </button>
                     </form>
                     
-                    <button onclick="window.print()" style="flex: 1; padding: 12px; font-size: 0.9rem; border: 1px solid #cbd5e1; background: #ffffff; color: #333; font-weight: bold; border-radius: 5px; cursor: pointer;">
-                        IMPRIMIR PROFORMA
+                    <button onclick="window.print()" class="btn-action" style="flex: 1; padding: 12px; font-size: 0.9rem; border: 1px solid #cbd5e1; background: #ffffff; color: #0f172a; font-weight: bold; border-radius: 6px; cursor: pointer;">
+                         IMPRIMIR PROFORMA
                     </button>
                 </div>
 
-                <button onclick="agregarAlCarrito(1, 'Laptop Uni-Student 14\"', 8499)" style="width: 100%; background: #28a745; color: white; font-size: 1.2rem; height: 60px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);">
-                    A&Ntilde;ADIR AL CARRITO - $8,499.00
+                <!-- Acción Principal de Compra -->
+                <button onclick="agregarAlCarrito(1, 'Laptop Uni-Student 14\'\'', 8499.00)" class="btn-add-cart">
+                    A&Ntilde;ADIR AL CARRITO - $8,499.00 MXN
                 </button>
             </section>
         </div>
 
     </main>
 
-    <footer class="main-footer" style="background: #1a1a1a; color: #bdc3c7; text-align: center; padding: 20px; margin-top: 60px; font-size: 14px;">
-        <p>TechVenta 2026 | Precios sujetos a cambios sin previo aviso.</p>
+    <!-- PIE DE PÁGINA -->
+    <footer class="main-footer" style="background: #0f172a; color: #94a3b8; text-align: center; padding: 25px; margin-top: 80px; font-size: 13px; border-top: 4px solid #0056b3;">
+        <p>&copy; 2026 TechVenta | Precios e IVA incluidos de manera oficial. Sujetos a cambios sin previo aviso.</p>
     </footer>
 
-    <script type="text/javascript" src="interactivo.js"></script>
+    <!-- INTERACTIVIDAD NATIVA SÍNCRONA -->
+    <script type="text/javascript">
+        // Inicializar contador visual al cargar la página leyendo el estado global
+        document.addEventListener("DOMContentLoaded", function() {
+            actualizarContadorVisual();
+        });
+
+        function agregarAlCarrito(id, nombre, precio) {
+            // 1. Recuperar carrito existente del LocalStorage para persistencia entre páginas
+            let carrito = JSON.parse(localStorage.getItem('carrito_techventa')) || [];
+            
+            // 2. Insertar nuevo artículo seleccionado
+            carrito.push({
+                id: id,
+                nombre: nombre,
+                precio: precio,
+                fecha: new Date().toISOString()
+            });
+            
+            // 3. Guardar el nuevo estado de forma segura
+            localStorage.setItem('carrito_techventa', JSON.stringify(carrito));
+            
+            // 4. Actualizar interfaz de forma reactiva instantánea
+            actualizarContadorVisual();
+            
+            // 5. Retroalimentación visual interactiva al usuario
+            alert("¡Excelente elección!\n\n" + nombre + " se ha añadido correctamente a tu carrito de compras.");
+        }
+
+        function actualizarContadorVisual() {
+            const contadorElemento = document.getElementById('contador-cart-nav');
+            if (contadorElemento) {
+                let carrito = JSON.parse(localStorage.getItem('carrito_techventa')) || [];
+                contadorElemento.textContent = carrito.length;
+            }
+        }
+    </script>
 </body>
 </html>

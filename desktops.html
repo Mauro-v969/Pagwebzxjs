@@ -10,7 +10,7 @@
 
     <noscript>
         <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
-            Atenci&oacute;n: El m&oacute;dulo de filtros avanzados y el armado personalizado de PC requieren JavaScript habilitado para interactuar con el DOM.
+            Atención: El módulo de filtros avanzados y el armado personalizado de PC requieren JavaScript habilitado para interactuar con el DOM.
         </div>
     </noscript>
 
@@ -19,7 +19,7 @@
             <div class="logo-box"></div>
             <div class="logo-text">
                 <span class="brand">TechVenta</span>
-                <small>DIVISI&Oacute;N DESKTOP</small>
+                <small>DIVISIÓN DESKTOP</small>
             </div>
         </div>
         <nav style="display: flex; gap: 10px; align-items: center;">
@@ -35,26 +35,26 @@
             
             <form id="formulario-filtros">
                 <div style="margin-bottom: 25px;">
-                    <label style="display: block; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; color: var(--dark);">Rango de Inversi&oacute;n:</label>
-                    <select style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px; outline: none;">
-                        <option>Ver todos los precios</option>
-                        <option>$8,000 - $15,000</option>
-                        <option>$15,000 - $30,000</option>
-                        <option>M&aacute;s de $30,000</option>
+                    <label for="filtro-precio" style="display: block; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; color: var(--dark);">Rango de Inversión:</label>
+                    <select id="filtro-precio" style="width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px; outline: none;">
+                        <option value="todos">Ver todos los precios</option>
+                        <option value="bajo">$8,000 - $15,000</option>
+                        <option value="medio">$15,000 - $30,000</option>
+                        <option value="alto">Más de $30,000</option>
                     </select>
                 </div>
 
                 <div style="margin-bottom: 25px;">
                     <label style="display: block; font-weight: bold; font-size: 0.9rem; margin-bottom: 10px; color: var(--dark);">Uso Sugerido:</label>
                     <label style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #64748b; margin-bottom: 8px; cursor: pointer;">
-                        <input type="radio" name="rend"> Oficina / Estudiante
+                        <input type="radio" name="rend" value="oficina" checked> Oficina / Estudiante
                     </label>
                     <label style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: #64748b; cursor: pointer;">
-                        <input type="radio" name="rend"> Gaming / Dise&ntilde;o Pro
+                        <input type="radio" name="rend" value="pro"> Gaming / Diseño Pro
                     </label>
                 </div>
 
-                <button type="submit" class="btn-submit" style="width: 100%;">ACTUALIZAR VISTA</button>
+                <button type="submit" class="btn-submit" style="width: 100%; cursor: pointer;">ACTUALIZAR VISTA</button>
             </form>
             
             <hr style="border: 0; border-top: 1px solid #f1f5f9; margin: 25px 0;">
@@ -64,44 +64,83 @@
         <main style="flex: 3; min-width: 350px;">
             <div style="background: var(--dark); color: white; padding: 20px 30px; border-radius: 15px; margin-bottom: 30px; display: flex; justify-content: space-between; align-items: center;">
                 <h2 style="margin: 0; font-size: 1.4rem;">Computadoras de Escritorio</h2>
-                <span style="font-size: 0.9rem; opacity: 0.8;">Mostrando 2 de 12 modelos</span>
+                <span id="contador-productos" style="font-size: 0.9rem; opacity: 0.8;">Mostrando 2 modelos</span>
             </div>
             
             <div id="contenedor-productos-desktop" class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
                 
-                <article class="product-card card">
+                <article class="product-card card" data-precio="18900" data-uso="pro">
                     <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=500" alt="Workstation Pro" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
                     <h3 style="margin-top: 15px;">Workstation Pro-Venta V2</h3>
                     <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">Core i7 | 32GB RAM | Quadro T1000</p>
                     <p class="price" style="font-weight: bold; color: var(--primary); font-size: 1.25rem; margin-bottom: 15px;">$18,900.00</p>
-                    <a href="detalle-pro.html" class="btn-contact" style="display: block; text-align: center; background: var(--secondary); font-size: 0.85rem;">VER FICHA T&Eacute;CNICA</a>
+                    <a href="detalle-pro.html" class="btn-contact" style="display: block; text-align: center; background: var(--secondary); font-size: 0.85rem;">VER FICHA TÉCNICA</a>
                 </article>
 
-                <article class="product-card card">
+                <article class="product-card card" data-precio="12450" data-uso="oficina">
                     <img src="https://images.unsplash.com/photo-1616440347437-b1c73416efc2?w=500" alt="Modern Slim Desktop" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px 8px 0 0;">
                     <h3 style="margin-top: 15px;">EcoCompute Slim Tower</h3>
                     <p style="font-size: 0.8rem; color: #64748b; margin-bottom: 15px;">Ryzen 5 | 16GB RAM | 512GB SSD</p>
                     <p class="price" style="font-weight: bold; color: var(--primary); font-size: 1.25rem; margin-bottom: 15px;">$12,450.00</p>
-                    <a href="detalle-pro.html" class="btn-contact" style="display: block; text-align: center; background: var(--secondary); font-size: 0.85rem;">VER FICHA T&Eacute;CNICA</a>
+                    <a href="detalle-pro.html" class="btn-contact" style="display: block; text-align: center; background: var(--secondary); font-size: 0.85rem;">VER FICHA TÉCNICA</a>
                 </article>
 
-                <article class="card" style="grid-column: 1 / -1; background: linear-gradient(90deg, var(--primary), #1e293b); color: white; display: flex; align-items: center; gap: 30px; padding: 40px; flex-wrap: wrap;">
-                    <div style="font-size: 4rem;"></div>
+                <article class="card" style="grid-column: 1 / -1; background: linear-gradient(90deg, var(--primary), #1e293b); color: white; display: flex; align-items: center; gap: 30px; padding: 40px; flex-wrap: wrap; border-radius: 12px;">
+                    <div style="font-size: 4rem;">🖥️</div>
                     <div style="flex: 1; min-width: 250px;">
-                        <h3 style="color: var(--secondary); margin: 0; font-size: 1.5rem;">&iquest;Buscas algo espec&iacute;fico?</h3>
-                        <p style="margin: 10px 0 0 0; opacity: 0.9;">Armamos tu PC personalizada con los componentes que t&uacute; elijas. Ideal para Gaming extremo o Renders pesados.</p>
+                        <h3 style="color: var(--secondary); margin: 0; font-size: 1.5rem;">¿Buscas algo específico?</h3>
+                        <p style="margin: 10px 0 0 0; opacity: 0.9;">Armamos tu PC personalizada con los componentes que tú elijas. Ideal para Gaming extremo o Renders pesados.</p>
                     </div>
-                    <a href="contacto.html" class="btn-submit" style="background: white; color: var(--primary); text-decoration: none; padding: 12px 25px; font-weight: bold;">COTIZAR AHORA</a>
+                    <a href="contacto.html" class="btn-submit" style="background: white; color: var(--primary); text-decoration: none; padding: 12px 25px; font-weight: bold; border-radius: 6px;">COTIZAR AHORA</a>
                 </article>
 
             </div>
         </main>
     </div>
 
-    <footer class="main-footer">
+    <footer class="main-footer" style="text-align: center; padding: 20px; background: #1e293b; color: white; margin-top: 40px;">
         <p>TechVenta | Soluciones Desktop Profesionales 2026</p>
     </footer>
 
-    <script type="text/javascript" src="interactivo.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            const formFiltros = document.getElementById('formulario-filtros');
+            const productos = document.querySelectorAll('.product-card');
+            const contadorText = document.getElementById('contador-productos');
+
+            formFiltros.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const rangoPrecio = document.getElementById('filtro-precio').value;
+                const usoSeleccionado = document.querySelector('input[name="rend"]:checked').value;
+                let visibles = 0;
+
+                productos.forEach(card => {
+                    const precio = parseInt(card.getAttribute('data-precio'), 10);
+                    const uso = card.getAttribute('data-uso');
+
+                    let coincidePrecio = false;
+                    let coincideUso = (uso === usoSeleccionado);
+
+                    // Evaluación de rangos monetarios
+                    if (rangoPrecio === 'todos') coincidePrecio = true;
+                    else if (rangoPrecio === 'bajo' && precio >= 8000 && precio <= 15000) coincidePrecio = true;
+                    else if (rangoPrecio === 'medio' && precio > 15000 && precio <= 30000) coincidePrecio = true;
+                    else if (rangoPrecio === 'alto' && precio > 30000) coincidePrecio = true;
+
+                    // Mostrar u ocultar nodos HTML basándose en las condiciones logradas
+                    if (coincidePrecio && coincideUso) {
+                        card.style.display = 'block';
+                        visibles++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Actualizar dinámicamente el mensaje del panel superior
+                contadorText.textContent = `Mostrando ${visibles} de ${productos.length} modelos filtrados`;
+            });
+        });
+    </script>
 </body>
 </html>

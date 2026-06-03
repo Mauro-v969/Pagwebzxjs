@@ -3,14 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Tecnol&oacute;gico | TechVenta</title>
+    <title>Blog Tecnológico | TechVenta</title>
     <link rel="stylesheet" href="estilos-home.css">
+    <style>
+        /* Estilos base para el control de accesibilidad y modo oscuro */
+        :root {
+            --bg-principal: #fcfcfc;
+            --bg-tarjeta: #ffffff;
+            --texto-principal: #333333;
+            --texto-secundario: #64748b;
+            --borde-tarjeta: #EEEEEE;
+        }
+
+        /* Variables para el modo oscuro/lectura nocturna */
+        .modo-noche {
+            --bg-principal: #121212;
+            --bg-tarjeta: #1e1e1e;
+            --texto-principal: #e2e8f0;
+            --texto-secundario: #94a3b8;
+            --borde-tarjeta: #333333;
+        }
+
+        body {
+            background-color: var(--bg-principal) !important;
+            color: var(--texto-principal);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .tarjeta-blog {
+            background: var(--bg-tarjeta) !important;
+            border-color: var(--borde-tarjeta) !important;
+            color: var(--texto-principal);
+        }
+
+        /* Panel de accesibilidad flotante */
+        .panel-accesibilidad {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #0056b3;
+            padding: 10px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            gap: 8px;
+            z-index: 1000;
+        }
+
+        .btn-acc {
+            background: white;
+            border: none;
+            color: #0056b3;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: transform 0.2s;
+        }
+
+        .btn-acc:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
-<body style="background-color: #fcfcfc; margin: 0; padding: 0; font-family: Arial, sans-serif;">
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif;">
 
     <noscript>
         <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
-            Atenci&oacute;n: El conmutador de lectura adaptativa (Modo Lectura/Noche) y la personalizaci&oacute;n de fuentes requieren JavaScript.
+            Atención: El conmutador de lectura adaptativa (Modo Lectura/Noche) y la personalización de fuentes requieren JavaScript.
         </div>
     </noscript>
 
@@ -27,40 +92,46 @@
         </nav>
     </header>
 
+    <div class="panel-accesibilidad">
+        <button id="btn-modo-noche" class="btn-acc" title="Cambiar Modo de Lectura">🌙</button>
+        <button id="btn-fuente-mas" class="btn-acc" title="Aumentar Letra">A+</button>
+        <button id="btn-fuente-menos" class="btn-acc" title="Disminuir Letra">A-</button>
+    </div>
+
     <main style="max-width: 1100px; margin: 40px auto; padding: 0 20px;">
         
         <div style="display: flex; gap: 40px; flex-wrap: wrap;">
             
-            <section style="flex: 2; min-width: 300px;">
-                <h2 style="color: #333333; font-size: 2rem; margin-bottom: 30px;">Noticias y Tendencias</h2>
+            <section style="flex: 2; min-width: 300px;" id="seccion-articulos">
+                <h2 style="font-size: 2rem; margin-bottom: 30px;">Noticias y Tendencias</h2>
                 
-                <article id="articulo-principal" class="tarjeta-producto" style="background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 40px; display: flex; flex-direction: column; border: 1px solid #EEE;">
+                <article id="articulo-principal" class="tarjeta-producto tarjeta-blog" style="border-radius: 15px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 40px; display: flex; flex-direction: column; border: 1px solid #EEE;">
                     <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?w=800" alt="Procesadores 2026" style="width: 100%; height: 300px; object-fit: cover;">
                     <div style="padding: 30px;">
                         <span style="background: #e74c3c; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase;">Hardware</span>
-                        <h3 style="font-size: 1.6rem; color: #0056b3; margin: 15px 0;">&iquest;Qu&eacute; procesador elegir en 2026?</h3>
-                        <p style="line-height: 1.8; color: #64748b; margin-bottom: 20px;">
-                            La arquitectura de los nuevos procesadores ha cambiado dr&aacute;sticamente este a&ntilde;o. Te explicamos de forma sencilla las diferencias fundamentales entre n&uacute;cleos f&iacute;sicos, hilos de ejecuci&oacute;n y por qu&eacute; la memoria cach&eacute; es ahora m&aacute;s importante que nunca para tu pr&oacute;xima compra...
+                        <h3 style="font-size: 1.6rem; color: #0056b3; margin: 15px 0;">¿Qué procesador elegir en 2026?</h3>
+                        <p class="texto-articulo" style="line-height: 1.8; color: var(--texto-secundario); margin-bottom: 20px;">
+                            La arquitectura de los nuevos procesadores ha cambiado drásticamente este año. Te explicamos de forma sencilla las diferencias fundamentales entre núcleos físicos, hilos de ejecución y por qué la memoria caché es ahora más importante que nunca para tu próxima compra...
                         </p>
                         <a href="#" style="color: #e74c3c; font-weight: bold; text-decoration: none; display: flex; align-items: center; gap: 5px;">
-                            Leer art&iacute;culo completo <span>&rarr;</span>
+                            Leer artículo completo <span>&rarr;</span>
                         </a>
                     </div>
                 </article>
 
-                <article class="tarjeta-producto" style="background: white; border-radius: 15px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px; border: 1px solid #EEE;">
+                <article class="tarjeta-producto tarjeta-blog" style="border-radius: 15px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px; border: 1px solid #EEE;">
                     <span style="background: #3498db; color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: bold; text-transform: uppercase;">Software</span>
                     <h3 style="font-size: 1.3rem; margin: 10px 0; color: #0056b3;">Productividad 4.0: Las mejores herramientas</h3>
-                    <p style="color: #64748b; font-size: 0.95rem;">Descubre c&oacute;mo la IA est&aacute; optimizando los flujos de trabajo en equipos remotos...</p>
+                    <p class="texto-articulo" style="color: var(--texto-secundario); font-size: 0.95rem; line-height: 1.6;">Descubre cómo la IA está optimizando los flujos de trabajo en equipos remotos...</p>
                 </article>
             </section>
 
             <aside style="flex: 1; min-width: 250px;">
                 <div style="background: #1a1a1a; color: white; padding: 25px; border-radius: 15px; position: sticky; top: 20px;" id="barra-lateral">
-                    <h3 style="color: #3498db; margin-top: 0;">Suscripci&oacute;n</h3>
-                    <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px;">Recibe las mejores ofertas y noticias t&eacute;cnicas en tu correo.</p>
-                    <form action="newsletter.php" method="POST">
-                        <input type="email" name="email_newsletter" placeholder="tu@correo.com" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #333; margin-bottom: 10px; box-sizing: border-box;">
+                    <h3 style="color: #3498db; margin-top: 0;">Suscripción</h3>
+                    <p style="font-size: 0.85rem; opacity: 0.8; margin-bottom: 20px;">Recibe las mejores ofertas y noticias técnicas en tu correo.</p>
+                    <form action="newsletter.php" method="POST" id="form-newsletter">
+                        <input type="email" name="email_newsletter" placeholder="tu@correo.com" required style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #333; margin-bottom: 10px; box-sizing: border-box; background: #fff; color: #000;">
                         <button type="submit" class="btn-submit" style="width: 100%; background: #3498db; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: bold; cursor: pointer;">UNIRME AL NEWSLETTER</button>
                     </form>
                     
@@ -79,9 +150,63 @@
     </main>
 
     <footer class="main-footer" style="background: #1a1a1a; color: white; text-align: center; padding: 20px 0; margin-top: 40px;">
-        <p>&copy; 2026 TechVenta | Espacio de Divulgaci&oacute;n Tecnol&oacute;gica</p>
+        <p>&copy; 2026 TechVenta | Espacio de Divulgación Tecnológica</p>
     </footer>
 
-    <script type="text/javascript" src="interactivo.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnModoNoche = document.getElementById('btn-modo-noche');
+            const btnFuenteMas = document.getElementById('btn-fuente-mas');
+            const btnFuenteMenos = document.getElementById('btn-fuente-menos');
+            const textosArticulos = document.querySelectorAll('.texto-articulo');
+            const formNewsletter = document.getElementById('form-newsletter');
+            
+            let tamanoFuenteActual = 100; // Porcentaje base
+
+            // 1. Conmutador Adaptativo de Modo Noche / Modo Claro
+            btnModoNoche.addEventListener('click', () => {
+                document.body.classList.toggle('modo-noche');
+                
+                // Cambiar el emoji del botón según el estado
+                if (document.body.classList.contains('modo-noche')) {
+                    btnModoNoche.textContent = '☀️';
+                    btnModoNoche.setAttribute('title', 'Cambiar a Modo Claro');
+                } else {
+                    btnModoNoche.textContent = '🌙';
+                    btnModoNoche.setAttribute('title', 'Cambiar a Modo Noche');
+                }
+            });
+
+            // 2. Control Dinámico de Accesibilidad para las Fuentes (Aumentar)
+            btnFuenteMas.addEventListener('click', () => {
+                if (tamanoFuenteActual < 140) { // Límite máximo saludable
+                    tamanoFuenteActual += 10;
+                    textosArticulos.forEach(texto => {
+                        texto.style.fontSize = `${tamanoFuenteActual}%`;
+                    });
+                }
+            });
+
+            // 3. Control Dinámico de Accesibilidad para las Fuentes (Disminuir)
+            btnFuenteMenos.addEventListener('click', () => {
+                if (tamanoFuenteActual > 90) { // Límite mínimo
+                    tamanoFuenteActual -= 10;
+                    textosArticulos.forEach(texto => {
+                        texto.style.fontSize = `${tamanoFuenteActual}%`;
+                    });
+                }
+            });
+
+            // Intercepción del Newsletter para evitar recargas molestas si es necesario
+            if(formNewsletter) {
+                formNewsletter.addEventListener('submit', (e) => {
+                    const emailInput = formNewsletter.querySelector('input[type="email"]').value;
+                    if(emailInput) {
+                        alert(`¡Gracias por suscribirte! Las mejores noticias de 2026 llegarán a: ${emailInput}`);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

@@ -2,18 +2,185 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Únete al Equipo | TechVenta</title>
+    <title>&Uacute;nete al Equipo | TechVenta</title>
     <link rel="stylesheet" href="estilos-home.css">
+
+    <!-- Estilos de respaldo integrados para asegurar un diseño responsivo y filtros fluidos -->
+    <style>
+        :root {
+            --primary: #0056b3;
+            --dark: #0f172a;
+            --bg-color: #f8f9fa;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: #334155;
+        }
+
+        /* Cabecera Corporativa de Respaldo */
+        .top-header {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            background: var(--primary);
+            color: white;
+            padding: 5px 14px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            border-radius: 6px;
+        }
+
+        .logo-text .brand {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+
+        .logo-text small {
+            color: #94a3b8;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-back {
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .btn-back:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Botones de Filtro Dinámico */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .btn-filter {
+            background: #ffffff;
+            color: #475569;
+            border: 1px solid #cbd5e1;
+            padding: 10px 22px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-filter:hover, .btn-filter.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0, 86, 179, 0.2);
+        }
+
+        /* Contenedor y Tarjetas de Vacantes */
+        .vacantes-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .job-card {
+            background: #ffffff;
+            padding: 25px 30px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            transition: var(--transition);
+        }
+
+        .job-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+            border-color: var(--primary);
+        }
+
+        .job-info h3 {
+            margin: 0 0 8px 0;
+            color: var(--dark);
+            font-size: 1.3rem;
+        }
+
+        .job-info p {
+            margin: 0;
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .job-tag {
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+
+        .tag-completo {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .tag-medio {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .main-footer {
+            background: var(--dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
-<body style="background-color: #f8f9fa;">
+<body>
 
     <noscript>
         <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
-            Atención: El módulo de filtrado de vacantes de Recursos Humanos requiere JavaScript activo para procesar postulaciones.
+            Atenci&oacute;n: El m&oacute;dulo de filtrado de vacantes de Recursos Humanos requiere JavaScript activo para procesar postulaciones.
         </div>
     </noscript>
 
+    <!-- Header Corporativo -->
     <header class="top-header">
         <div class="logo-container">
             <div class="logo-box">T</div>
@@ -22,56 +189,95 @@
                 <small>RECURSOS HUMANOS</small>
             </div>
         </div>
-        <a href="index.html" class="btn-contact" style="background: var(--dark); color: white;">← VOLVER AL INICIO</a>
+        <a href="index.html" class="btn-back">&larr; VOLVER AL INICIO</a>
     </header>
 
     <main style="max-width: 900px; margin: 60px auto; padding: 0 20px;">
-        <section style="text-align: center; margin-bottom: 50px;">
-            <h1 style="color: var(--primary); font-size: 2.8rem; margin-bottom: 15px;">¡Trabaja con Nosotros!</h1>
-            <p style="color: #555; font-size: 1.2rem;">Buscamos mentes creativas y apasionadas por la tecnología para transformar el futuro digital.</p>
+        
+        <section style="text-align: center; margin-bottom: 40px;">
+            <h1 style="color: #0056b3; font-size: 2.8rem; margin-top: 0; margin-bottom: 15px;">&iexcl;Trabaja con Nosotros!</h1>
+            <p style="color: #555; font-size: 1.2rem; max-width: 700px; margin: 0 auto;">Buscamos mentes creativas y apasionadas por la tecnolog&iacute;a para transformar el futuro digital.</p>
         </section>
 
+        <!-- Barra de Filtros Interactivos por Código -->
+        <nav class="filter-container">
+            <button class="btn-filter active" onclick="filtrarVacantes('todas', this)">🗂️ Ver Todas</button>
+            <button class="btn-filter" onclick="filtrarVacantes('completo', this)">💼 Tiempo Completo</button>
+            <button class="btn-filter" onclick="filtrarVacantes('medio', this)">⏱️ Medio Tiempo</button>
+        </nav>
+
+        <!-- Contenedor Dinámico de Tarjetas -->
         <section class="vacantes-container">
-            <article class="job-card">
+            
+            <article class="job-card" data-tipo="completo">
                 <div class="job-info">
-                    <h3>Técnico de Soporte</h3>
-                    <p>Especialista en ensamble, diagnóstico de hardware y mantenimiento preventivo.</p>
+                    <h3>T&eacute;cnico de Soporte</h3>
+                    <p>Especialista en ensamble, diagn&oacute;stico avanzado de hardware y mantenimiento preventivo integral.</p>
                 </div>
-                <div class="job-tag">Tiempo Completo</div>
+                <div class="job-tag tag-completo">Tiempo Completo</div>
             </article>
 
-            <article class="job-card">
+            <article class="job-card" data-tipo="medio">
                 <div class="job-info">
                     <h3>Asesor de Ventas</h3>
-                    <p>Atención personalizada al cliente, conocimiento de specs técnicas y cierre de ventas.</p>
+                    <p>Atenci&oacute;n personalizada al cliente, dominio de especificaciones t&eacute;cnicas comerciales y cierre de metas.</p>
                 </div>
-                <div class="job-tag">Medio Tiempo</div>
+                <div class="job-tag tag-medio">Medio Tiempo</div>
             </article>
 
-            <article class="job-card">
+            <article class="job-card" data-tipo="completo">
                 <div class="job-info">
                     <h3>Gestor de Inventarios</h3>
-                    <p>Control de stock, recepción de mercancía y logística interna de almacén.</p>
+                    <p>Control riguroso de stock, recepci&oacute;n de tecnolog&iacute;a y log&iacute;stica de distribuci&oacute;n interna.</p>
                 </div>
-                <div class="job-tag">Tiempo Completo</div>
+                <div class="job-tag tag-completo">Tiempo Completo</div>
             </article>
+            
         </section>
 
-        <section style="margin-top: 50px; background: var(--white); padding: 40px; border-radius: 15px; text-align: center; box-shadow: var(--shadow-soft);">
+        <!-- Sección Informativa de Envío -->
+        <section style="margin-top: 60px; background: #ffffff; padding: 40px; border-radius: 15px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #e2e8f0;">
             <div style="font-size: 3rem; margin-bottom: 15px;">📩</div>
-            <h2 style="color: var(--dark); margin-bottom: 15px;">¿Listo para el siguiente paso?</h2>
-            <p style="color: #666; margin-bottom: 25px;">Envía tu CV actualizado y portafolio de evidencias a nuestro departamento de reclutamiento:</p>
-            <div style="background: #eef2f7; display: inline-block; padding: 15px 30px; border-radius: 50px; border: 2px dashed var(--primary);">
-                <span style="font-size: 1.3rem; color: var(--primary); font-weight: bold;">rrhh@techventa.com.mx</span>
+            <h2 style="color: #0f172a; margin-top: 0; margin-bottom: 15px;">&iquest;Listo para el siguiente paso?</h2>
+            <p style="color: #64748b; margin-bottom: 25px; font-size: 1.05rem;">Env&iacute;a tu CV actualizado y portafolio de evidencias a nuestro departamento de reclutamiento:</p>
+            
+            <div style="background: #f1f5f9; display: inline-block; padding: 15px 35px; border-radius: 50px; border: 2px dashed #0056b3;">
+                <span style="font-size: 1.3rem; color: #0056b3; font-weight: bold; letter-spacing: 0.5px;">rrhh@techventa.com.mx</span>
             </div>
-            <p style="margin-top: 20px; font-size: 0.85rem; color: #999;">*TechVenta es una empresa que promueve la igualdad de oportunidades.</p>
+            
+            <p style="margin-top: 25px; font-size: 0.85rem; color: #94a3b8; font-style: italic;">*TechVenta es una empresa comprometida que promueve activamente la igualdad de oportunidades laborales.</p>
         </section>
     </main>
 
-    <footer class="main-footer" style="margin-top: 80px;">
-        <p>&copy; 2026 TechVenta S.A. de C.V. | <a href="mapa_sitio.html" style="color: var(--accent); text-decoration: none;">Mapa del Sitio</a></p>
+    <!-- Pie de Página -->
+    <footer class="main-footer">
+        <p>&copy; 2026 TechVenta S.A. de C.V. | <a href="mapa_sitio.html" style="color: #38bdf8; text-decoration: none; font-weight: bold;">Mapa del Sitio</a></p>
     </footer>
 
-    <script type="text/javascript" src="interactivo.js"></script>
+    <!-- LÓGICA DE FILTRADO REACTIVO -->
+    <script type="text/javascript">
+        function filtrarVacantes(categoria, botonPresionado) {
+            // 1. Quitar la clase activa de todos los botones de filtrado
+            const botones = document.querySelectorAll('.btn-filter');
+            botones.forEach(btn => btn.classList.remove('active'));
+            
+            // 2. Asignar la clase activa al botón que pulsó el usuario
+            botonPresionado.classList.add('active');
+
+            // 3. Obtener todas las tarjetas de empleo disponibles
+            const tarjetas = document.querySelectorAll('.job-card');
+
+            // 4. Evaluar atributo personalizado data-tipo para ocultar o mostrar con estilos inline alternativos
+            tarjetas.forEach(tarjeta => {
+                const tipoTrabajo = tarjeta.getAttribute('data-tipo');
+
+                if (categoria === 'todas' || tipoTrabajo === categoria) {
+                    tarjeta.style.display = 'flex'; // Comportamiento flex original
+                } else {
+                    tarjeta.style.display = 'none'; // Ocultar vacante que no cumple el filtro
+                }
+            });
+        }
+    </script>
 </body>
 </html>

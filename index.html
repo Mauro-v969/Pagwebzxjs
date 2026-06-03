@@ -2,18 +2,42 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechVenta S.A. de C.V. | E-Commerce Premium 2.0</title>
+    <style>
+        /* Estilos base y transiciones globales */
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .tarjeta-producto {
+            transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+        }
+        .tarjeta-producto:hover {
+            transform: translateY(-4px);
+        }
+        /* Clases de utilidad para el Modo Oscuro */
+        .dark-mode-body {
+            background-color: #0f172a !important;
+            color: #f8fafc !important;
+        }
+        .dark-mode-card {
+            background-color: #1e293b !important;
+            border-color: #334155 !important;
+            color: #f8fafc !important;
+        }
+        .dark-mode-text-muted {
+            color: #94a3b8 !important;
+        }
+    </style>
 </head>
-<body bgcolor="#FFFFFF" text="#333333" style="font-family: Arial, sans-serif; margin: 0; padding: 0; transition: background-color 0.4s, color 0.4s;">
+<body bgcolor="#FFFFFF" text="#333333" style="font-family: Arial, sans-serif; margin: 0; padding: 0;">
 
     <noscript>
         <table width="100%" bgcolor="#e74c3c" cellpadding="15" border="0">
             <tr>
                 <td align="center">
                     <font color="#FFFFFF" size="4" face="Arial">
-                        <strong>&iexcl;Aviso importante!</strong> Su navegador tiene las funciones de JavaScript deshabilitadas o no las soporta. Por favor, active los scripts para experimentar la interfaz v2.0.
+                        <strong>¡Aviso importante!</strong> Su navegador tiene las funciones de JavaScript deshabilitadas o no las soporta. Por favor, active los scripts para experimentar la interfaz v2.0.
                     </font>
                 </td>
             </tr>
@@ -25,24 +49,24 @@
             <td width="300">
                 <table border="0" cellpadding="0" cellspacing="0">
                     <tr>
-                        <td bgcolor="#0056b3" style="padding: 10px 18px; border-radius: 8px; transition: all 0.3s;" id="logo-contenedor">
+                        <td bgcolor="#0056b3" style="padding: 10px 18px; border-radius: 8px;" id="logo-contenedor">
                             <font color="#FFFFFF" size="6"><strong>T</strong></font>
                         </td>
                         <td style="padding-left: 12px;">
                             <font color="#0056b3" size="5" id="logo-texto"><strong>Tech</strong>Venta</font><br>
-                            <font color="#999999" size="1" style="letter-spacing: 1px;">SOLUCIONES TECNOL&Oacute;GICAS</font>
+                            <font color="#999999" size="1" style="letter-spacing: 1px;" id="logo-subtexto">SOLUCIONES TECNOLÓGICAS</font>
                         </td>
                     </tr>
                 </table>
             </td>
             <td align="center">
                 <form action="buscar.php" method="GET" onsubmit="return false;">
-                    <input type="text" name="search" size="45" style="padding: 12px 20px; border: 1px solid #cbd5e1; border-radius: 30px; outline: none; font-size: 14px; width: 80%; max-width: 400px;" placeholder="&iquest;Qu&eacute; equipo o soluci&oacute;n buscas hoy?">
+                    <input type="text" name="search" size="45" style="padding: 12px 20px; border: 1px solid #cbd5e1; border-radius: 30px; outline: none; font-size: 14px; width: 80%; max-width: 400px;" placeholder="¿Qué equipo o solución buscas hoy?">
                 </form>
             </td>
             <td align="right">
                 <button id="btn-modo-lectura" style="padding: 12px 22px; background: #34495e; color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; margin-right: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"> Modo Oscuro</button>
-                <button onclick="calcularPresupuestoExpress();" style="background: #28a745; color: white; border: none; padding: 12px 22px; border-radius: 30px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 6px rgba(40,167,69,0.2);" id="btn-contacto-top">COTIZACI&Oacute;N EXPRESS</button>
+                <button onclick="calcularPresupuestoExpress();" style="background: #28a745; color: white; border: none; padding: 12px 22px; border-radius: 30px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 6px rgba(40,167,69,0.2);" id="btn-contacto-top">COTIZACIÓN EXPRESS</button>
             </td>
         </tr>
     </table>
@@ -50,7 +74,7 @@
     <table width="100%" bgcolor="#0f172a" cellpadding="16" border="0" id="menu-navegacion">
         <tr align="center">
             <td><a href="index.html" style="color:#38bdf8; text-decoration:none; font-size: 14px; letter-spacing: 0.5px;"><strong>INICIO</strong></a></td>
-            <td><a href="laptops.html" style="color:#94a3b8; text-decoration:none; font-size: 14px; transition: color 0.2s;">LAPTOPS</a></td>
+            <td><a href="laptops.html" style="color:#94a3b8; text-decoration:none; font-size: 14px;">LAPTOPS</a></td>
             <td><a href="desktops.html" style="color:#94a3b8; text-decoration:none; font-size: 14px;">DESKTOPS</a></td>
             <td><a href="ofertas.html" style="color:#f59e0b; text-decoration:none; font-size: 14px;"><strong>OFERTAS MUNDIALES</strong></a></td>
             <td><a href="servicios.html" style="color:#94a3b8; text-decoration:none; font-size: 14px;">SERVICIOS</a></td>
@@ -82,40 +106,40 @@
     <table width="95%" align="center" border="0" cellpadding="35" cellspacing="0">
         <tr>
             <td width="260" valign="top" bgcolor="#F4F7F6" style="border-radius: 16px; border: 1px solid #e2e8f0; padding: 25px;" id="barra-lateral">
-                <h3 style="color: #0056b3; margin-top: 0; font-size: 16px; letter-spacing: 0.5px;" id="titulo-filtros">ORDENACI&Oacute;N E INTELIGENCIA</h3>
+                <h3 style="color: #0056b3; margin-top: 0; font-size: 16px; letter-spacing: 0.5px;" id="titulo-filtros">ORDENACIÓN E INTELIGENCIA</h3>
                 
-                <p style="font-size: 13px;"><strong>Organizar Cat&aacute;logo:</strong></p>
-                <select id="control-orden" onchange="ordenarProductosPorPrecio();" style="width:100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: white; font-size: 13px; outline: none;">
+                <p style="font-size: 13px;"><strong>Organizar Catálogo:</strong></p>
+                <select id="control-orden" onchange="ordenarProductosPorPrecio();" style="width:100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: white; font-size: 13px; outline: none; cursor: pointer;">
                     <option value="DEF">Seleccionar ordenamiento...</option>
                     <option value="MENOR">Precio: De Menor a Mayor</option>
                     <option value="MAYOR">Precio: De Mayor a Menor</option>
                 </select>
 
-                <p style="font-size: 13px; margin-top: 20px;"><strong>Segmentaci&oacute;n Acad&eacute;mica:</strong></p>
-                <label style="font-size: 13px; display: block; margin-bottom: 6px;"><input type="radio" name="perf" value="basico"> Rendimiento Estudiantil</label>
-                <label style="font-size: 13px; display: block;"><input type="radio" name="perf" value="alto"> Estaci&oacute;n de Trabajo Alta</label>
+                <p style="font-size: 13px; margin-top: 20px;"><strong>Segmentación Académica:</strong></p>
+                <label style="font-size: 13px; display: block; margin-bottom: 6px; cursor: pointer;"><input type="radio" name="perf" value="basico"> Rendimiento Estudiantil</label>
+                <label style="font-size: 13px; display: block; cursor: pointer;"><input type="radio" name="perf" value="alto"> Estación de Trabajo Alta</label>
 
                 <p style="font-size: 13px; margin-top: 20px;"><strong>Fabricantes Integrados:</strong></p>
-                <label style="font-size: 13px; display: block; margin-bottom: 6px;"><input type="checkbox" name="m1" value="tech" checked> TechPro Global</label>
-                <label style="font-size: 13px; display: block;"><input type="checkbox" name="m2" value="eco"> EcoCompute S.A.</label>
+                <label style="font-size: 13px; display: block; margin-bottom: 6px; cursor: pointer;"><input type="checkbox" class="chk-fabricante" value="student" checked> TechPro Global</label>
+                <label style="font-size: 13px; display: block; cursor: pointer;"><input type="checkbox" class="chk-fabricante" value="pro"> EcoCompute S.A.</label>
                 
                 <br><br>
                 <input type="button" onclick="calcularPresupuestoExpress();" value="Calcular Presupuestos" style="width:100%; padding: 12px; background: #0f172a; color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 13px;">
                 
                 <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 25px 0;">
                 <div align="center">
-                    <a href="blog.html" style="text-decoration:none;" id="enlace-blog"><font color="#0056b3" size="2"><b> Leer Art&iacute;culos del Blog</b></font></a>
+                    <a href="blog.html" style="text-decoration:none;" id="enlace-blog"><font color="#0056b3" size="2"><b> Leer Artículos del Blog</b></font></a>
                 </div>
             </td>
 
             <td valign="top" style="padding-left: 20px;">
-                <h2 style="color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; margin-top: 0; font-size: 22px;" id="titulo-catalogo">CAT&Aacute;LOGO DESTACADO CONFIGURABLE</h2>
+                <h2 style="color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; margin-top: 0; font-size: 22px;" id="titulo-catalogo">CATÁLOGO DESTACADO CONFIGURABLE</h2>
                 
                 <table border="0" width="100%" cellpadding="0" cellspacing="15" id="grid-laptops">
                     <tr>
                         <td width="50%" style="border: 1px solid #e2e8f0; border-radius: 16px; padding: 25px; background: #FFFFFF;" class="tarjeta-producto" data-precio="8499" id="producto-student">
                             <div align="center">
-                                <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400" width="260" style="border-radius: 8px; transition: all 0.3s;" id="img-student"><br>
+                                <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400" width="260" style="border-radius: 8px; transition: all 0.3s; border: 3px solid transparent;" id="img-student"><br>
                                 <h3 style="margin: 20px 0 5px 0; font-size: 16px; color:#0f172a;">Laptop Uni-Student 14"</h3>
                                 
                                 <p style="margin: 8px 0 15px 0;">
@@ -136,7 +160,7 @@
 
                         <td width="50%" style="border: 1px solid #e2e8f0; border-radius: 16px; padding: 25px; background: #FFFFFF;" class="tarjeta-producto" data-precio="18900" id="producto-pro">
                             <div align="center">
-                                <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400" width="260" style="border-radius: 8px; transition: all 0.3s;" id="img-pro"><br>
+                                <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400" width="260" style="border-radius: 8px; transition: all 0.3s; border: 3px solid transparent;" id="img-pro"><br>
                                 <h3 style="margin: 20px 0 5px 0; font-size: 16px; color:#0f172a;">Workstation Pro-Venta</h3>
                                 
                                 <p style="margin: 8px 0 15px 0;">
@@ -145,7 +169,7 @@
                                     <span onclick="cambiarColorEquipo('pro', '#e2e8f0', 'Titanio Puro');" style="display:inline-block; width:14px; height:14px; background:#e2e8f0; border-radius:50%; margin:0 5px; cursor:pointer; border:2px solid #fff; box-shadow:0 0 4px rgba(0,0,0,0.3);" title="Claro"></span>
                                 </p>
 
-                                <p style="margin: 10px 0;"><font color="#0f172a" size="4"><strong>$18,900.00 MXN</strong></font></p>
+                                <p style="margin: 10px 0;"><font color="#0f172a" size="4" class="precio-pro-texto"><strong>$18,900.00 MXN</strong></font></p>
                                 <table width="100%" border="0" cellpadding="0" cellspacing="4">
                                     <tr>
                                         <td width="50%"><a href="detalles_pro.html" style="text-decoration: none;"><button style="width:100%; padding: 11px; cursor: pointer; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; font-weight: bold; font-size: 11px; color:#64748b;">FICHA</button></a></td>
@@ -160,15 +184,15 @@
         </tr>
     </table>
 
-    <table width="100%" bgcolor="#f8fafc" cellpadding="50" id="seccion-mision" style="border-top: 1px solid #e2e8f0;">
+    <table width="100%" bgcolor="#f8fafc" cellpadding="50" id="seccion-mision" style="border-top: 1px solid #e2e8f0; transition: background-color 0.3s;">
         <tr>
             <td align="center">
                 <table width="65%" border="0">
                     <tr>
                         <td align="center">
                             <h2 style="color: #0056b3; font-size: 26px; letter-spacing: 0.5px;" id="mision-header">IDENTIDAD CORPORATIVA CONTROLADA</h2>
-                            <p style="font-size: 15px; line-height: 1.7; color: #475569;" id="mision-p1"><strong>Misi&oacute;n:</strong> <cite>Proporcionar soluciones tecnol&oacute;gicas integrales a trav&eacute;s de la venta de equipos de c&oacute;mputo de alta calidad, impulsando el desarrollo educativo y profesional de nuestros usuarios.</cite></p>
-                            <p style="font-size: 15px; line-height: 1.7; color: #475569;" id="mision-p2"><strong>Visi&oacute;n:</strong> <em>Consolidarnos como la plataforma de comercio electr&oacute;nico l&iacute;der en el sector tecnol&oacute;gico nacional, reconocida por nuestra excelencia operativa y vanguardia en productos.</em></p>
+                            <p style="font-size: 15px; line-height: 1.7; color: #475569;" id="mision-p1"><strong>Misión:</strong> <cite>Proporcionar soluciones tecnológicas integrales a través de la venta de equipos de cómputo de alta calidad, impulsando el desarrollo educativo y profesional de nuestros usuarios.</cite></p>
+                            <p style="font-size: 15px; line-height: 1.7; color: #475569;" id="mision-p2"><strong>Visión:</strong> <em>Consolidarnos como la plataforma de comercio electrónico líder en el sector tecnológico nacional, reconocida por nuestra excelencia operativa y vanguardia en productos.</em></p>
                         </td>
                     </tr>
                 </table>
@@ -179,16 +203,16 @@
     <table width="100%" bgcolor="#0f172a" style="color:#94a3b8;" cellpadding="40" id="pie-desarrollo">
         <tr>
             <td width="33%" valign="top" style="font-size: 13px; line-height: 1.8;">
-                <font color="#38bdf8" size="3"><strong>ATENCI&Oacute;N AL CLIENTE</strong></font><br><br>
+                <font color="#38bdf8" size="3"><strong>ATENCIÓN AL CLIENTE</strong></font><br><br>
                 <a href="preguntas-frecuentes.html" style="color:#64748b; text-decoration:none;">Preguntas Frecuentes (FAQ)</a><br>
-                <a href="politicas.html" style="color:#64748b; text-decoration:none;">Garant&iacute;as de Hardware y Privacidad</a><br>
+                <a href="politicas.html" style="color:#64748b; text-decoration:none;">Garantías de Hardware y Privacidad</a><br>
                 <a href="mailto:ventas@techventa.com.mx" style="color:#38bdf8; text-decoration:none;">ventas@techventa.com.mx</a>
             </td>
             <td width="33%" align="center" valign="top" style="font-size: 13px;">
                 <br>
                 <a href="mapa_sitio.html" style="color:white; border: 1px solid #38bdf8; padding: 10px 22px; text-decoration:none; border-radius: 30px; font-weight: bold; font-size: 12px; letter-spacing: 0.5px;">MAPA DEL SITIO</a>
                 <br><br><br>
-                <p style="color:#475569; font-size: 11px;">&copy; 2026 TechVenta S.A. de C.V. <br> Plataforma Comercial de Pruebas Acad&eacute;micas</p>
+                <p style="color:#475569; font-size: 11px;">&copy; 2026 TechVenta S.A. de C.V. <br> Plataforma Comercial de Pruebas Académicas</p>
             </td>
             <td width="33%" align="right" valign="top" style="font-size: 13px;">
                 <font color="#38bdf8" size="3"><strong>NUESTRAS REDES v2.0</strong></font><br><br>
@@ -198,6 +222,204 @@
         </tr>
     </table>
 
-    <script type="text/javascript" src="interactivo.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            inicializarModoOscuro();
+            inicializarCarrito();
+        });
+
+        // 1. CONTROL DE MOTO OSCURO / CLARO OPTIMIZADO
+        function inicializarModoOscuro() {
+            const btnModo = document.getElementById("btn-modo-lectura");
+            if (!btnModo) return;
+
+            if (localStorage.getItem("modoOscuro") === "true") {
+                aplicarEstilosModoOscuro(true);
+            }
+
+            btnModo.addEventListener("click", function() {
+                const isDark = document.body.classList.contains("dark-mode-body");
+                aplicarEstilosModoOscuro(!isDark);
+            });
+        }
+
+        function aplicarEstilosModoOscuro(activar) {
+            const body = document.body;
+            const btnModo = document.getElementById("btn-modo-lectura");
+            const cabecera = document.getElementById("cabecera-principal");
+            const logoTexto = document.getElementById("logo-texto");
+            const logoSubtexto = document.getElementById("logo-subtexto");
+            const barraLateral = document.getElementById("barra-lateral");
+            const tituloCatalogo = document.getElementById("titulo-catalogo");
+            const seccionMision = document.getElementById("seccion-mision");
+            const tarjetas = document.querySelectorAll(".tarjeta-producto");
+            const titulosProductos = document.querySelectorAll(".tarjeta-producto h3");
+            const precioPro = document.querySelector(".precio-pro-texto");
+
+            if (activar) {
+                body.classList.add("dark-mode-body");
+                if (cabecera) cabecera.style.backgroundColor = "#1e293b";
+                if (logoTexto) logoTexto.innerHTML = '<strong style="color: #38bdf8;">Tech</strong>Venta';
+                if (logoSubtexto) logoSubtexto.color = "#64748b";
+                
+                if (barraLateral) {
+                    barraLateral.style.backgroundColor = "#1e293b";
+                    barraLateral.style.borderColor = "#334155";
+                }
+                if (seccionMision) seccionMision.style.backgroundColor = "#111827";
+                if (tituloCatalogo) tituloCatalogo.style.color = "#38bdf8";
+                if (precioPro) precioPro.color = "#ffffff";
+
+                tarjetas.forEach(t => t.classList.add("dark-mode-card"));
+                titulosProductos.forEach(h => h.style.color = "#f8fafc");
+
+                if (btnModo) {
+                    btnModo.textContent = " Modo Claro";
+                    btnModo.style.backgroundColor = "#f1f5f9";
+                    btnModo.style.color = "#0f172a";
+                }
+                localStorage.setItem("modoOscuro", "true");
+            } else {
+                body.classList.remove("dark-mode-body");
+                if (cabecera) cabecera.style.backgroundColor = "#FFFFFF";
+                if (logoTexto) logoTexto.innerHTML = '<strong style="color: #0056b3;">Tech</strong>Venta';
+                if (logoSubtexto) logoSubtexto.color = "#999999";
+                
+                if (barraLateral) {
+                    barraLateral.style.backgroundColor = "#F4F7F6";
+                    barraLateral.style.borderColor = "#e2e8f0";
+                }
+                if (seccionMision) seccionMision.style.backgroundColor = "#f8fafc";
+                if (tituloCatalogo) tituloCatalogo.style.color = "#0f172a";
+                if (precioPro) precioPro.color = "#0f172a";
+
+                tarjetas.forEach(t => t.classList.remove("dark-mode-card"));
+                titulosProductos.forEach(h => h.style.color = "#0f172a");
+
+                if (btnModo) {
+                    btnModo.textContent = " Modo Oscuro";
+                    btnModo.style.backgroundColor = "#34495e";
+                    btnModo.style.color = "white";
+                }
+                localStorage.setItem("modoOscuro", "false");
+            }
+        }
+
+        // 2. ORDENAMIENTO EN TIEMPO REAL DEL CONTENIDO
+        function ordenarProductosPorPrecio() {
+            const controlOrden = document.getElementById("control-orden");
+            const gridLaptops = document.getElementById("grid-laptops");
+            if (!controlOrden || !gridLaptops) return;
+
+            const seleccion = controlOrden.value;
+            if (seleccion === "DEF") return;
+
+            const filaDestino = gridLaptops.querySelector("tr");
+            if (!filaDestino) return;
+
+            const celdas = Array.from(filaDestino.children);
+
+            celdas.sort((a, b) => {
+                const tarjetaA = a.querySelector(".tarjeta-producto");
+                const tarjetaB = b.querySelector(".tarjeta-producto");
+                if (!tarjetaA || !tarjetaB) return 0;
+
+                const pA = parseFloat(tarjetaA.getAttribute("data-precio"));
+                const pB = parseFloat(tarjetaB.getAttribute("data-precio"));
+
+                return (seleccion === "MENOR") ? pA - pB : pB - pA;
+            });
+
+            filaDestino.innerHTML = "";
+            celdas.forEach(celda => filaDestino.appendChild(celda));
+        }
+
+        // 3. CAMBIO VISUAL DE COLORES DE EQUIPOS
+        function cambiarColorEquipo(idProducto, codigoHex, nombreColor) {
+            const img = document.getElementById(`img-${idProducto}`);
+            if (!img) return;
+
+            img.style.opacity = "0.3";
+            setTimeout(() => {
+                img.style.borderColor = codigoHex;
+                img.style.opacity = "1";
+                console.log(`Equipo [${idProducto}] mutado a espectro: ${nombreColor}`);
+            }, 150);
+        }
+
+        // 4. CARRITO DE COMPRAS PERSISTENTE
+        let totalItemsCarrito = 0;
+
+        function inicializarCarrito() {
+            const almacenado = localStorage.getItem("itemsCarrito");
+            if (almacenado) {
+                totalItemsCarrito = parseInt(almacenado, 10);
+                actualizarVisualCarrito();
+            }
+        }
+
+        function agregarAlCarritoExpress(nombreProducto) {
+            totalItemsCarrito++;
+            localStorage.setItem("itemsCarrito", totalItemsCarrito);
+            actualizarVisualCarrito();
+            alert(` ¡Producto añadido! "${nombreProducto}" se integró a la orden de compra.`);
+        }
+
+        function actualizarVisualCarrito() {
+            const visor = document.querySelector("#enlace-carrito span");
+            if (visor) visor.textContent = totalItemsCarrito;
+        }
+
+        // 5. SISTEMA LOGÍSTICO DE PRESUPUESTOS (COTIZACIÓN CON IVA TRASLADADO)
+        function calcularPresupuestoExpress() {
+            const radioRendimiento = document.querySelector('input[name="perf"]:checked');
+            const tarjetaStudent = document.getElementById("producto-student");
+            const tarjetaPro = document.getElementById("producto-pro");
+
+            const precioStudent = tarjetaStudent ? parseFloat(tarjetaStudent.getAttribute("data-precio")) : 8499;
+            const precioPro = tarjetaPro ? parseFloat(tarjetaPro.getAttribute("data-precio")) : 18900;
+
+            let subtotal = 0;
+            let desgloseTexto = "";
+
+            if (radioRendimiento) {
+                if (radioRendimiento.value === "basico") {
+                    subtotal = precioStudent;
+                    desgloseTexto = "Plan Seleccionado: Laptop Uni-Student 14\"";
+                } else {
+                    subtotal = precioPro;
+                    desgloseTexto = "Plan Seleccionado: Workstation Pro-Venta";
+                }
+            } else {
+                desgloseTexto = "Cálculo por Fabricantes Seleccionados:";
+                const checkboxes = document.querySelectorAll('.chk-fabricante:checked');
+                
+                checkboxes.forEach(chk => {
+                    if (chk.value === "student") subtotal += precioStudent;
+                    if (chk.value === "pro") subtotal += precioPro;
+                });
+
+                if (subtotal === 0) {
+                    alert(" Por favor, define un rendimiento o fabricante en el menú lateral para cotizar.");
+                    return;
+                }
+            }
+
+            const impuestoIVA = subtotal * 0.16;
+            const totalNeto = subtotal + impuestoIVA;
+            const format = (num) => new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(num);
+
+            alert(
+                ` --- COTIZACIÓN EXPRESS (CICLO FISCAL 2026) ---\n\n` +
+                `${desgloseTexto}\n` +
+                `-----------------------------------------\n` +
+                `Subtotal Neto: ${format(subtotal)}\n` +
+                `IVA Trasladado (16%): ${format(impuestoIVA)}\n` +
+                `-----------------------------------------\n` +
+                `Monto Total Estimado: ${format(totalNeto)} MXN\n\n` +
+                `* Precios calculados dinámicamente según inventario activo.`
+            );
+        }
+    </script>
 </body>
 </html>

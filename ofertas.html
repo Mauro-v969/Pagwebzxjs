@@ -2,11 +2,189 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ofertas Irresistibles | TechVenta</title>
     <link rel="stylesheet" href="estilos-home.css">
+
+    <style>
+        :root {
+            --danger: #e74c3c;
+            --danger-dark: #c0392b;
+            --success: #27ae60;
+            --dark: #1e293b;
+            --light-bg: #fff5f5;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: #334155;
+        }
+
+        /* Cabecera de Ofertas */
+        .top-header {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--danger);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            color: white;
+            padding: 5px 14px;
+            font-weight: bold;
+            font-size: 1.4rem;
+            border-radius: 6px;
+        }
+
+        .logo-text .brand {
+            font-size: 1.25rem;
+            font-weight: bold;
+            display: block;
+        }
+
+        .logo-text small {
+            color: #94a3b8;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-back-home {
+            background: transparent;
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            border: 2px solid var(--danger);
+            transition: var(--transition);
+        }
+
+        .btn-back-home:hover {
+            background: var(--danger);
+            color: white !important;
+        }
+
+        /* Panel del Temporizador */
+        .timer-banner {
+            background: #ffffff;
+            border: 2px solid var(--danger);
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(231, 76, 60, 0.05);
+        }
+
+        .timer-display {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--danger-dark);
+            letter-spacing: 1px;
+            margin-top: 5px;
+        }
+
+        /* Grid de Productos */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: var(--transition);
+            box-sizing: border-box;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        }
+
+        .discount-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            color: white;
+            padding: 5px 12px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: 160px;
+            object-fit: contain;
+        }
+
+        .product-card h3 {
+            margin: 15px 0 8px 0;
+            font-size: 1.25rem;
+        }
+
+        /* Botonera */
+        .btn-submit {
+            color: white;
+            border: none;
+            padding: 12px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            opacity: 0.9;
+        }
+
+        .btn-details {
+            background: #64748b;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-details:hover {
+            background: var(--dark);
+        }
+
+        .main-footer {
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
-<body style="background-color: #fff5f5;">
+<body>
 
     <noscript>
         <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
@@ -14,71 +192,140 @@
         </div>
     </noscript>
 
-    <header class="top-header" style="border-bottom-color: #e74c3c;">
+    <header class="top-header">
         <div class="logo-container">
-            <div class="logo-box" style="background: #e74c3c;">%</div>
+            <div class="logo-box" style="background: var(--danger);">%</div>
             <div class="logo-text">
-                <span class="brand" style="color: #e74c3c;">TechVenta</span>
+                <span class="brand" style="color: var(--danger);">TechVenta</span>
                 <small>ZONA DE DESCUENTOS</small>
             </div>
         </div>
         <nav>
-            <a href="index.html" class="btn-contact" style="border-color: #e74c3c; color: #e74c3c;">VOLVER AL INICIO</a>
+            <a href="index.html" class="btn-back-home" style="color: var(--danger);">VOLVER AL INICIO</a>
         </nav>
     </header>
 
     <main style="max-width: 1000px; margin: 40px auto; padding: 0 20px;">
         
-        <section style="text-align: center; margin-bottom: 50px;">
-            <h1 style="color: #c0392b; font-size: 3rem; text-transform: uppercase; letter-spacing: -1px;">&iexcl;Liquidaci&oacute;n Total 2026!</h1>
-            <p style="color: #666; font-size: 1.2rem;">Precios de locura por tiempo limitado. &iexcl;No dejes que te los ganen!</p>
+        <section style="text-align: center; margin-bottom: 35px;">
+            <h1 style="color: var(--danger-dark); font-size: 3rem; text-transform: uppercase; letter-spacing: -1px; margin-top: 0; margin-bottom: 10px;">&iexcl;Liquidaci&oacute;n Total 2026!</h1>
+            <p style="color: #64748b; font-size: 1.2rem; margin: 0;">Precios de locura por tiempo limitado. &iexcl;No dejes que te los ganen!</p>
+        </section>
+
+        <section class="timer-banner">
+            <span style="font-size: 0.9rem; text-transform: uppercase; font-weight: bold; color: #64748b; letter-spacing: 0.5px;">⏳ Las ofertas de esta sesión caducan en:</span>
+            <div id="countdown-clock" class="timer-display">00m : 00s</div>
         </section>
 
         <section class="product-grid">
             
-            <article class="product-card promo-card" style="border: 2px dashed #e74c3c; background: white;">
-                <div class="discount-tag">-35% Dto.</div>
-                <div class="img-container" style="padding: 20px;">
+            <article class="product-card" style="border: 2px dashed var(--danger); background: white;">
+                <div class="discount-tag" style="background: var(--danger);">-35% Dto.</div>
+                <div style="padding: 10px 0; text-align: center;">
                     <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400" alt="Tablet Pro">
                 </div>
-                <h3 style="color: #c0392b;">Tablet Pro 10"</h3>
-                <p style="color: #777; margin-bottom: 10px;">Pantalla Retina | 128GB | Incluye Stylus</p>
+                <h3 style="color: var(--danger-dark);">Tablet Pro 10"</h3>
+                <p style="color: #64748b; margin-bottom: 15px; font-size: 0.9rem;">Pantalla Retina | 128GB | Incluye Stylus Mec&aacute;nico</p>
                 
-                <div class="price-container" style="margin-bottom: 20px;">
-                    <span style="text-decoration: line-through; color: #999; font-size: 1.1rem;">$4,500.00</span><br>
-                    <span style="color: #e74c3c; font-size: 2.2rem; font-weight: 800;">$2,999.00</span>
+                <div style="margin-bottom: 20px;">
+                    <span style="text-decoration: line-through; color: #94a3b8; font-size: 1.1rem;">$4,500.00</span><br>
+                    <span style="color: var(--danger); font-size: 2.2rem; font-weight: 800;">$2,999.00</span>
                 </div>
 
-                <a href="carrito.html" style="text-decoration: none;">
-                    <button class="btn-submit" style="background: #e74c3c; width: 100%;">
-                        AGREGAR AL CARRITO
-                    </button>
-                </a>
-                <p style="margin-top: 15px; font-size: 0.8rem; color: #999;">*V&aacute;lido hasta agotar existencias.</p>
+                <button class="btn-submit" style="background: var(--danger); width: 100%;" onclick="agregarNotificacion('Tablet Pro 10');">
+                    AGREGAR AL CARRITO
+                </button>
+                <p style="margin-top: 15px; font-size: 0.8rem; color: #94a3b8; margin-bottom: 0;">*V&aacute;lido hasta agotar existencias.</p>
             </article>
 
             <article class="product-card" style="background: white;">
-                <div class="discount-tag" style="background: #27ae60;">NUEVO PRECIO</div>
-                <div class="img-container" style="padding: 20px;">
+                <div class="discount-tag" style="background: var(--success);">NUEVO PRECIO</div>
+                <div style="padding: 10px 0; text-align: center;">
                     <img src="https://images.unsplash.com/photo-1583573636246-18cb2246697f?w=400" alt="Smartphone X">
                 </div>
-                <h3>Smartphone Tech X</h3>
-                <p style="color: #777; margin-bottom: 10px;">C&aacute;mara 108MP | 5G | Bater&iacute;a 2 d&iacute;as</p>
-                <div class="price-container" style="margin-bottom: 20px;">
-                    <span style="text-decoration: line-through; color: #999; font-size: 1.1rem;">$12,400.00</span><br>
-                    <span style="color: #27ae60; font-size: 2.2rem; font-weight: 800;">$9,899.00</span>
+                <h3 style="color: var(--dark);">Smartphone Tech X</h3>
+                <p style="color: #64748b; margin-bottom: 15px; font-size: 0.9rem;">C&aacute;mara 108MP | Red 5G | Bater&iacute;a de larga duraci&oacute;n</p>
+                
+                <div style="margin-bottom: 20px;">
+                    <span style="text-decoration: line-through; color: #94a3b8; font-size: 1.1rem;">$12,400.00</span><br>
+                    <span style="color: var(--success); font-size: 2.2rem; font-weight: 800;">$9,899.00</span>
                 </div>
-                <button class="btn-details">VER DETALLES</button>
+                <button class="btn-details" onclick="agregarNotificacion('Smartphone Tech X');">AGREGAR AL CARRITO</button>
+                <p style="margin-top: 15px; font-size: 0.8rem; color: #94a3b8; margin-bottom: 0;">*Env&iacute;o gratuito a domicilio.</p>
             </article>
 
         </section>
 
+        <section style="background: white; border: 1px solid #e2e8f0; padding: 25px; border-radius: 12px; margin-bottom: 40px; text-align: center;">
+            <h3 style="color: var(--dark); margin-top: 0; margin-bottom: 8px; font-size: 1.25rem;">🎟️ &iquest;Tienes un cup&oacute;n corporativo?</h3>
+            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 15px;">Introduce tu c&oacute;digo para intentar desbloquear una rebaja adicional del 10% en tus compras.</p>
+            <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                <input type="text" id="txt-cupon-oferta" placeholder="Ej: TECH10" style="padding: 10px 15px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; text-transform: uppercase; outline: none; width: 180px;">
+                <button onclick="validarCuponDescuento();" class="btn-submit" style="background: var(--dark); padding: 10px 25px;">APLICAR</button>
+            </div>
+            <p id="lbl-status-cupon" style="margin-top: 12px; font-weight: bold; font-size: 0.9rem; display: none;"></p>
+        </section>
+
     </main>
 
-    <footer class="main-footer" style="background: #c0392b; margin-top: 60px;">
+    <footer class="main-footer" style="background: var(--danger-dark); margin-top: 60px;">
         <p>Promociones v&aacute;lidas para todo M&eacute;xico | TechVenta 2026</p>
     </footer>
 
-    <script type="text/javascript" src="interactivo.js"></script>
+    <script type="text/javascript">
+        // 1. Temporizador de 15 minutos de prueba para la sesión
+        let tiempoRestante Segundos = 15 * 60; 
+
+        function iniciarRelojRegresivo() {
+            const contenedorReloj = document.getElementById("countdown-clock");
+
+            const intervalo = setInterval(() => {
+                let minutos = Math.floor(tiempoRestanteSegundos / 60);
+                let segundos = tiempoRestanteSegundos % 60;
+
+                // Forzar formato de doble dígito visual (04m : 09s)
+                minutos = minutos < 10 ? "0" + minutos : minutos;
+                segundos = segundos < 10 ? "0" + segundos : segundos;
+
+                contenedorReloj.textContent = `${minutos}m : ${segundos}s`;
+
+                if (tiempoRestanteSegundos <= 0) {
+                    clearInterval(intervalo);
+                    contenedorReloj.textContent = "¡OFERTA EXPIRADA! Recarga la página.";
+                    contenedorReloj.style.color = "#7f1d1d";
+                }
+
+                tiempoRestanteSegundos--;
+            }, 1000);
+        }
+
+        // 2. Validación dinámica de Cupones
+        function validarCuponDescuento() {
+            const inputCupon = document.getElementById("txt-cupon-oferta").value.trim().toUpperCase();
+            const lblStatus = document.getElementById("lbl-status-cupon");
+
+            lblStatus.style.display = "block";
+
+            if (inputCupon === "TECH10") {
+                lblStatus.textContent = "✅ ¡Cupón Aplicado! Se descontará un 10% adicional al finalizar tu pedido en el carrito.";
+                lblStatus.style.color = var(--success);
+            } else if (inputCupon === "") {
+                lblStatus.textContent = "⚠️ Por favor, introduce un código de cupón primero.";
+                lblStatus.style.color = "#b45309";
+            } else {
+                lblStatus.textContent = "❌ Código de cupón inválido o caducado. Intenta de nuevo.";
+                lblStatus.style.color = "var(--danger)";
+            }
+        }
+
+        function agregarNotificacion(nombreProducto) {
+            alert(`🛒 ¡Éxito!\n\n"${nombreProducto}" ha sido agregado a tu carrito de compras con la tarifa de descuento aplicada.`);
+        }
+
+        // Ejecución al inicializar la ventana de navegación
+        document.addEventListener("DOMContentLoaded", function() {
+            iniciarRelojRegresivo();
+        });
+    </script>
 </body>
 </html>

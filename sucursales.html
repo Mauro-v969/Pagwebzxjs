@@ -2,54 +2,164 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sucursales | TechVenta</title>
-</head>
-<body bgcolor="#FFFFFF" style="font-family: Arial; margin:0;">
+    <link rel="stylesheet" href="estilos-home.css">
 
-    <!-- ========================================================================= -->
-    <!-- CRITERIO RÚBRICA: <noscript> en etiqueta <body> para protección del flujo -->
-    <!-- ========================================================================= -->
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-light: #34495e;
+            --success: #28a745;
+            --danger: #dc3545;
+            --light-bg: #f8fafc;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        /* Cabecera Corporativa de Respaldo */
+        .top-header-store {
+            background: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn-back {
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 13px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Contenedor de la Sucursal */
+        .store-container {
+            max-width: 650px;
+            margin: 40px auto;
+            padding: 30px;
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+
+        /* Indicador Dinámico de Horario */
+        .status-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            font-weight: bold;
+            font-size: 14px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .status-open {
+            background: #e8f5e9;
+            color: var(--success);
+            border: 1px solid rgba(40, 167, 69, 0.2);
+        }
+
+        .status-closed {
+            background: #ffebee;
+            color: var(--danger);
+            border: 1px solid rgba(220, 53, 69, 0.2);
+        }
+    </style>
+</head>
+<body>
+
     <noscript>
         <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
-            Atención: JavaScript está deshabilitado. La validación de horarios de apertura en tiempo real no estará disponible.
+            Atenci&oacute;n: JavaScript est&aacute; deshabilitado. La validaci&oacute;n de horarios de apertura en tiempo real no estar&aacute; disponible.
         </div>
     </noscript>
 
-    <table width="100%" bgcolor="#2c3e50" cellpadding="20" border="0">
-        <tr>
-            <td>
-                <font color="white" size="5">Nuestras Tiendas</font>
-            </td>
-            <td align="right">
-                <a href="index.html" style="color:white; text-decoration:none; border:1px solid white; padding:10px; font-family: Arial; font-weight: bold; border-radius: 4px;">
-                    VOLVER AL INICIO
-                </a>
-            </td>
-        </tr>
-    </table>
+    <header class="top-header-store">
+        <div style="color: white; font-size: 22px; font-weight: bold; letter-spacing: 0.5px;">Nuestras Tiendas</div>
+        <a href="index.html" class="btn-back">VOLVER AL INICIO</a>
+    </header>
 
-    <table width="80%" align="center" cellpadding="30" border="0">
-        <tr>
-            <td align="center">
-                <h3 style="color: #2c3e50; font-size: 24px;">CDMX - Centro Tecnológico</h3>
-                <p style="font-size: 18px; color: #555;">Av. Reforma No. 500, Ciudad de México.</p>
-                
-                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500" width="400" alt="Tienda TechVenta" style="border-radius:10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                
-                <p style="margin-top: 20px; font-weight: bold; color: #2c3e50;">Horario de Atención:</p>
-                <p>Lunes a Sábado: 9:00 AM - 8:00 PM</p>
-                <p>Domingos: 10:00 AM - 4:00 PM</p>
-                
-                <br>
-                <hr width="50%" color="#eeeeee">
-                <p><small>Para soporte técnico en sucursal, favor de agendar cita previa.</small></p>
-            </td>
-        </tr>
-    </table>
+    <main class="store-container">
+        
+        <h3 style="color: #2c3e50; font-size: 26px; margin-top: 0; margin-bottom: 5px;">CDMX - Centro Tecnol&oacute;gico</h3>
+        <p style="font-size: 16px; color: #64748b; margin-bottom: 25px;">Av. Reforma No. 500, Ciudad de M&eacute;xico.</p>
+        
+        <div id="tienda-status-badge" class="status-badge status-closed">
+            Cargando estado...
+        </div>
+        
+        <div style="margin: 15px 0 25px 0;">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=500" width="100%" style="max-width: 450px; border-radius:12px; box-shadow: 0 6px 15px rgba(0,0,0,0.08);" alt="Tienda TechVenta">
+        </div>
+        
+        <div style="background: #f8fafc; padding: 20px; border-radius: 12px; border: 1px solid #e2e8f0; display: inline-block; width: 85%; max-width: 400px;">
+            <p style="margin-top: 0; font-weight: bold; color: #2c3e50; font-size: 15px; letter-spacing: 0.5px;">HORARIO DE ATENCI&Oacute;N VIGENTE</p>
+            <p style="margin: 6px 0; font-size: 14px; color: #334155;"><b>Lunes a S&aacute;bado:</b> 9:00 AM - 8:00 PM</p>
+            <p style="margin: 6px 0; font-size: 14px; color: #334155;"><b>Domingos:</b> 10:00 AM - 4:00 PM</p>
+        </div>
+        
+        <br><br>
+        <hr width="40%" style="border: 0; border-top: 1px solid #e2e8f0; margin: 10px auto;">
+        <p style="margin-bottom: 0;"><small style="color: #94a3b8; font-size: 11px;">Para soporte t&eacute;cnico en sucursal, favor de agendar cita previa en la sección de contacto.</small></p>
 
-    <!-- ========================================================================= -->
-    <!-- CRITERIO RÚBRICA: Vinculación del JavaScript centralizado en archivo externo -->
-    <!-- ========================================================================= -->
-    <script type="text/javascript" src="interactivo.js"></script>
+    </main>
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            verificarHorarioSucursal();
+        });
+
+        function verificarHorarioSucursal() {
+            const fechaActual = new Date();
+            const diaSemana = fechaActual.getDay(); // 0 = Domingo, 1 = Lunes, ..., 6 = Sábado
+            const horaActual = fechaActual.getHours();
+            
+            const badge = document.getElementById("tienda-status-badge");
+            let abierta = false;
+
+            if (diaSemana === 0) {
+                // Domingo: Abierto de 10 AM a 4 PM (Hora 10 a 15 de corrido)
+                if (horaActual >= 10 && horaActual < 16) {
+                    abierta = true;
+                }
+            } else {
+                // Lunes a Sábado: Abierto de 9 AM a 8 PM (Hora 9 a 19 de corrido)
+                if (horaActual >= 9 && horaActual < 20) {
+                    abierta = true;
+                }
+            }
+
+            // Actualización dinámica de clases e interfaz visual
+            if (abierta) {
+                badge.textContent = "🟢 ¡Abierta Ahora! Visítanos";
+                badge.className = "status-badge status-open";
+            } else {
+                badge.textContent = "🔴 Cerrado por el momento";
+                badge.className = "status-badge status-closed";
+            }
+        }
+    </script>
 </body>
 </html>

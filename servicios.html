@@ -2,98 +2,342 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios Profesionales | TechVenta</title>
     <link rel="stylesheet" href="estilos-home.css">
-</head>
-<body style="background-color: #f8fafc;">
+    
+    <style>
+        :root {
+            --primary: #0056b3;
+            --dark: #0f172a;
+            --light-bg: #f8fafc;
+            --transition: all 0.3s ease;
+        }
 
-    <!-- ========================================================================= -->
-    <!-- CRITERIO RÚBRICA: <noscript> en etiqueta <body> para protección del flujo -->
-    <!-- ========================================================================= -->
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: #334155;
+        }
+
+        /* Cabecera Estilizada */
+        .top-header {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            font-size: 1.8rem;
+        }
+
+        .logo-text .brand {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+
+        .logo-text small {
+            color: #94a3b8;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-contact {
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .btn-contact:hover {
+            background: #004085;
+        }
+
+        /* Grid de Servicios Responsivo */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: var(--primary);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin: 0 0 10px 0;
+            color: var(--dark);
+            font-size: 1.3rem;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            height: 70px;
+        }
+
+        .service-tag {
+            display: inline-block;
+            background: #f0f7ff;
+            color: var(--primary);
+            font-weight: bold;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Estilos del Cotizador */
+        .calc-box {
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            padding: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .calc-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: var(--transition);
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .calc-option:hover {
+            background: #f8fafc;
+        }
+
+        .calc-option input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .btn-action-calc {
+            background: #0f172a;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-action-calc:hover {
+            background: var(--primary);
+        }
+
+        .main-footer {
+            background: var(--dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.85rem;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
     <noscript>
         <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
-            Atención: El catálogo de soluciones técnicas requiere JavaScript para procesar los cálculos de tarifas vigentes.
+            Atenci&oacute;n: El cat&aacute;logo de soluciones t&eacute;cnicas requiere JavaScript para procesar los c&aacute;lculos de tarifas vigentes.
         </div>
     </noscript>
 
-    <!-- Header Corporativo -->
     <header class="top-header">
         <div class="logo-container">
-            <div class="logo-box">🛠️</div>
+            <div class="logo-box">&#128736;&#65039;</div>
             <div class="logo-text">
                 <span class="brand">TechVenta</span>
-                <small>DIVISIÓN TÉCNICA</small>
+                <small>DIVISI&Oacute;N T&Eacute;CNICA</small>
             </div>
         </div>
         <nav>
-            <a href="index.html" class="btn-contact">← VOLVER AL INICIO</a>
+            <a href="index.html" class="btn-contact">&larr; VOLVER AL INICIO</a>
         </nav>
     </header>
 
     <main style="max-width: 1100px; margin: 50px auto; padding: 0 20px;">
         
         <section style="text-align: center; margin-bottom: 60px;">
-            <h1 style="color: var(--dark); font-size: 2.8rem; margin-bottom: 15px;">Soluciones Técnicas Especializadas</h1>
+            <h1 style="color: #0f172a; font-size: 2.8rem; margin-bottom: 15px; margin-top: 0;">Soluciones T&eacute;cnicas Especializadas</h1>
             <p style="color: #64748b; font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
-                Contamos con ingenieros certificados para garantizar que tu inversión tecnológica siempre funcione al 100%.
+                Contamos con ingenieros certificados para garantizar que tu inversi&oacute;n tecnol&oacute;gica siempre funcione al 100%.
             </p>
         </section>
 
-        <!-- Banner Principal de Servicios -->
-        <section style="position: relative; margin-bottom: 50px; border-radius: 20px; overflow: hidden; height: 350px;">
-            <img src="https://images.unsplash.com/photo-1597733336794-12d05021d510?w=1200" alt="Soporte Técnico" style="width:100%; height:100%; object-fit:cover;">
+        <section style="position: relative; margin-bottom: 50px; border-radius: 20px; overflow: hidden; height: 350px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);">
+            <img src="https://images.unsplash.com/photo-1597733336794-12d05021d510?w=1200" alt="Soporte T&eacute;cnico" style="width:100%; height:100%; object-fit:cover;">
             <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.8)); padding: 40px; color: white;">
-                <h2 style="font-size: 2rem;">Soporte Nivel Experto</h2>
-                <p>Diagnóstico preciso y reparaciones con piezas originales.</p>
+                <h2 style="font-size: 2rem; margin: 0 0 10px 0;">Soporte Nivel Experto</h2>
+                <p style="margin: 0; opacity: 0.9;">Diagn&oacute;stico preciso y reparaciones con piezas originales de f&aacute;brica.</p>
             </div>
         </section>
 
-        <!-- Grid de Tarjetas de Servicio -->
         <section class="services-grid">
             
             <article class="service-card">
-                <div class="service-icon">🖥️</div>
+                <div class="service-icon">&#128421;&#65039;</div>
                 <h3>Ensamble Profesional</h3>
-                <p>Armado de PC Gamer y Workstations de alto rendimiento con gestión de cables optimizada.</p>
-                <span class="service-tag">Desde $899</span>
+                <p>Armado de PC Gamer y Workstations de alto rendimiento con gesti&oacute;n de cables optimizada.</p>
+                <span class="service-tag">Desde $899 MXN</span>
             </article>
 
             <article class="service-card">
-                <div class="service-icon">🧼</div>
+                <div class="service-icon">&#129524;</div>
                 <h3>Mantenimiento Preventivo</h3>
-                <!-- SE CORRIGIÓ "components" A "componentes" -->
-                <p>Limpieza profunda de componentes y cambio de pasta térmica de alto rendimiento.</p>
-                <span class="service-tag">Desde $450</span>
+                <p>Limpieza profunda de componentes y cambio de pasta t&eacute;rmica de alto rendimiento.</p>
+                <span class="service-tag">Desde $450 MXN</span>
             </article>
 
             <article class="service-card">
-                <div class="service-icon">🌐</div>
+                <div class="service-icon">&#127104;</div>
                 <h3>Redes y Conectividad</h3>
-                <p>Configuración de WiFi empresarial, cableado estructurado y seguridad perimetral.</p>
-                <span class="service-tag">Cotización Libre</span>
+                <p>Configuraci&oacute;n de WiFi empresarial, cableado estructurado y seguridad perimetral.</p>
+                <span class="service-tag">Cotizaci&oacute;n Libre</span>
             </article>
 
         </section>
 
-        <!-- Enlace al Mapa del Sitio para Navegación -->
+        <section style="margin-top: 60px; margin-bottom: 60px;">
+            <div class="calc-box">
+                <h2 style="color: #0f172a; margin-top: 0; margin-bottom: 10px; text-align: center; font-size: 1.6rem;">🧮 Cotizador Exclusivo de Soluciones</h2>
+                <p style="color: #64748b; text-align: center; font-size: 0.95rem; margin-bottom: 25px;">Selecciona los servicios que necesitas para estimar tu presupuesto base de inmediato.</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <label class="calc-option">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <input type="checkbox" class="chk-servicio" data-precio="899" onchange="calcularTarifaTotal();">
+                            <span>Ensamble a Medida de Hardware</span>
+                        </div>
+                        <strong style="color: #0f172a;">$899.00</strong>
+                    </label>
+
+                    <label class="calc-option">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <input type="checkbox" class="chk-servicio" data-precio="450" onchange="calcularTarifaTotal();">
+                            <span>Mantenimiento Preventivo F&iacute;sico</span>
+                        </div>
+                        <strong style="color: #0f172a;">$450.00</strong>
+                    </label>
+
+                    <label class="calc-option">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <input type="checkbox" class="chk-servicio" data-precio="650" onchange="calcularTarifaTotal();">
+                            <span>Optimizaci&oacute;n de Software y Sistema Operativo</span>
+                        </div>
+                        <strong style="color: #0f172a;">$650.00</strong>
+                    </label>
+                </div>
+
+                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 25px 0;">
+
+                <div style="display: flex; justify-between; align-items: center; justify-content: space-between;">
+                    <div>
+                        <span style="font-size: 0.85rem; color: #64748b; display: block; font-weight: bold; uppercase; letter-spacing: 0.5px;">ESTIMADO TOTAL VIGENTE</span>
+                        <span style="font-size: 1.8rem; font-weight: bold; color: #10b981;" id="lbl-total-tarifa">$0.00 MXN</span>
+                    </div>
+                    <button onclick="solicitarServiciosSeleccionados();" class="btn-action-calc">SOLICITAR SOPORTE</button>
+                </div>
+            </div>
+        </section>
+
         <footer style="text-align: center; margin-top: 60px; padding: 30px; border-top: 1px solid #e2e8f0;">
-            <p style="color: #64748b; margin-bottom: 10px;">¿Buscas algo más específico?</p>
-            <a href="mapa_sitio.html" style="color: var(--primary); font-weight: bold; text-decoration: none; border-bottom: 2px solid var(--primary);">
-                Explorar todas las categorías en el Mapa del Sitio
+            <p style="color: #64748b; margin-bottom: 10px;">&iquest;Buscas algo m&aacute;s espec&iacute;fico?</p>
+            <a href="mapa_sitio.html" style="color: #0056b3; font-weight: bold; text-decoration: none; border-bottom: 2px solid #0056b3;">
+                Explorar todas las categor&iacute;as en el Mapa del Sitio
             </a>
         </footer>
 
     </main>
 
     <footer class="main-footer">
-        <!-- SE CORRIGIÓ "in IT" A "en TI" -->
         <p>&copy; 2026 TechVenta S.A. de C.V. | Excelencia en TI</p>
     </footer>
 
-    <!-- ========================================================================= -->
-    <!-- CRITERIO RÚBRICA: Vinculación del JavaScript centralizado en archivo externo -->
-    <!-- ========================================================================= -->
-    <script type="text/javascript" src="interactivo.js"></script>
+    <script type="text/javascript">
+        function calcularTarifaTotal() {
+            const checkboxes = document.querySelectorAll('.chk-servicio');
+            let total = 0;
+            let seleccionados = 0;
+
+            checkboxes.forEach(chk => {
+                if (chk.checked) {
+                    total += parseFloat(chk.getAttribute('data-precio'));
+                    seleccionados++;
+                }
+            });
+
+            // Regla inteligente: Si elige los 3 servicios obtiene un 10% de descuento automático
+            if (seleccionados === 3) {
+                total = total * 0.90;
+                document.getElementById('lbl-total-tarifa').innerHTML = `$${total.toFixed(2)} MXN <small style="color:#f59e0b; font-size:12px; block;">¡10% Descuento Aplicado!</small>`;
+            } else {
+                document.getElementById('lbl-total-tarifa').textContent = `$${total.toFixed(2)} MXN`;
+            }
+        }
+
+        function solicitarServiciosSeleccionados() {
+            const checkboxes = document.querySelectorAll('.chk-servicio');
+            let contador = 0;
+
+            checkboxes.forEach(chk => {
+                if (chk.checked) contador++;
+            });
+
+            if (contador === 0) {
+                alert("Por favor, selecciona al menos una solución técnica para generar tu orden de soporte.");
+            } else {
+                alert("¡Tu solicitud ha sido registrada con éxito!\n\nUn ingeniero asignado se comunicará contigo en los próximos 30 minutos para agendar tu servicio técnico.");
+            }
+        }
+    </script>
 </body>
 </html>

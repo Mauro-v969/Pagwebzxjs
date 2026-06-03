@@ -3,14 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cat&aacute;logo de Laptops | TechVenta</title>
+    <title>Catálogo de Laptops | TechVenta</title>
     <link rel="stylesheet" href="estilos-home.css">
+    <style>
+        /* Estilos complementarios para la barra de filtrado interactivo */
+        .filter-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .filter-container input[type="range"] {
+            width: 100%;
+            max-width: 300px;
+            margin: 0 15px;
+            vertical-align: middle;
+        }
+        .filter-container span {
+            font-weight: bold;
+            color: var(--primary, #3498db);
+        }
+    </style>
 </head>
 <body style="background-color: #f8fafc;">
 
     <noscript>
         <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
-            Atenci&oacute;n: El cat&aacute;logo interactivo y los filtros de precios din&aacute;micos requieren JavaScript activo para procesar las cotizaciones.
+            Atención: El catálogo interactivo y los filtros de precios dinámicos requieren JavaScript activo para procesar las cotizaciones.
         </div>
     </noscript>
 
@@ -19,69 +40,75 @@
             <div class="logo-box"></div>
             <div class="logo-text">
                 <span class="brand">TechVenta</span>
-                <small>SECCI&Oacute;N LAPTOPS</small>
+                <small>SECCIÓN LAPTOPS</small>
             </div>
         </div>
         <nav style="display: flex; gap: 10px; align-items: center;">
             <a href="index.html" class="btn-contact" style="background: var(--dark);">INICIO</a>
-            <a href="carrito.html" class="btn-contact" style="background: var(--primary); color: white; border: none;">MI CARRITO (1)</a>
+            <a href="carrito.html" id="cart-btn" class="btn-contact" style="background: var(--primary); color: white; border: none;">MI CARRITO (1)</a>
         </nav>
     </header>
 
     <main style="max-width: 1200px; margin: 40px auto; padding: 0 20px;">
         
-        <section style="text-align: center; margin-bottom: 50px;">
-            <h1 style="color: var(--dark); font-size: 2.8rem; margin-bottom: 10px;">Cat&aacute;logo de Equipos Port&aacute;tiles</h1>
+        <section style="text-align: center; margin-bottom: 40px;">
+            <h1 style="color: var(--dark); font-size: 2.8rem; margin-bottom: 10px;">Catálogo de Equipos Portátiles</h1>
             <p style="color: #64748b; font-size: 1.2rem;">Encuentra la potencia ideal para tus estudios o proyectos profesionales.</p>
             <hr style="width: 60px; border: 2px solid var(--primary); margin: 20px auto;">
         </section>
 
-        <div class="product-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+        <div class="filter-container">
+            <label for="price-range" style="color: #475569; font-weight: 500;">Presupuesto Máximo:</label>
+            <input type="range" id="price-range" min="4000" max="40000" step="500" value="40000">
+            <span id="price-display">$40,000.00</span>
+        </div>
+
+        <div class="product-grid" id="catalog-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
             
-            <article class="product-card card">
+            <article class="product-card card" data-price="8499">
                 <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400" alt="Laptop Student" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
                 <h3 style="margin: 15px 0 5px 0;">Uni-Student Slim 14"</h3>
                 <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 10px;">Intel Core i3 | 8GB RAM | 256GB SSD</p>
                 <p class="price" style="font-weight: bold; color: var(--primary); font-size: 1.3rem; margin-bottom: 15px;">$8,499.00</p>
-                <a href="detalle-laptop.html" class="btn-contact" style="display: block; text-align: center; background: var(--secondary);">VER FICHA</a>
+                <a href="#" class="btn-contact add-to-cart-mock" style="display: block; text-align: center; background: var(--secondary);">VER FICHA</a>
             </article>
 
-            <article class="product-card card">
+            <article class="product-card card" data-price="18200">
                 <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400" alt="Gaming Laptop" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
                 <h3 style="margin: 15px 0 5px 0;">TechPro Gaming G5</h3>
                 <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 10px;">Ryzen 7 | 16GB RAM | RTX 3060</p>
                 <p class="price" style="font-weight: bold; color: var(--primary); font-size: 1.3rem; margin-bottom: 15px;">$18,200.00</p>
-                <a href="detalle-laptop.html" class="btn-contact" style="display: block; text-align: center; background: var(--secondary);">VER FICHA</a>
+                <a href="#" class="btn-contact add-to-cart-mock" style="display: block; text-align: center; background: var(--secondary);">VER FICHA</a>
             </article>
 
-            <article class="product-card card">
+            <article class="product-card card" data-price="22500">
                 <img src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=400" alt="EliteBook" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
                 <h3 style="margin: 15px 0 5px 0;">EliteBook Ultra 13"</h3>
                 <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 10px;">Intel Core i7 | 16GB RAM | 512GB SSD</p>
                 <p class="price" style="font-weight: bold; color: var(--primary); font-size: 1.3rem; margin-bottom: 15px;">$22,500.00</p>
-                <a href="detalle-laptop.html" class="btn-contact" style="display: block; text-align: center; background: var(--secondary);">VER FICHA</a>
+                <a href="#" class="btn-contact add-to-cart-mock" style="display: block; text-align: center; background: var(--secondary);">VER FICHA</a>
             </article>
 
-            <article class="product-card card">
+            <article class="product-card card" data-price="4899">
                 <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400" alt="Eco Laptop" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
                 <h3 style="margin: 15px 0 5px 0;">Eco-Compute Air</h3>
                 <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 10px;">Celeron N4020 | 4GB RAM | 128GB</p>
                 <p class="price" style="font-weight: bold; color: var(--primary); font-size: 1.3rem; margin-bottom: 15px;">$4,899.00</p>
-                <a href="detalle-laptop.html" class="btn-contact" style="display: block; text-align: center; background: var(--secondary);">VER FICHA</a>
+                <a href="#" class="btn-contact add-to-cart-mock" style="display: block; text-align: center; background: var(--secondary);">VER FICHA</a>
             </article>
 
-            <article class="product-card card">
+            <article class="product-card card" data-price="35900">
                 <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=400" alt="Workstation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
                 <h3 style="margin: 15px 0 5px 0;">Precision WorkStation 16"</h3>
                 <p style="font-size: 0.85rem; color: #64748b; margin-bottom: 10px;">Core i9 | 32GB RAM | 1TB SSD</p>
                 <p class="price" style="font-weight: bold; color: var(--primary); font-size: 1.3rem; margin-bottom: 15px;">$35,900.00</p>
-                <a href="detalle-laptop.html" class="btn-contact" style="display: block; text-align: center; background: var(--secondary);">VER FICHA</a>
+                <a href="#" class="btn-contact add-to-cart-mock" style="display: block; text-align: center; background: var(--secondary);">VER FICHA</a>
             </article>
 
-            <article class="card" style="border: 2px dashed var(--primary); background: #f0f7ff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
-                <div style="font-size: 3rem; margin-bottom: 15px;"></div>
-                <h3 style="color: var(--primary); margin-bottom: 10px;">&iquest;No sabes cu&aacute;l elegir?</h3>
-                <p style="color: #475569; margin-bottom: 20px; font-size: 0.9rem;">Contacta a nuestros asesores t&eacute;cnicos para una recomendaci&oacute;n personalizada.</p>
+            <article class="card static-card" style="border: 2px dashed var(--primary); background: #f0f7ff; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px;">
+                <div style="font-size: 3rem; margin-bottom: 15px;">💬</div>
+                <h3 style="color: var(--primary); margin-bottom: 10px;">¿No sabes cuál elegir?</h3>
+                <p style="color: #475569; margin-bottom: 20px; font-size: 0.9rem;">Contacta a nuestros asesores técnicos para una recomendación personalizada.</p>
                 <a href="contacto.html" class="btn-contact" style="text-decoration: none; padding: 12px 30px; display: inline-block;">CHAT EN VIVO</a>
             </article>
 
@@ -89,10 +116,53 @@
     </main>
 
     <footer class="main-footer" style="margin-top: 60px;">
-        <p>TechVenta S.A. de C.V. - Cat&aacute;logo Actualizado Mayo 2026</p>
+        <p>TechVenta S.A. de C.V. - Catálogo Actualizado Mayo 2026</p>
         <p style="margin-top: 10px;"><a href="mapa_sitio.html" style="color: #cbd5e1; font-size: 0.9rem; text-decoration: none;">Volver al Mapa del Sitio</a></p>
     </footer>
 
-    <script type="text/javascript" src="interactivo.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+            const priceSlider = document.getElementById('price-range');
+            const priceDisplay = document.getElementById('price-display');
+            const productCards = document.querySelectorAll('.product-card');
+            const cartBtn = document.getElementById('cart-btn');
+            let cartCount = 1; // Contador inicial
+
+            // 1. Filtrado dinámico por precio en tiempo real
+            priceSlider.addEventListener('input', (e) => {
+                const maxPrice = parseInt(e.target.value);
+                
+                // Formatear el texto indicador a moneda local
+                priceDisplay.textContent = `$${maxPrice.toLocaleString('es-MX', { minimumFractionDigits: 2 })}`;
+
+                productCards.forEach(card => {
+                    const cardPrice = parseInt(card.getAttribute('data-price'));
+                    if (cardPrice <= maxPrice) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+
+            // 2. Comportamiento interactivo al interactuar con las fichas (Añadir al Carrito simulado)
+            const actionButtons = document.querySelectorAll('.add-to-cart-mock');
+            actionButtons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    cartCount++;
+                    cartBtn.textContent = `MI CARRITO (${cartCount})`;
+                    
+                    // Efecto visual sutil de confirmación
+                    btn.style.background = '#2ecc71';
+                    btn.textContent = '¡AGREGADO!';
+                    setTimeout(() => {
+                        btn.style.background = 'var(--secondary)';
+                        btn.textContent = 'VER FICHA';
+                    }, 1000);
+                });
+            });
+        });
+    </script>
 </body>
 </html>

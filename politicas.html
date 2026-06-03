@@ -2,43 +2,208 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legal | TechVenta</title>
+    <link rel="stylesheet" href="estilos-home.css">
+
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --light-bg: #ecf0f1;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: #333333;
+        }
+
+        /* Cabecera Corporativa de Respaldo */
+        .top-header-legal {
+            background: var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .btn-back {
+            color: white;
+            text-decoration: none;
+            border: 1px solid white;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 13px;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .btn-back:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Contenedores Principales */
+        .legal-container {
+            max-width: 750px;
+            margin: 40px auto;
+            padding: 40px;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #dcdde1;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+        }
+
+        /* Panel de Herramienta Interactiva */
+        .checker-box {
+            background: #f8fafc;
+            border: 1px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .input-date {
+            padding: 10px 15px;
+            font-size: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            outline: none;
+            margin-right: 10px;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn-check {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 11px 22px;
+            font-size: 0.95rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-check:hover {
+            background: var(--primary-dark);
+        }
+
+        .result-message {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 1rem;
+            padding: 10px;
+            border-radius: 6px;
+            display: none;
+        }
+    </style>
 </head>
-<body bgcolor="#ecf0f1" style="font-family: Arial, sans-serif; margin:0; padding:0;">
+<body>
 
     <noscript>
         <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
-            Atención: El validador temporal de vigencia de pólizas requiere JavaScript activo para contrastar la fecha de tu equipo.
+            Atenci&oacute;n: El validador temporal de vigencia de p&oacute;lizas requiere JavaScript activo para contrastar la fecha de tu equipo.
         </div>
     </noscript>
 
-    <table width="100%" bgcolor="#2c3e50" cellpadding="15" border="0">
-        <tr>
-            <td>
-                <font color="white" size="4"><strong>Tech</strong>Venta | Centro Legal</font>
-            </td>
-            <td align="right">
-                <a href="index.html" style="color:white; text-decoration:none; border:1px solid white; padding:10px; font-weight: bold; border-radius: 4px;">
-                    VOLVER AL INICIO
-                </a>
-            </td>
-        </tr>
-    </table>
+    <header class="top-header-legal">
+        <div style="color: white; font-size: 20px; font-weight: bold;">
+            <strong>Tech</strong>Venta <span style="font-weight: normal; opacity: 0.8;">| Centro Legal</span>
+        </div>
+        <a href="index.html" class="btn-back">VOLVER AL INICIO</a>
+    </header>
 
-    <table width="80%" align="center" bgcolor="white" cellpadding="40" style="margin-top:30px; margin-bottom:30px; border:1px solid #ccc; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-        <tr>
-            <td>
-                <h2 align="center" style="color: #2c3e50;">Políticas de Garantía</h2>
-                <hr color="#eeeeee">
-                <br>
-                <div style="line-height: 1.8; color: #444;">
-                    <p><strong>1. Periodo de Cobertura:</strong> Todos los productos de hardware tienen 12 meses de garantía contra defectos de fábrica.</p>
-                    <p><strong>2. Restricciones:</strong> La garantía no cubre daños por software malicioso, variaciones de voltaje ni manipulación física externa no autorizada.</p>
-                </div>
-            </td>
-        </tr>
-    </table>
+    <main class="legal-container">
+        
+        <section class="checker-box">
+            <h3 style="color: var(--primary); margin-top: 0; margin-bottom: 10px; font-size: 1.3rem;">📋 Verificador de P&oacute;liza de Garant&iacute;a</h3>
+            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 20px;">Ingresa la fecha en la que realizaste tu compra para validar tu estado de cobertura actual.</p>
+            
+            <div style="display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 10px;">
+                <input type="date" id="txt-fecha-compra" class="input-date">
+                <button onclick="evaluarVigenciaGarantia();" class="btn-check">COMPROBAR ESTADO</button>
+            </div>
+            
+            <div id="wrapper-resultado-legal" class="result-message"></div>
+        </section>
 
-    <script type="text/javascript" src="interactivo.js"></script>
+        <section>
+            <h2 style="color: #2c3e50; text-align: center; font-size: 1.8rem; margin-top: 0; margin-bottom: 15px;">Pol&iacute;ticas de Garant&iacute;a</h2>
+            <hr style="border: 0; border-top: 1px solid #eeeeee; margin-bottom: 25px;">
+            
+            <div style="line-height: 1.8; color: #444444; font-size: 1rem;">
+                <p><strong>1. Periodo de Cobertura Base:</strong> Todos los productos de hardware comercializados de forma directa por nuestra empresa cuentan con un periodo est&aacute;ndar de 12 meses (1 a&ntilde;o) de garant&iacute;a contra defectos de fabricaci&oacute;n o vicios ocultos del material.</p>
+                
+                <p><strong>2. Restricciones y Exclusiones:</strong> La garant&iacute;a quedar&aacute; autom&aacute;ticamente invalidada ante las siguientes situaciones:</p>
+                <ul style="padding-left: 20px; margin-bottom: 20px;">
+                    <li>Infecciones o da&ntilde;os provocados por software malicioso o sistemas operativos modificados.</li>
+                    <li>Afectaciones f&iacute;sicas derivadas de variaciones abruptas de voltaje o falta de regulador.</li>
+                    <li>Manipulaci&oacute;n f&iacute;sica interna, apertura de sellos o reparaciones por personal no autorizado por TechVenta.</li>
+                </ul>
+                
+                <p><strong>3. Mecanismo de Reclamaci&oacute;n:</strong> Para hacer v&aacute;lida esta p&oacute;liza, el usuario deber&aacute; presentar su proforma de compra impresa o digital junto con el equipo completo en cualquiera de nuestras sucursales oficiales.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer style="background: var(--primary); color: #bdc3c7; text-align: center; padding: 20px; font-size: 13px;">
+        <p>&copy; 2026 TechVenta S.A. de C.V. | Todos los derechos reservados bajo regulaci&oacute;n federal mexicana.</p>
+    </footer>
+
+    <script type="text/javascript">
+        function evaluarVigenciaGarantia() {
+            const inputFecha = document.getElementById("txt-fecha-compra").value;
+            const cajaResultado = document.getElementById("wrapper-resultado-legal");
+
+            if (!inputFecha) {
+                alert("Por favor, selecciona una fecha válida del calendario para procesar la validación.");
+                return;
+            }
+
+            // Convertir fechas a milisegundos
+            const fechaCompra = new Date(inputFecha);
+            const fechaActual = new Date();
+
+            // Calcular diferencia exacta de tiempo en meses aproximados
+            const diferenciaTiempo = fechaActual - fechaCompra;
+            const diasTranscurridos = diferenciaTiempo / (1000 * 60 * 60 * 24);
+
+            cajaResultado.style.display = "block";
+
+            if (diasTranscurridos < 0) {
+                cajaResultado.textContent = "⚠️ La fecha seleccionada es del futuro. Verifica tus datos.";
+                cajaResultado.style.backgroundColor = "#fff3cd";
+                cajaResultado.style.color = "#856404";
+            } else if (diasTranscurridos <= 300) {
+                // Menos de 10 meses: Garantía totalmente vigente y segura (Verde)
+                cajaResultado.textContent = "🟢 Tu garantía está VIGENTE. Cuentas con soporte técnico total de fábrica.";
+                cajaResultado.style.backgroundColor = "#d4edda";
+                cajaResultado.style.color = "#155724";
+            } else if (diasTranscurridos <= 365) {
+                // Entre 10 y 12 meses: Próxima a vencer (Naranja)
+                cajaResultado.textContent = "🟡 Póliza activa, pero PRÓXIMA A EXPIRAR. Te quedan menos de 60 días de cobertura.";
+                cajaResultado.style.backgroundColor = "#fff3cd";
+                cajaResultado.style.color = "#856404";
+            } else {
+                // Más de 12 meses: Garantía vencida (Rojo)
+                cajaResultado.textContent = "🔴 Póliza EXPIRADA. Tus 12 meses de cobertura de fábrica han concluido.";
+                cajaResultado.style.backgroundColor = "#f8d7da";
+                cajaResultado.style.color = "#721c24";
+            }
+        }
+    </script>
 </body>
 </html>

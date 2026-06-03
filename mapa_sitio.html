@@ -2,15 +2,141 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa del Sitio | TechVenta</title>
     <link rel="stylesheet" href="estilos-home.css">
+    
     <style>
-        /* Estilos específicos para la interactividad del mapa */
+        :root {
+            --primary: #0056b3;
+            --dark: #0f172a;
+            --light-bg: #f8fafc;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: #334155;
+        }
+
+        /* Header Corporativo de Respaldo */
+        .top-header {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            font-size: 1.6rem;
+        }
+
+        .logo-text .brand {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+
+        .logo-text small {
+            color: #94a3b8;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-back-home {
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .btn-back-home:hover {
+            background: #004085;
+        }
+
+        /* Barra de búsqueda interactiva */
+        .search-wrapper {
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 14px 20px 14px 45px;
+            font-size: 1rem;
+            border: 2px solid #cbd5e1;
+            border-radius: 50px;
+            outline: none;
+            transition: var(--transition);
+            box-sizing: border-box;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1rem;
+            color: #94a3b8;
+        }
+
+        /* Estructura Estilizada del Mapa */
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .map-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.01), 0 2px 4px -1px rgba(0,0,0,0.01);
+            border: 1px solid #e2e8f0;
+            transition: var(--transition);
+        }
+
+        .map-section h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+            font-size: 1.15rem;
+            letter-spacing: 0.5px;
+        }
+
         .map-section ul {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
+
         .map-link {
             display: flex;
             align-items: center;
@@ -21,34 +147,46 @@
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 8px;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             font-weight: 500;
+            font-size: 0.95rem;
         }
+
         .map-link:hover {
             background: var(--primary);
-            color: white;
-            transform: translateX(10px);
+            color: white !important;
+            transform: translateX(8px);
             border-color: var(--primary);
         }
+
         .map-link::before {
             content: '➔';
-            margin-right: 10px;
+            margin-right: 12px;
             font-size: 0.8rem;
             opacity: 0.6;
         }
+
+        .main-footer {
+            background: var(--dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.85rem;
+            margin-top: 60px;
+        }
     </style>
 </head>
-<body style="background-color: #f8fafc;">
+<body>
 
     <noscript>
         <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
-            El Mapa del Sitio requiere la activación de scripts externos para realizar las métricas de navegación.
+            El Mapa del Sitio requiere la activaci&oacute;n de scripts para realizar el filtrado predictivo de secciones en tiempo real.
         </div>
     </noscript>
 
     <header class="top-header">
         <div class="logo-container">
-            <div class="logo-box">🌐</div>
+            <div class="logo-box">&#127104;</div>
             <div class="logo-text">
                 <span class="brand">TechVenta</span>
                 <small>MAPA DEL SITIO OFICIAL</small>
@@ -61,40 +199,45 @@
 
     <main class="container" style="max-width: 1100px; margin: 50px auto; padding: 0 20px;">
         
-        <section style="text-align: center; margin-bottom: 50px;">
-            <h1 style="color: var(--dark); font-size: 2.5rem; margin-bottom: 10px;">Mapa Estructural del Sitio</h1>
-            <p style="color: #64748b;">Navega rápidamente por todas nuestras secciones operativas</p>
-            <hr style="width: 50px; border: 2px solid var(--primary); margin: 20px auto;">
+        <section style="text-align: center; margin-bottom: 40px;">
+            <h1 style="color: #0f172a; font-size: 2.5rem; margin-top: 0; margin-bottom: 10px;">Mapa Estructural del Sitio</h1>
+            <p style="color: #64748b; margin-bottom: 0;">Navega r&aacute;pidamente por todas nuestras secciones operativas</p>
+            <hr style="width: 50px; border: 0; border-top: 3px solid #0056b3; margin: 20px auto;">
         </section>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+        <div class="search-wrapper">
+            <span class="search-icon">&#128269;</span>
+            <input type="text" id="map-search-bar" class="search-input" placeholder="Escribe para buscar una sección o página..." onkeyup="filtrarContenidoMapa();">
+        </div>
+
+        <div class="map-grid">
             
-            <div class="map-section" style="background: white; padding: 30px; border-radius: 15px; box-shadow: var(--shadow-soft);">
-                <h3 style="color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">🛒 CATÁLOGO</h3>
+            <div class="map-section" data-seccion="catalogo">
+                <h3 style="color: #0056b3;">🛒 CAT&Aacute;LOGO</h3>
                 <ul>
-                    <li><a href="laptops.html" class="map-link">Laptops Portátiles</a></li>
+                    <li><a href="laptops.html" class="map-link">Laptops Port&aacute;tiles</a></li>
                     <li><a href="desktops.html" class="map-link">Desktops de Escritorio</a></li>
-                    <li><a href="ofertas.html" class="map-link" style="color: #e74c3c;">Zona de Ofertas 🔥</a></li>
-                    <li><a href="carrito.html" class="map-link">Mi Carrito</a></li>
+                    <li><a href="ofertas.html" class="map-link" style="color: #e74c3c;">Zona de Ofertas &iexcl;Fuego!</a></li>
+                    <li><a href="carrito.html" class="map-link">Mi Carrito de Compras</a></li>
                 </ul>
             </div>
 
-            <div class="map-section" style="background: white; padding: 30px; border-radius: 15px; box-shadow: var(--shadow-soft);">
-                <h3 style="color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">🏢 EMPRESA</h3>
+            <div class="map-section" data-seccion="empresa">
+                <h3 style="color: #0056b3;">🏢 EMPRESA</h3>
                 <ul>
-                    <li><a href="servicios.html" class="map-link">Servicios Técnicos</a></li>
-                    <li><a href="sucursales.html" class="map-link">Nuestras Tiendas</a></li>
-                    <li><a href="blog.html" class="map-link">Blog Tecnológico</a></li>
-                    <li><a href="bolsa-trabajo.html" class="map-link">Trabaja con Nosotros</a></li>
+                    <li><a href="servicios.html" class="map-link">Soluciones y Servicios T&eacute;cnicos</a></li>
+                    <li><a href="sucursales.html" class="map-link">Nuestras Tiendas y Sucursales</a></li>
+                    <li><a href="blog.html" class="map-link">Blog Tecnol&oacute;gico Informativo</a></li>
+                    <li><a href="bolsa-trabajo.html" class="map-link">&Uacute;nete al Equipo (Vacantes)</a></li>
                 </ul>
             </div>
 
-            <div class="map-section" style="background: white; padding: 30px; border-radius: 15px; box-shadow: var(--shadow-soft);">
-                <h3 style="color: var(--primary); margin-bottom: 20px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">🛠 SOPORTE Y LEGAL</h3>
+            <div class="map-section" data-seccion="soporte">
+                <h3 style="color: #0056b3;">🛠️ SOPORTE Y LEGAL</h3>
                 <ul>
-                    <li><a href="contacto.html" class="map-link">Contacto Directo</a></li>
-                    <li><a href="preguntas-frecuentes.html" class="map-link">Preguntas (FAQ)</a></li>
-                    <li><a href="politicas.html" class="map-link">Políticas Legales</a></li>
+                    <li><a href="contacto.html" class="map-link">Contacto Directo de Atenci&oacute;n</a></li>
+                    <li><a href="preguntas-frecuentes.html" class="map-link">Preguntas Frecuentes (FAQ)</a></li>
+                    <li><a href="politicas.html" class="map-link">Pol&iacute;ticas Legales de Privacidad</a></li>
                 </ul>
             </div>
 
@@ -102,20 +245,61 @@
 
         <div style="margin-top: 50px; background: #1e293b; color: white; padding: 25px; border-radius: 15px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
             <div>
-                <span style="color: #4ade80;">● Sistema Operativo</span> 
-                <small style="margin-left: 10px; opacity: 0.7;">Todos los servicios en línea</small>
+                <span style="color: #4ade80;">&bull; Sistema Operativo Activo</span> 
+                <small style="margin-left: 10px; opacity: 0.7;">Todos los servicios en l&iacute;nea | <span id="lbl-total-links">0</span> p&aacute;ginas mapeadas</small>
             </div>
             <div style="font-size: 0.85rem; opacity: 0.8;">
-                Versión del Sitio: 2.0.26 | Última actualización: Mayo 2026
+                Versi&oacute;n del Sitio: 2.0.26 | &Uacute;ltima actualizaci&oacute;n Acad&eacute;mica: 2026
             </div>
         </div>
 
     </main>
 
     <footer class="main-footer">
-        <p>TechVenta S.A. de C.V. &copy; 2026 | Proyecto Académico CONALEP</p>
+        <p>TechVenta S.A. de C.V. &copy; 2026 | Proyecto Acad&eacute;mico Estudiantil</p>
     </footer>
 
-    <script type="text/javascript" src="interactivo.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            // Calcular de forma automática el total de hipervínculos mapeados al cargar la interfaz
+            const enlaces = document.querySelectorAll('.map-link');
+            const contadorContenedor = document.getElementById('lbl-total-links');
+            if (contadorContenedor) {
+                contadorContenedor.textContent = enlaces.length;
+            }
+        });
+
+        function filtrarContenidoMapa() {
+            // 1. Obtener la cadena ingresada por el usuario en minúsculas para homologar
+            const terminoBusqueda = document.getElementById("map-search-bar").value.toLowerCase();
+            
+            // 2. Apuntar a los bloques contenedores primarios del mapa
+            const secciones = document.querySelectorAll(".map-section");
+
+            secciones.forEach(seccion => {
+                const enlacesInternos = seccion.querySelectorAll(".map-link");
+                let coincidenciaEncontrada = false;
+
+                enlacesInternos.forEach(enlace => {
+                    const textoEnlace = enlace.textContent.toLowerCase();
+
+                    // Evaluar coincidencia de caracteres
+                    if (textoEnlace.includes(terminoBusqueda)) {
+                        enlace.style.display = "flex"; // Mostrar enlace coincidente
+                        coincidenciaEncontrada = true;
+                    } else {
+                        enlace.style.display = "none"; // Ocultar enlace disonante
+                    }
+                });
+
+                // Lógica inteligente de colapso: Si toda la sección no tiene coincidencias, se oculta el recuadro completo
+                if (coincidenciaEncontrada) {
+                    seccion.style.display = "block";
+                } else {
+                    seccion.style.display = "none";
+                }
+            });
+        }
+    </script>
 </body>
 </html>

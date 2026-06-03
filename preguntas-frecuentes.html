@@ -2,11 +2,168 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQ | TechVenta</title>
+    
+    <!-- Enlace a tu hoja de estilos principal -->
     <link rel="stylesheet" href="estilos-home.css">
+
+    <!-- Estilos de respaldo integrados para diseño autónomo sin fallas -->
+    <style>
+        :root {
+            --primary: #0056b3;
+            --dark: #0f172a;
+            --light-bg: #f4f7f6;
+            --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Estructura Base de Respaldo por si falla el CSS externo */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: #333;
+        }
+
+        .top-header {
+            background: #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-bottom: 4px solid var(--primary);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-box {
+            background: var(--primary);
+            color: white;
+            padding: 8px 15px;
+            font-weight: bold;
+            font-size: 1.5rem;
+            border-radius: 6px;
+        }
+
+        .logo-text .brand {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: var(--primary);
+            display: block;
+        }
+
+        .logo-text small {
+            color: #999;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Estilos específicos para la sección FAQ Dinámica */
+        .faq-item-pro {
+            background: #ffffff;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-header-pro {
+            padding: 20px;
+            cursor: pointer;
+            user-select: none;
+            background: #ffffff;
+            transition: var(--transition);
+        }
+
+        .faq-header-pro:hover {
+            background: #f8fafc;
+        }
+
+        .faq-header-pro h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--dark);
+            flex-grow: 1;
+        }
+
+        .faq-status {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .faq-content-pro {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out, padding 0.35s ease-out;
+            background: #fafafa;
+            padding: 0 20px;
+        }
+
+        .faq-content-pro p {
+            margin: 0;
+            padding: 15px 0 20px 0;
+            line-height: 1.6;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        /* Estado Activo para ítems expandidos */
+        .faq-item-pro.is-active {
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(0, 86, 179, 0.08);
+        }
+
+        .faq-item-pro.is-active .faq-header-pro {
+            background: #f0f7ff;
+        }
+
+        .faq-item-pro.is-active .faq-content-pro {
+            padding: 0 20px;
+        }
+
+        /* Botón de Asesoría Premium */
+        .btn-submit {
+            background: var(--primary);
+            color: white;
+            font-weight: bold;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px rgba(0, 86, 179, 0.15);
+            transition: var(--transition);
+        }
+
+        .btn-submit:hover {
+            background: #004085;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 86, 179, 0.25);
+        }
+
+        .main-footer {
+            background: var(--dark);
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
-<body style="background-color: #f4f7f6;">
+<body>
 
     <noscript>
         <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
@@ -23,60 +180,66 @@
             </div>
         </div>
         <nav>
-            <a href="index.html" class="btn-contact" style="background: var(--dark); color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold;">VOLVER AL INICIO</a>
+            <a href="index.html" class="btn-contact" style="background: #0f172a; color: white; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: bold; transition: opacity 0.2s;">VOLVER AL INICIO</a>
         </nav>
     </header>
 
     <main style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
         
-        <section style="background: white; padding: 40px; border-radius: 12px; box-shadow: var(--shadow-soft);">
+        <section style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.05);">
             <header style="text-align: center; margin-bottom: 30px;">
-                <h2 style="color: var(--primary); font-size: 2rem; border-bottom: 3px solid var(--primary); display: inline-block; padding-bottom: 10px;">Preguntas Frecuentes</h2>
+                <h2 style="color: #0056b3; font-size: 2rem; border-bottom: 3px solid #0056b3; display: inline-block; padding-bottom: 10px; margin: 0;">Preguntas Frecuentes</h2>
             </header>
 
             <div class="faq-wrapper">
                 
+                <!-- Pregunta 1 -->
                 <article class="faq-item-pro">
-                    <div class="faq-header-pro" style="display: flex; align-items: center; gap: 10px;">
-                        <!-- Se removió el carácter roto '' -->
-                        <span class="faq-status"></span>
-                        <h3>&iquest;Tienen env&iacute;os?</h3>
+                    <div class="faq-header-pro" style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span class="faq-status">+</span>
+                            <h3>&iquest;Tienen env&iacute;os?</h3>
+                        </div>
                     </div>
                     <div class="faq-content-pro">
-                        <p>S&iacute;, realizamos env&iacute;os seguros a toda la <strong>Rep&uacute;blica Mexicana</strong> con un tiempo estimado de entrega de <strong>48 horas h&aacute;biles</strong>.</p>
+                        <p>S&iacute;, realizamos env&iacute;os seguros a toda la <strong>Rep&uacute;blica Mexicana</strong> con un tiempo estimado de entrega de <strong>48 horas h&aacute;biles</strong> a través de nuestras paqueterías socias.</p>
                     </div>
                 </article>
 
-                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                <div style="height: 12px;"></div>
 
+                <!-- Pregunta 2 -->
                 <article class="faq-item-pro">
-                    <div class="faq-header-pro" style="display: flex; align-items: center; gap: 10px;">
-                        <!-- Se removió el carácter roto '' -->
-                        <span class="faq-status"></span>
-                        <h3>&iquest;Facturan las compras?</h3>
+                    <div class="faq-header-pro" style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span class="faq-status">+</span>
+                            <h3>&iquest;Facturan las compras?</h3>
+                        </div>
                     </div>
                     <div class="faq-content-pro">
-                        <p>S&iacute;, todos nuestros precios ya incluyen <strong>IVA</strong>. Al finalizar tu compra, recibir&aacute;s un enlace para generar tu factura electr&oacute;nica de forma autom&aacute;tica.</p>
+                        <p>S&iacute;, todos nuestros precios ya incluyen <strong>IVA</strong>. Al finalizar tu compra o recibir tu correo de confirmación, recibir&aacute;s un enlace para generar tu factura electr&oacute;nica de forma autom&aacute;tica.</p>
                     </div>
                 </article>
 
-                <hr style="border: 0; border-top: 1px solid #eee; margin: 20px 0;">
+                <div style="height: 12px;"></div>
 
+                <!-- Pregunta 3 -->
                 <article class="faq-item-pro">
-                    <div class="faq-header-pro" style="display: flex; align-items: center; gap: 10px;">
-                        <!-- Se removieron los caracteres rotos '' -->
-                        <span class="faq-status"></span>
-                        <h3>&iquest;Tienen garant&iacute;a?</h3>
+                    <div class="faq-header-pro" style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <span class="faq-status">+</span>
+                            <h3>&iquest;Tienen garant&iacute;a?</h3>
+                        </div>
                     </div>
                     <div class="faq-content-pro">
-                        <p>Todos nuestros equipos cuentan con <strong>1 a&ntilde;o de garant&iacute;a</strong> contra defectos de f&aacute;brica directamente con nosotros o el fabricante.</p>
+                        <p>Todos nuestros equipos cuentan con <strong>1 a&ntilde;o de garant&iacute;a</strong> de fábrica integral contra defectos de hardware directamente con nuestro centro de atención o los centros autorizados de la marca.</p>
                     </div>
                 </article>
 
             </div>
 
-            <div style="margin-top: 40px; text-align: center; background: #f9f9f9; padding: 25px; border-radius: 8px;">
-                <p style="margin-bottom: 15px; color: #666;">&iquest;No encontraste la respuesta que buscabas?</p>
+            <div style="margin-top: 40px; text-align: center; background: #f8fafc; padding: 25px; border-radius: 8px; border: 1px dashed #cbd5e1;">
+                <p style="margin-top: 0; margin-bottom: 15px; color: #64748b; font-size: 0.95rem;">&iquest;No encontraste la respuesta que buscabas?</p>
                 <a href="contacto.html" class="btn-submit" style="font-size: 0.9rem; padding: 12px 25px; text-decoration: none; display: inline-block;">CONTACTAR A UN ASESOR</a>
             </div>
         </section>
@@ -84,9 +247,43 @@
     </main>
 
     <footer class="main-footer" style="margin-top: 60px;">
-        <p>TechVenta S.A. de C.V. - Soporte al Cliente 2026</p>
+        <p>&copy; 2026 TechVenta S.A. de C.V. - Soporte Integral al Cliente</p>
     </footer>
 
-    <script type="text/javascript" src="interactivo.js"></script>
+    <!-- INTERACTIVIDAD COMPLETA SIN ERRORES -->
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            const faqHeaders = document.querySelectorAll(".faq-header-pro");
+
+            faqHeaders.forEach(header => {
+                header.addEventListener("click", function() {
+                    const currentItem = this.closest(".faq-item-pro");
+                    const currentContent = currentItem.querySelector(".faq-content-pro");
+                    const currentStatus = currentItem.querySelector(".faq-status");
+
+                    // Cerrar otros elementos abiertos (Efecto acordeón exclusivo)
+                    document.querySelectorAll(".faq-item-pro").forEach(item => {
+                        if (item !== currentItem && item.classList.contains("is-active")) {
+                            item.classList.remove("is-active");
+                            item.querySelector(".faq-content-pro").style.maxHeight = null;
+                            item.querySelector(".faq-status").textContent = "+";
+                        }
+                    });
+
+                    // Activar o desactivar el elemento actual
+                    if (currentItem.classList.contains("is-active")) {
+                        currentItem.classList.remove("is-active");
+                        currentContent.style.maxHeight = null;
+                        currentStatus.textContent = "+";
+                    } else {
+                        currentItem.classList.add("is-active");
+                        // Asignamos dinámicamente la altura del contenido real para una transición fluida
+                        currentContent.style.maxHeight = currentContent.scrollHeight + "px";
+                        currentStatus.textContent = "\u2212"; // Carácter seguro para el signo menos ()
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
