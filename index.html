@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechVenta S.A. de C.V. | E-Commerce Premium 2.0</title>
 </head>
@@ -29,19 +30,19 @@
                         </td>
                         <td style="padding-left: 12px;">
                             <font color="#0056b3" size="5" id="logo-texto"><strong>Tech</strong>Venta</font><br>
-                            <font color="#999999" size="1" style="letter-spacing: 1px;">SOLUCIONES TECNOLÓGICAS</font>
+                            <font color="#999999" size="1" style="letter-spacing: 1px;">SOLUCIONES TECNOL&Oacute;GICAS</font>
                         </td>
                     </tr>
                 </table>
             </td>
             <td align="center">
                 <form action="buscar.php" method="GET" onsubmit="return false;">
-                    <input type="text" name="search" size="45" style="padding: 12px 20px; border: 1px solid #cbd5e1; border-radius: 30px; outline: none; font-size: 14px; width: 80%; max-width: 400px;" placeholder="¿Qué equipo o solución buscas hoy?">
+                    <input type="text" name="search" size="45" style="padding: 12px 20px; border: 1px solid #cbd5e1; border-radius: 30px; outline: none; font-size: 14px; width: 80%; max-width: 400px;" placeholder="&iquest;Qu&eacute; equipo o soluci&oacute;n buscas hoy?">
                 </form>
             </td>
             <td align="right">
                 <button id="btn-modo-lectura" style="padding: 12px 22px; background: #34495e; color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; margin-right: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"> Modo Oscuro</button>
-                <button onclick="calcularPresupuestoExpress();" style="background: #28a745; color: white; border: none; padding: 12px 22px; border-radius: 30px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 6px rgba(40,167,69,0.2);" id="btn-contacto-top">COTIZACIÓN EXPRESS</button>
+                <button onclick="calcularPresupuestoExpress();" style="background: #28a745; color: white; border: none; padding: 12px 22px; border-radius: 30px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 6px rgba(40,167,69,0.2);" id="btn-contacto-top">COTIZACI&Oacute;N EXPRESS</button>
             </td>
         </tr>
     </table>
@@ -81,18 +82,18 @@
     <table width="95%" align="center" border="0" cellpadding="35" cellspacing="0">
         <tr>
             <td width="260" valign="top" bgcolor="#F4F7F6" style="border-radius: 16px; border: 1px solid #e2e8f0; padding: 25px;" id="barra-lateral">
-                <h3 style="color: #0056b3; margin-top: 0; font-size: 16px; letter-spacing: 0.5px;" id="titulo-filtros">ORDENACIÓN E INTELIGENCIA</h3>
+                <h3 style="color: #0056b3; margin-top: 0; font-size: 16px; letter-spacing: 0.5px;" id="titulo-filtros">ORDENACI&Oacute;N E INTELIGENCIA</h3>
                 
-                <p style="font-size: 13px;"><strong>Organizar Catálogo:</strong></p>
+                <p style="font-size: 13px;"><strong>Organizar Cat&aacute;logo:</strong></p>
                 <select id="control-orden" onchange="ordenarProductosPorPrecio();" style="width:100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: white; font-size: 13px; outline: none;">
                     <option value="DEF">Seleccionar ordenamiento...</option>
                     <option value="MENOR">Precio: De Menor a Mayor</option>
                     <option value="MAYOR">Precio: De Mayor a Menor</option>
                 </select>
 
-                <p style="font-size: 13px; margin-top: 20px;"><strong>Segmentación Académica:</strong></p>
+                <p style="font-size: 13px; margin-top: 20px;"><strong>Segmentaci&oacute;n Acad&eacute;mica:</strong></p>
                 <label style="font-size: 13px; display: block; margin-bottom: 6px;"><input type="radio" name="perf" value="basico"> Rendimiento Estudiantil</label>
-                <label style="font-size: 13px; display: block;"><input type="radio" name="perf" value="alto"> Estación de Trabajo Alta</label>
+                <label style="font-size: 13px; display: block;"><input type="radio" name="perf" value="alto"> Estaci&oacute;n de Trabajo Alta</label>
 
                 <p style="font-size: 13px; margin-top: 20px;"><strong>Fabricantes Integrados:</strong></p>
                 <label style="font-size: 13px; display: block; margin-bottom: 6px;"><input type="checkbox" name="m1" value="tech" checked> TechPro Global</label>
@@ -103,12 +104,12 @@
                 
                 <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 25px 0;">
                 <div align="center">
-                    <a href="blog.html" style="text-decoration:none;" id="enlace-blog"><font color="#0056b3" size="2"><b> Leer Artículos del Blog</b></font></a>
+                    <a href="blog.html" style="text-decoration:none;" id="enlace-blog"><font color="#0056b3" size="2"><b> Leer Art&iacute;culos del Blog</b></font></a>
                 </div>
             </td>
 
             <td valign="top" style="padding-left: 20px;">
-                <h2 style="color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; margin-top: 0; font-size: 22px;" id="titulo-catalogo">CATÁLOGO DESTACADO CONFIGURABLE</h2>
+                <h2 style="color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; margin-top: 0; font-size: 22px;" id="titulo-catalogo">CAT&Aacute;LOGO DESTACADO CONFIGURABLE</h2>
                 
                 <table border="0" width="100%" cellpadding="0" cellspacing="15" id="grid-laptops">
                     <tr>
@@ -166,8 +167,8 @@
                     <tr>
                         <td align="center">
                             <h2 style="color: #0056b3; font-size: 26px; letter-spacing: 0.5px;" id="mision-header">IDENTIDAD CORPORATIVA CONTROLADA</h2>
-                            <p style="font-size: 15px; line-height: 1.7; color: #475569;" id="mision-p1"><strong>Misión:</strong> <cite>Proporcionar soluciones tecnológicas integrales a través de la venta de equipos de cómputo de alta calidad, impulsando el desarrollo educativo y profesional de nuestros usuarios.</cite></p>
-                            <p style="font-size: 15px; line-height: 1.7; color: #475569;" id="mision-p2"><strong>Visión:</strong> <em>Consolidarnos como la plataforma de comercio electrónico líder en el sector tecnológico nacional, reconocida por nuestra excelencia operativa y vanguardia en productos.</em></p>
+                            <p style="font-size: 15px; line-height: 1.7; color: #475569;" id="mision-p1"><strong>Misi&oacute;n:</strong> <cite>Proporcionar soluciones tecnol&oacute;gicas integrales a trav&eacute;s de la venta de equipos de c&oacute;mputo de alta calidad, impulsando el desarrollo educativo y profesional de nuestros usuarios.</cite></p>
+                            <p style="font-size: 15px; line-height: 1.7; color: #475569;" id="mision-p2"><strong>Visi&oacute;n:</strong> <em>Consolidarnos como la plataforma de comercio electr&oacute;nico l&iacute;der en el sector tecnol&oacute;gico nacional, reconocida por nuestra excelencia operativa y vanguardia en productos.</em></p>
                         </td>
                     </tr>
                 </table>
@@ -178,16 +179,16 @@
     <table width="100%" bgcolor="#0f172a" style="color:#94a3b8;" cellpadding="40" id="pie-desarrollo">
         <tr>
             <td width="33%" valign="top" style="font-size: 13px; line-height: 1.8;">
-                <font color="#38bdf8" size="3"><strong>ATENCIÓN AL CLIENTE</strong></font><br><br>
+                <font color="#38bdf8" size="3"><strong>ATENCI&Oacute;N AL CLIENTE</strong></font><br><br>
                 <a href="preguntas-frecuentes.html" style="color:#64748b; text-decoration:none;">Preguntas Frecuentes (FAQ)</a><br>
-                <a href="politicas.html" style="color:#64748b; text-decoration:none;">Garantías de Hardware y Privacidad</a><br>
+                <a href="politicas.html" style="color:#64748b; text-decoration:none;">Garant&iacute;as de Hardware y Privacidad</a><br>
                 <a href="mailto:ventas@techventa.com.mx" style="color:#38bdf8; text-decoration:none;">ventas@techventa.com.mx</a>
             </td>
             <td width="33%" align="center" valign="top" style="font-size: 13px;">
                 <br>
                 <a href="mapa_sitio.html" style="color:white; border: 1px solid #38bdf8; padding: 10px 22px; text-decoration:none; border-radius: 30px; font-weight: bold; font-size: 12px; letter-spacing: 0.5px;">MAPA DEL SITIO</a>
                 <br><br><br>
-                <p style="color:#475569; font-size: 11px;">&copy; 2026 TechVenta S.A. de C.V. <br> Plataforma Comercial de Pruebas Académicas</p>
+                <p style="color:#475569; font-size: 11px;">&copy; 2026 TechVenta S.A. de C.V. <br> Plataforma Comercial de Pruebas Acad&eacute;micas</p>
             </td>
             <td width="33%" align="right" valign="top" style="font-size: 13px;">
                 <font color="#38bdf8" size="3"><strong>NUESTRAS REDES v2.0</strong></font><br><br>
