@@ -1,7 +1,7 @@
 // ====================================================================
 // ARCHIVO JAVASCRIPT EXTERNO CENTRALIZADO - TECHVENTA S.A. DE C.V.
 // PROYECTO ACADÉMICO INTEGRAL - COMPILADO COMPLETO DE INTERACTIVIDAD
-// VERSIÓN ACADÉMICA FINAL (15 DE 15 BLOQUES TEMÁTICOS)
+// VERSIÓN ACADÉMICA FINAL (ACTUALIZADA CON MANIPULACIÓN VISUAL DEL DOM)
 // ====================================================================
 
 // --- SECCIÓN INDEX.HTML (CÓDIGO 1 DE 15): Variables y Consola ---
@@ -62,7 +62,6 @@ for (var i = 0; i < camposAValidar.length; i++) { console.log("Bucle FOR - Valid
 var intentosConexionSmtp = 1;
 while (intentosConexionSmtp <= 3) { intentosConexionSmtp++; }
 
-// OPTIMIZACIÓN LOGICAL: Evita que baje a números negativos de forma innecesaria
 var correosEnColaEspera = 1;
 do { correosEnColaEspera--; } while (correosEnColaEspera > 0);
 
@@ -81,7 +80,6 @@ var costoEnsambleFinal = calcularCostoServicioConIva(899, 2);
 var componentesHardware = ["Intel Core i3", "8GB RAM DDR4", "256GB SSD"];
 componentesHardware.push("Pantalla 14 pulgadas HD");
 
-/* CORRECCIÓN: Se eliminó la "s" de componentsHardware para evitar el ReferenceError */
 var componenteRemovido = componentesHardware.slice(0, -1)[0]; 
 var totalComponentesListados = componentesHardware.length;
 var fichaResumenCadena = componentesHardware.join(" / ");
@@ -196,9 +194,7 @@ function procesarEstilosBlogCorporativo() {
 procesarEstilosBlogCorporativo();
 
 
-// --- SECCIÓN ESTILOS-HOME.CSS (CÓDIGO 15 DE 15): Modificación de Hojas de Estilo Completonas ---
-console.log("--- MODIFICACIÓN DE HOJAS DE ESTILO NATIVAS (CSSOM) ---");
-
+// --- SECCIÓN ESTILOS-HOME.CSS (CÓDIGO 15 DE 15): Modificación de Hojas de Estilo ---
 function interceptarYModificarEstilosHojaMaestra() {
     var hojaEstilosMaestraSimulada = {
         href: "estilos-home.css",
@@ -208,26 +204,106 @@ function interceptarYModificarEstilosHojaMaestra() {
             { selectorText: ".btn-contact", style: { padding: "12px 25px", borderRadius: "5px" } }
         ],
         insertRule: function(reglaTexto, posicionIndex) {
-            console.log("CSSOM Acción: insertRule() inyectó una nueva clase en el archivo CSS -> '" + reglaTexto + "' en la posición [" + posicionIndex + "].");
             return posicionIndex;
         }
     };
 
-    console.log("Hojas de Estilo del Sistema detectadas: Cargando [" + hojaEstilosMaestraSimulada.href + "]");
-
     var mapaVariablesRoot = hojaEstilosMaestraSimulada.cssRules[0].style;
-    mapaVariablesRoot.setProperty("--primary", "#0d9488"); 
+    mapaVariablesRoot.setProperty("--primary", "#0056b3"); 
     mapaVariablesRoot.setProperty("--accent", "#ea580c");  
-
-    var reglaInyeccionModoLectura = ".dark-reading-mode { background-color: #111827 !important; color: #f9fafb !important; }";
-    hojaEstilosMaestraSimulada.insertRule(reglaInyeccionModoLectura, hojaEstilosMaestraSimulada.cssRules.length);
-
-    console.log("Refresco de Estilos: Todas las mutaciones cosméticas basadas en la hoja de estilos maestra han sido aplicadas.");
 }
-
-// Inicialización del controlador avanzado CSSOM
 interceptarYModificarEstilosHojaMaestra();
 
+
+// ====================================================================
+// 🚀 INYECCIÓN DE MEJORAS DE PRODUCCIÓN INTERACTIVAS (REALES)
+// ====================================================================
+
+// --- MEJORA 1: Sistema de Carrito Dinámico usando LocalStorage ---
+var carritoReal = JSON.parse(localStorage.getItem('techventa_carrito')) || [];
+
+function agregarAlCarrito(idProducto, nombre, precio) {
+    var producto = { id: idProducto, nombre: nombre, precio: precio };
+    carritoReal.push(producto);
+    localStorage.setItem('techventa_carrito', JSON.stringify(carritoReal));
+    actualizarContadorMenu();
+    alert("¡Excelente elección! " + nombre + " se ha añadido a tu carrito.");
+}
+
+function actualizarContadorMenu() {
+    var enlaces = document.getElementsByTagName('a');
+    for (var i = 0; i < enlaces.length; i++) {
+        if (enlaces[i].textContent && enlaces[i].textContent.includes('MI CARRITO')) {
+            enlaces[i].innerHTML = "🛒 MI CARRITO (" + carritoReal.length + ")";
+        }
+    }
+}
+
+// --- MEJORA 2: Buscador Reactivo por Teclado en Tiempo Real (Filtro DOM) ---
+function inicializarBuscadorInteractivo() {
+    var inputBusqueda = document.getElementsByName('search')[0];
+    if (!inputBusqueda) return; 
+
+    inputBusqueda.addEventListener('keyup', function(e) {
+        var palabraClave = e.target.value.toLowerCase();
+        var tarjetasProductos = document.querySelectorAll('td[style*="border: 1px solid #EEE"], .product-card');
+        
+        for (var i = 0; i < tarjetasProductos.length; i++) {
+            var tarjeta = tarjetasProductos[i];
+            var encabezadoTitulo = tarjeta.querySelector('h3');
+            if (encabezadoTitulo) {
+                var textoProducto = encabezadoTitulo.innerText.toLowerCase();
+                if (textoProducto.includes(palabraClave)) {
+                    tarjeta.style.display = ""; 
+                } else {
+                    tarjeta.style.display = "none"; 
+                }
+            }
+        }
+    });
+}
+
+// --- MEJORA 3: Transformación Visual del Entorno (Inyección DOM Dinámica) ---
+function inyectarCambiosVisualesPremium() {
+    // 1. Modificación de la barra de navegación (Cambio de color inmediato a Azul Corporativo)
+    var barraMenu = document.querySelector('table[bgcolor="#1a1a1a"]');
+    if (barraMenu) {
+        barraMenu.style.backgroundColor = "#002d62";
+        console.log("Visual: Barra de navegación transformada de forma interactiva.");
+    }
+
+    // 2. Efecto Dinámico Hover 3D en Tarjetas de Productos mediante bucle convencional
+    var tarjetas = document.querySelectorAll('td[style*="border: 1px solid #EEE"]');
+    for (var i = 0; i < tarjetas.length; i++) {
+        tarjetas[i].style.transition = "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease";
+        tarjetas[i].style.cursor = "pointer";
+        
+        tarjetas[i].onmouseover = function() {
+            this.style.transform = "scale(1.03)";
+            this.style.boxShadow = "0px 10px 25px rgba(0, 86, 179, 0.2)";
+            this.style.borderColor = "#0056b3";
+        };
+        
+        tarjetas[i].onmouseout = function() {
+            this.style.transform = "scale(1)";
+            this.style.boxShadow = "none";
+            this.style.borderColor = "#EEE";
+        };
+    }
+}
+
+// --- CONTROLADOR DE INICIALIZACIÓN SEGURO (DOM READY) ---
+window.addEventListener('DOMContentLoaded', function() {
+    actualizarContadorMenu();
+    inicializarBuscadorInteractivo();
+    inyectarCambiosVisualesPremium();
+});
+
+// Función interactiva nativa para botones de acción directa
+function alertarContacto() {
+    alert("Conectando con un asesor de TechVenta S.A. de C.V. Por favor espere...");
+}
+
 console.log("====================================================================");
-console.log("PROYECTO COMPLETO: Los 15 archivos han sido enlazados y validados.");
+console.log("SISTEMA TOTALMENTE COMPILADO: Modificaciones aplicadas con éxito.");
 console.log("====================================================================");
