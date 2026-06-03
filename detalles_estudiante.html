@@ -6,24 +6,27 @@
     <title>Laptop Uni-Student 14" | TechVenta</title>
     <link rel="stylesheet" href="estilos-home.css">
 </head>
-<body style="background-color: #ffffff;">
+<body style="background-color: #ffffff; margin: 0; padding: 0; font-family: Arial, sans-serif;">
 
     <noscript>
-        <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-family: Arial, sans-serif; font-weight: bold;">
+        <div style="background: #e74c3c; color: white; padding: 15px; text-align: center; font-weight: bold;">
             Atenci&oacute;n: El m&oacute;dulo de componentes y comparaci&oacute;n de hardware din&aacute;mico requiere JavaScript para cargar las listas de especificaciones.
         </div>
     </noscript>
 
-    <header class="top-header">
-        <div class="logo-container">
-            <div class="logo-box"></div>
-            <div class="logo-text">
-                <span class="brand">TechVenta</span>
-                <small>FICHA T&Eacute;CNICA OFICIAL</small>
+    <header class="top-header" style="background: #ffffff; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid #0056b3;">
+        <div class="logo-container" style="display: flex; align-items: center;">
+            <div class="logo-box" style="background: #0056b3; color: white; padding: 5px 12px; font-weight: bold; border-radius: 5px; font-size: 24px;">T</div>
+            <div class="logo-text" style="margin-left: 10px;">
+                <span class="brand" style="color: #0056b3; font-size: 20px; font-weight: bold;">TechVenta</span><br>
+                <small style="color: #999; font-size: 10px;">FICHA T&Eacute;CNICA OFICIAL</small>
             </div>
         </div>
-        <nav>
-            <a href="laptops.html" class="btn-contact">VOLVER AL CAT&Aacute;LOGO</a>
+        
+        <nav style="display: flex; gap: 20px; align-items: center;">
+            <a href="index.html" style="color: #333; text-decoration: none; font-weight: bold; font-size: 14px;">INICIO</a>
+            <a href="carrito.html" style="color: #0056b3; text-decoration: none; font-weight: bold; font-size: 14px;">🛒 MI CARRITO</a>
+            <a href="laptops.html" class="btn-contact" style="background: #0056b3; color: white; padding: 8px 15px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 13px;">VOLVER AL CAT&Aacute;LOGO</a>
         </nav>
     </header>
 
@@ -32,12 +35,12 @@
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; align-items: start;">
             
             <section>
-                <div style="background: #f8fafc; padding: 20px; border-radius: 15px; text-align: center; margin-bottom: 20px;">
-                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500" alt="Laptop Uni-Student" style="width: 100%; border-radius: 10px; box-shadow: var(--shadow-soft);">
+                <div style="background: #f8fafc; padding: 20px; border-radius: 15px; text-align: center; margin-bottom: 20px; border: 1px solid #e2e8f0;">
+                    <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=500" alt="Laptop Uni-Student" style="width: 100%; border-radius: 10px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
                 </div>
                 
-                <h3 style="color: var(--dark); margin-bottom: 15px;">Video de Rendimiento</h3>
-                <div style="border-radius: 12px; overflow: hidden; box-shadow: var(--shadow-soft); background: #000;">
+                <h3 style="color: #1e293b; margin-bottom: 15px;">Video de Rendimiento</h3>
+                <div style="border-radius: 12px; overflow: hidden; background: #000; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">
                     <video width="100%" controls poster="https://via.placeholder.com/400x250?text=Cargando+Video...">
                         <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
                         Tu navegador no soporta el formato de video.
@@ -46,12 +49,12 @@
             </section>
 
             <section>
-                <h1 style="color: var(--primary); font-size: 2.2rem; margin-bottom: 10px;">Laptop Uni-Student 14"</h1>
+                <h1 style="color: #0056b3; font-size: 2.2rem; margin-bottom: 10px;">Laptop Uni-Student 14"</h1>
                 <p style="color: #64748b; font-size: 1.1rem; margin-bottom: 20px;">La compa&ntilde;era ideal para tus proyectos universitarios y tareas diarias.</p>
                 
                 <div style="background: #f1f5f9; padding: 20px; border-radius: 12px; margin-bottom: 30px;">
                     <table width="100%" style="border-collapse: collapse; color: #334155;">
-                        <caption style="text-align: left; font-weight: bold; margin-bottom: 10px; color: var(--dark);">ESPECIFICACIONES DE HARDWARE</caption>
+                        <caption style="text-align: left; font-weight: bold; margin-bottom: 10px; color: #1e293b;">ESPECIFICACIONES DE HARDWARE</caption>
                         <tr style="border-bottom: 1px solid #cbd5e1;">
                             <td style="padding: 10px 0;"><strong>Procesador</strong></td>
                             <td style="padding: 10px 0;">Intel Core i3 <dfn style="font-style: normal; color: #94a3b8;">(Rendimiento Est&aacute;ndar)</dfn></td>
@@ -70,27 +73,25 @@
                 <div style="display: flex; gap: 15px; margin-bottom: 30px;">
                     <form action="mailto:info@techventa.com" method="GET" style="flex: 1;">
                         <input type="hidden" name="subject" value="Inter&eacute;s en Laptop Uni-Student">
-                        <button type="submit" class="btn-submit" style="width: 100%; padding: 12px; font-size: 0.9rem;">
+                        <button type="submit" style="width: 100%; padding: 12px; font-size: 0.9rem; background: #333; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer;">
                             COMPARTIR FICHA
                         </button>
                     </form>
                     
-                    <button onclick="window.print()" class="btn-details" style="flex: 1; padding: 12px; font-size: 0.9rem; border: 1px solid #cbd5e1;">
+                    <button onclick="window.print()" style="flex: 1; padding: 12px; font-size: 0.9rem; border: 1px solid #cbd5e1; background: #ffffff; color: #333; font-weight: bold; border-radius: 5px; cursor: pointer;">
                         IMPRIMIR PROFORMA
                     </button>
                 </div>
 
-                <a href="carrito.html" style="text-decoration: none;">
-                    <button class="btn-submit" style="width: 100%; background: var(--secondary); color: var(--dark); font-size: 1.2rem; height: 60px;">
-                        A&Ntilde;ADIR AL CARRITO - $8,499.00
-                    </button>
-                </a>
+                <button onclick="agregarAlCarrito(1, 'Laptop Uni-Student 14\"', 8499)" style="width: 100%; background: #28a745; color: white; font-size: 1.2rem; height: 60px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);">
+                    A&Ntilde;ADIR AL CARRITO - $8,499.00
+                </button>
             </section>
         </div>
 
     </main>
 
-    <footer class="main-footer">
+    <footer class="main-footer" style="background: #1a1a1a; color: #bdc3c7; text-align: center; padding: 20px; margin-top: 60px; font-size: 14px;">
         <p>TechVenta 2026 | Precios sujetos a cambios sin previo aviso.</p>
     </footer>
 
