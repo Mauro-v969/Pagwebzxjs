@@ -41,8 +41,8 @@
                 </form>
             </td>
             <td align="right">
-                <button id="btn-cambio-tema" style="padding: 11px 18px; background: #34495e; color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; margin-right: 10px; transition: all 0.3s;"> Modo Oscuro</button>
-                <button onclick="alertarContacto();" style="background: #28a745; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s;" id="btn-contacto-top">CONTACTO DIRECTO</button>
+                <button id="btn-modo-lectura" style="padding: 11px 18px; background: #34495e; color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; margin-right: 10px; transition: all 0.3s;"> Modo Oscuro</button>
+                <button onclick="calcularPresupuestoExpress();" style="background: #28a745; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s;" id="btn-contacto-top">COTIZACIÓN EXPRESS</button>
             </td>
         </tr>
     </table>
@@ -55,18 +55,18 @@
             <td><a href="ofertas.html" style="color:#FFD700; text-decoration:none;"><strong>OFERTAS</strong></a></td>
             <td><a href="servicios.html" style="color:#FFFFFF; text-decoration:none;">SERVICIOS</a></td>
             <td><a href="sucursales.html" style="color:#FFFFFF; text-decoration:none;">SUCURSALES</a></td>
-            <td><a href="carrito.html" style="color:#FFFFFF; text-decoration:none;" id="enlace-carrito">ðŸ›’ MI CARRITO</a></td>
+            <td><a href="carrito.html" style="color:#FFFFFF; text-decoration:none;" id="enlace-carrito"> MI CARRITO (<span>0</span>)</a></td>
         </tr>
     </table>
 
     <center>
-        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" id="indicador-home">
             <tr>
                 <td align="center" background="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1200" style="background-size: cover; background-position: center; padding: 100px 0; transition: all 0.5s;" id="banner-hero">
                     <table bgcolor="rgba(0,0,0,0.85)" style="padding: 40px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s;" id="banner-recuadro">
                         <tr>
                             <td align="center">
-                                <font color="#FFFFFF" size="6"><strong>POTENCIA PARA TUS PROYECTOS</strong></font><br>
+                                <font color="#FFFFFF" size="6"><strong id="banner-titulo-dinamico">POTENCIA PARA TUS PROYECTOS</strong></font><br>
                                 <font color="#3498db" size="5" id="banner-subtitulo">Equipos de Alto Rendimiento 2026</font><br><br>
                                 <a href="laptops.html">
                                     <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=700" width="600" border="0" style="border: 4px solid white; border-radius: 10px; transition: transform 0.4s;" alt="Ver Laptops" id="banner-imagen">
@@ -85,10 +85,10 @@
                 <h3 style="color: #0056b3; margin-top: 0; transition: color 0.3s;" id="titulo-filtros">FILTRAR PRODUCTOS</h3>
                 <form action="filtrar.php" method="POST" onsubmit="return false;">
                     <p><strong>Rango de Precio:</strong></p>
-                    <select name="precio" style="width:100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc; background: white; transition: all 0.3s;">
-                        <option value="all">Ver todos</option>
-                        <option value="estudiante">Menos de $10,000</option>
-                        <option value="pro">$10,000 - $25,000</option>
+                    <select name="precio" id="control-orden" onchange="ordenarProductosPorPrecio();" style="width:100%; padding: 8px; border-radius: 5px; border: 1px solid #ccc; background: white; transition: all 0.3s;">
+                        <option value="DEF">Seleccionar filtro...</option>
+                        <option value="MENOR">Precio: Menor a Mayor</option>
+                        <option value="MAYOR">Precio: Mayor a Menor</option>
                     </select>
 
                     <p><strong>Rendimiento:</strong></p>
@@ -100,7 +100,7 @@
                     <label><input type="checkbox" name="m2" value="eco"> EcoCompute</label>
                     
                     <br><br>
-                    <input type="submit" value="Actualizar Cat&aacute;logo" style="width:100%; padding: 12px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s;" id="btn-filtrar-submit">
+                    <input type="button" onclick="calcularPresupuestoExpress();" value="Calcular Presupuesto Mantenimiento" style="width:100%; padding: 12px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s;" id="btn-filtrar-submit">
                 </form>
                 <hr style="border: 0; border-top: 1px solid #ddd; margin: 20px 0;" id="separador-lateral">
                 <center>
@@ -110,27 +110,27 @@
 
             <td valign="top">
                 <h2 style="color: #333; border-bottom: 2px solid #EEE; padding-bottom: 10px; margin-top: 0; transition: color 0.3s;" id="titulo-catalogo">CAT&Aacute;LOGO DESTACADO</h2>
-                <table border="0" width="100%" cellpadding="15" cellspacing="10">
+                <table border="0" width="100%" cellpadding="15" cellspacing="10" id="grid-laptops">
                     <tr align="center">
-                        <td width="50%" style="border: 1px solid #EEE; border-radius: 10px; padding: 20px; background: #FFF;" class="tarjeta-comercial">
-                            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400" width="280" style="border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"><br>
+                        <td width="50%" style="border: 1px solid #EEE; border-radius: 10px; padding: 20px; background: #FFF;" class="tarjeta-producto" data-precio="8499">
+                            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?w=400" width="280" style="border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" alt="Laptop Student"><br>
                             <h3 style="margin: 15px 0 5px 0;">Laptop Uni-Student 14"</h3>
                             <p><font color="#28a745" size="4"><strong>$8,499.00</strong></font></p>
                             <table width="100%" border="0" cellpadding="0" cellspacing="5">
                                 <tr>
                                     <td><a href="detalles_estudiante.html" style="text-decoration: none;"><button style="width:100%; padding: 10px; cursor: pointer; background: #f8f9fa; border: 1px solid #ccc; border-radius: 5px; font-weight: bold; font-size: 11px; transition: all 0.2s;" class="btn-secundario">FICHA T&Eacute;CNICA</button></a></td>
-                                    <td><button onclick="agregarAlCarrito('Laptop Uni-Student 14', 8499.00);" style="width:100%; padding: 10px; cursor: pointer; background: #0056b3; color: white; border: none; border-radius: 5px; font-weight: bold; font-size: 11px; transition: all 0.2s;" class="btn-primario"> AÑADIR</button></td>
+                                    <td><button onclick="agregarAlCarritoExpress('Laptop Uni-Student 14');" style="width:100%; padding: 10px; cursor: pointer; background: #0056b3; color: white; border: none; border-radius: 5px; font-weight: bold; font-size: 11px; transition: all 0.2s;" class="btn-primario"> AÑADIR</button></td>
                                 </tr>
                             </table>
                         </td>
-                        <td width="50%" style="border: 1px solid #EEE; border-radius: 10px; padding: 20px; background: #FFF;" class="tarjeta-comercial">
-                            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400" width="280" style="border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);"><br>
+                        <td width="50%" style="border: 1px solid #EEE; border-radius: 10px; padding: 20px; background: #FFF;" class="tarjeta-producto" data-precio="18900">
+                            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?w=400" width="280" style="border-radius: 5px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" alt="Workstation Pro"><br>
                             <h3 style="margin: 15px 0 5px 0;">Workstation Pro-Venta</h3>
                             <p><font color="#333" size="4"><strong>$18,900.00</strong></font></p>
                             <table width="100%" border="0" cellpadding="0" cellspacing="5">
                                 <tr>
                                     <td><a href="detalles_pro.html" style="text-decoration: none;"><button style="width:100%; padding: 10px; cursor: pointer; background: #f8f9fa; border: 1px solid #ccc; border-radius: 5px; font-weight: bold; font-size: 11px; transition: all 0.2s;" class="btn-secundario">FICHA T&Eacute;CNICA</button></a></td>
-                                    <td><button onclick="agregarAlCarrito('Workstation Pro-Venta', 18900.00);" style="width:100%; padding: 10px; cursor: pointer; background: #0056b3; color: white; border: none; border-radius: 5px; font-weight: bold; font-size: 11px; transition: all 0.2s;" class="btn-primario"> AÑADIR</button></td>
+                                    <td><button onclick="agregarAlCarritoExpress('Workstation Pro-Venta');" style="width:100%; padding: 10px; cursor: pointer; background: #0056b3; color: white; border: none; border-radius: 5px; font-weight: bold; font-size: 11px; transition: all 0.2s;" class="btn-primario"> AÑADIR</button></td>
                                 </tr>
                             </table>
                         </td>
@@ -167,12 +167,12 @@
             <td width="33%" align="center" valign="top">
                 <a href="mapa_sitio.html" style="color:white; border: 1px solid #3498db; padding: 10px 20px; text-decoration:none; border-radius: 20px; font-weight: bold;">MAPA DEL SITIO</a>
                 <br><br>
-                <p><small>&copy; 2026 TechVenta S.A. de C.V. <br> Proyecto Acad&eacute;mico</small></p>
+                <p><small>&copy; 2026 TechVenta S.A. de C.V. <br> Espacio de Divulgaci&oacute;n Tecnol&oacute;gica</small></p>
                 <a href="bolsa-trabajo.html" style="color:#bdc3c7; font-size: 12px; text-decoration: none;">Bolsa de Trabajo</a>
             </td>
             <td width="33%" align="right" valign="top">
                 <font color="#3498db" size="4"><strong>NUESTRAS REDES</strong></font><br><br>
-                <font size="6">&#127183; &#9993; &#128247; &#10060;</font><br><br>
+                <font size="5">   </font><br><br>
                 <font size="2" color="#bdc3c7">Sigue nuestras novedades constantes.</font>
             </td>
         </tr>
