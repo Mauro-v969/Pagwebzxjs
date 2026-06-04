@@ -85,7 +85,7 @@
                 </form>
             </td>
             <td align="right">
-                <button id="btn-modo-lectura" style="padding: 12px 22px; background: #34495e; color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; margin-right: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"> Modo Oscuro</button>
+                <button id="btn-modo-lectura" style="padding: 12px 22px; background: #34495e; color: white; border: none; border-radius: 30px; cursor: pointer; font-weight: bold; margin-right: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"> Modo Oscuro</button>
                 <button onclick="calcularPresupuestoExpress();" style="background: #28a745; color: white; border: none; padding: 12px 22px; border-radius: 30px; cursor: pointer; font-weight: bold; box-shadow: 0 4px 6px rgba(40,167,69,0.2);" id="btn-contacto-top">COTIZACIÓN EXPRESS</button>
             </td>
         </tr>
@@ -236,7 +236,7 @@
             </td>
             <td width="33%" align="right" valign="top" style="font-size: 13px;">
                 <font color="#38bdf8" size="3"><strong>NUESTRAS REDES v2.0</strong></font><br><br>
-                <font size="5" color="#ffffff"> &nbsp;  &nbsp;  &nbsp; </font><br><br>
+                <font size="5" color="#ffffff"> &nbsp;  &nbsp;  &nbsp; </font><br><br>
                 <font size="2" color="#475569">Monitoreo de actualizaciones constantes del servidor.</font>
             </td>
         </tr>
@@ -308,7 +308,7 @@
                 preciosTextos.forEach(p => p.style.color = "");
 
                 if (btnModo) {
-                    btnModo.textContent = " Modo Oscuro";
+                    btnModo.textContent = " Modo Oscuro";
                     btnModo.style.backgroundColor = "#34495e";
                     btnModo.style.color = "white";
                 }
@@ -345,7 +345,7 @@
             celdas.forEach(celda => filaDestino.appendChild(celda));
         }
 
-        // 3. CAMBIO VISUAL DE COLORES DE EQUIPOS (BUG DE ID CORREGIDO)
+        // 3. CAMBIO VISUAL DE COLORES DE EQUIPOS
         function cambiarColorEquipo(idProducto, codigoHex, nombreColor) {
             const img = document.getElementById(`img-${idProducto}`);
             if (!img) return;
@@ -379,7 +379,7 @@
             if (visor) visor.textContent = totalItemsCarrito;
         }
 
-        // 5. SISTEMA LOGÍSTICO DE PRESUPUESTOS (COTIZACIÓN CON IVA TRASLADADO)
+        // 5. SISTEMA LOGÍSTICO DE PRESUPUESTOS
         function calcularPresupuestoExpress() {
             const radioRendimiento = document.querySelector('input[name="perf"]:checked');
             const tarjetaStudent = document.getElementById("producto-student");
@@ -394,7 +394,7 @@
             if (radioRendimiento) {
                 if (radioRendimiento.value === "basico") {
                     subtotal = precioStudent;
-                    desgloseTexto = "Plan Seleccionado: Laptop Uni-Student 14\"";
+                    desgloseTexto = 'Plan Seleccionado: Laptop Uni-Student 14"';
                 } else {
                     subtotal = precioPro;
                     desgloseTexto = "Plan Seleccionado: Workstation Pro-Venta";
